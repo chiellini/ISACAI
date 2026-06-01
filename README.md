@@ -153,7 +153,16 @@ cd /path/to/isacai_website
 git pull origin main
 npm ci
 npm run build
-pm2 restart website
+pm2 restart isacai-website
+```
+
+Quick update command for the existing server deployment:
+
+```bash
+git pull
+npm install
+npm run build
+pm2 restart isacai-website
 ```
 
 If the server directory is not a Git repository yet:
@@ -164,7 +173,7 @@ git clone https://github.com/chiellini/ISACAI_WEBSITE.git isacai_website_new
 cd isacai_website_new
 npm ci
 npm run build
-pm2 start npm --name website -- run start -- -p 3000
+pm2 start npm --name isacai-website -- run start -- -p 3000
 pm2 save
 ```
 
@@ -172,8 +181,8 @@ If an older PM2 process is still running:
 
 ```bash
 pm2 list
-pm2 stop website
-pm2 delete website
+pm2 stop isacai-website
+pm2 delete isacai-website
 pm2 save
 ```
 

@@ -553,10 +553,10 @@ export const translations = {
         'The company story is strongest when it shows the mix required to build reliable embodied systems: perception, control, edge computing, networks, and deployment strategy.',
       capabilities: ['AI & Computer Vision', 'Robotics Control', 'Wireless Communication', 'FPGA / Edge Acceleration', 'Product Strategy', 'Cloud-Edge Systems'],
       members: [
-        { name: 'Dr. Zelin Li', role: 'Founder / AI & Vision', value: 'Leads OpenClaw agent integration, VLA/VLM workflows, visual perception, and skill planning.', background: 'City University of Hong Kong' },
+        { name: 'Dr. Zelin Li', role: 'Founder / AI & Vision', value: 'Leads OpenClaw agent integration, VLA/VLM workflows, visual perception, and skill planning.', background: 'City University of Hong Kong / HK GettingRice AI Limited' },
         { name: 'Zhuoheng Ran', role: 'FPGA / Edge Engineer', value: 'Builds acceleration and edge-computing foundations for robot-side deployments.', background: 'City University of Hong Kong' },
         { name: 'Dr. Hao Guo', role: 'Hardware Architect', value: 'Connects chip design, sensors, control boards, and embedded hardware decisions.', background: 'City University of Hong Kong' },
-        { name: 'Ms. Yajun Wang', role: 'Product & Finance', value: 'Shapes product strategy, deployment priorities, finance, and partnership motion.', background: 'CMHK / Product Strategy' },
+        { name: 'Ms. Yajun Wang', role: 'Product & Finance', value: 'Shapes product strategy, deployment priorities, finance, and partnership motion.', background: 'CMHK / Product Strategy / HK GettingRice AI Limited' },
         { name: 'Dr. Xinran Zhao', role: 'Communication Architect', value: 'Designs low-latency networking, ad-hoc communication, and robot connectivity.', background: 'City University of Hong Kong' },
         { name: 'Prof. Huiming Chen', role: 'Scientific Advisor', value: 'Guides cloud-edge collaboration, reliability thinking, and research direction.', background: 'USTB' },
         { name: 'Dr. Chenwei Wang', role: 'AI Scientist', value: 'Supports computer vision, fuzzy perception, imaging algorithms, and embodied AI research.', background: 'Hong Kong Polytechnic University' },
@@ -622,7 +622,7 @@ export const translations = {
         message: 'Message',
         submit: 'Prepare Inquiry',
       },
-      email: 'contact@gettingrice.com',
+      email: 'chiellini.lee@gmail.com',
     },
     footer: {
       title: 'ISACAI / VLAClaw',
@@ -1184,10 +1184,10 @@ export const translations = {
         '这个公司故事最强的地方，是团队覆盖了可靠具身系统需要的关键能力：感知、控制、边缘计算、网络和部署策略。',
       capabilities: ['AI & 计算机视觉', '机器人控制', '无线通信', 'FPGA / 边缘加速', '产品策略', '云边协同系统'],
       members: [
-        { name: '李泽霖 博士', role: 'Founder / AI & Vision', value: '负责 OpenClaw agent 集成、VLA/VLM 工作流、视觉感知和技能规划。', background: '香港城市大学' },
+        { name: '李泽霖 博士', role: 'Founder / AI & Vision', value: '负责 OpenClaw agent 集成、VLA/VLM 工作流、视觉感知和技能规划。', background: '香港城市大学 / 香港得米人工智能有限公司 HK GettingRice AI Limited' },
         { name: '冉卓恒', role: 'FPGA / Edge Engineer', value: '构建机器人侧部署所需的硬件加速和边缘计算基础。', background: '香港城市大学' },
         { name: '郭浩 博士', role: 'Hardware Architect', value: '连接芯片设计、传感器、控制板和嵌入式硬件决策。', background: '香港城市大学' },
-        { name: '王亚君 女士', role: 'Product & Finance', value: '负责产品策略、部署优先级、财务和合作路径。', background: 'CMHK / Product Strategy' },
+        { name: '王亚君 女士', role: 'Product & Finance', value: '负责产品策略、部署优先级、财务和合作路径。', background: 'CMHK / Product Strategy / 香港得米人工智能有限公司 HK GettingRice AI Limited' },
         { name: '赵欣然 博士', role: 'Communication Architect', value: '负责低时延网络、自组网通信和机器人连接稳定性。', background: '香港城市大学' },
         { name: '陈辉铭 教授', role: 'Scientific Advisor', value: '指导云边协同、可靠性思路和研究路线。', background: '北京科技大学' },
         { name: '王陈炜 博士', role: 'AI Scientist', value: '支持计算机视觉、模糊感知、图像算法和具身智能研究。', background: '香港理工大学' },
@@ -1253,7 +1253,7 @@ export const translations = {
         message: '留言',
         submit: '准备咨询',
       },
-      email: 'contact@gettingrice.com',
+      email: 'chiellini.lee@gmail.com',
     },
     footer: {
       title: 'ISACAI / VLAClaw',
