@@ -1,10 +1,10 @@
 # ISACAI Website
 
-Company website for **ISACAI / Hong Kong GettingRice Artificial Intelligence Limited** and its VLAClaw product direction.
+Company and product portal for **ISACAI / Hong Kong GettingRice Artificial Intelligence Limited** and the **VLAClaw** platform.
 
-VLAClaw is positioned as an **OpenClaw-powered intelligent upper-computer and skill orchestration platform for ROS2 robots**. The website explains how ISACAI connects language, vision, robot sensors, validated robot skills, rosbridge, and ROS2 execution for robot dogs, robotic arms, and embodied edge devices.
+VLAClaw is an **OpenClaw-powered intelligent upper-computer and skill orchestration platform for ROS2 robots**. The website explains how ISACAI connects language, vision, robot sensors, validated robot skills, rosbridge, and ROS2 execution for robot dogs, robotic arms, and embodied edge devices.
 
-The site is intentionally structured as a professional multi-entry company website rather than a single long scrolling document.
+The site is organized as a multi-entry product portal instead of a single scrolling page.
 
 ## Live / Related Sites
 
@@ -14,9 +14,9 @@ The site is intentionally structured as a professional multi-entry company websi
 
 ## Product Positioning
 
-ISACAI is not building a simple robot remote controller, and it is not claiming that a large model directly controls motors.
+ISACAI builds the product, developer, and collaboration surface for VLAClaw.
 
-The core story is:
+Core execution path:
 
 ```text
 OpenClaw Agent Layer
@@ -29,30 +29,30 @@ OpenClaw Agent Layer
 
 The website emphasizes:
 
-- skill-level robot control, not raw motor-level generation
+- skill-level robot control with validated execution boundaries
 - ROS2 and rosbridge integration
 - reusable robot skills from action groups and ROS2 commands
 - camera / IMU / radar / odometry feedback loops
 - OpenClaw / VLA / VLM / LLM orchestration
-- software-first validation before hardware-heavy scaling
-- developer-facing API and internal infrastructure
+- interface-first validation and repeatable demo workflows
+- developer-facing API and internal engineering infrastructure
 
 ## Site Structure
 
-The website is organized into top-level entry pages:
+Top-level pages:
 
 ```text
 /              Homepage gateway
-/platform      Product platform, architecture, validation path, safety model
+/platform      Platform, architecture, validation path, safety model
 /developers    API Portal, rosbridge examples, Skill API, skills.yaml, engineering notes
-/solutions     Use cases, demos, pilot packages, education / exhibition / OEM paths
+/solutions     Use cases, demo workflows, education / exhibition / OEM paths
 /company       Team, engineering work, roadmap, research resources
-/contact       Technical integration, research collaboration, pilot deployment
+/contact       Technical integration, research collaboration, solution deployment
 ```
 
-This avoids the site feeling like a long Word document. Visitors can choose the route that matches their role:
+Suggested visitor routes:
 
-- investors and partners -> `/platform` or `/company`
+- partners and customers -> `/platform` or `/company`
 - developers and labs -> `/developers`
 - education / demo / OEM customers -> `/solutions`
 - direct collaboration -> `/contact`
@@ -70,24 +70,24 @@ This avoids the site feeling like a long Word document. Visitors can choose the 
 
 ```text
 isacai_website/
-├── app/
-│   ├── page.tsx
-│   ├── layout.tsx
-│   ├── globals.css
-│   ├── platform/page.tsx
-│   ├── developers/page.tsx
-│   ├── solutions/page.tsx
-│   ├── company/page.tsx
-│   └── contact/page.tsx
-├── components/
-│   ├── LanguageProvider.tsx
-│   └── ui/
-├── lib/
-│   ├── i18n.ts
-│   └── utils.ts
-├── public/images/
-├── package.json
-└── README.md
+|-- app/
+|   |-- page.tsx
+|   |-- layout.tsx
+|   |-- globals.css
+|   |-- platform/page.tsx
+|   |-- developers/page.tsx
+|   |-- solutions/page.tsx
+|   |-- company/page.tsx
+|   `-- contact/page.tsx
+|-- components/
+|   |-- LanguageProvider.tsx
+|   `-- ui/
+|-- lib/
+|   |-- i18n.ts
+|   `-- utils.ts
+|-- public/images/
+|-- package.json
+`-- README.md
 ```
 
 ## Local Development
@@ -110,7 +110,7 @@ Open:
 http://localhost:3000
 ```
 
-Note: the dev script uses webpack mode:
+The dev script uses webpack mode:
 
 ```json
 "dev": "node node_modules/next/dist/bin/next dev --webpack"
@@ -140,44 +140,44 @@ npm run start -- -p 3000
 
 ## Deployment Update From GitHub
 
-The repository is pushed to:
+Repository:
 
 ```text
 https://github.com/chiellini/ISACAI_WEBSITE.git
 ```
 
-On the server, update the deployed website with:
+If the server already has a cloned Git repository:
 
 ```bash
 cd /path/to/isacai_website
 git pull origin main
 npm ci
 npm run build
+pm2 restart website
 ```
 
-Then restart the process manager.
-
-For PM2:
+If the server directory is not a Git repository yet:
 
 ```bash
-pm2 restart isacai-website
+cd /path/to
+git clone https://github.com/chiellini/ISACAI_WEBSITE.git isacai_website_new
+cd isacai_website_new
+npm ci
+npm run build
+pm2 start npm --name website -- run start -- -p 3000
+pm2 save
 ```
 
-If the server is not yet connected to GitHub, either clone the repository:
+If an older PM2 process is still running:
 
 ```bash
-git clone https://github.com/chiellini/ISACAI_WEBSITE.git isacai_website
+pm2 list
+pm2 stop website
+pm2 delete website
+pm2 save
 ```
 
-or add this remote to an existing server directory:
-
-```bash
-git remote add origin https://github.com/chiellini/ISACAI_WEBSITE.git
-git branch -M main
-git pull origin main
-```
-
-Always back up the server directory before replacing an existing deployment.
+Always back up the existing server directory before replacing a deployment.
 
 ## API Portal
 
@@ -187,34 +187,35 @@ The main website links to the internal API / developer portal:
 http://isacai.space
 ```
 
-This API portal is part of the engineering proof of work. It shows that ISACAI is not only building a marketing website, but also preparing developer-facing infrastructure for robot-agent integration, skill calls, API documentation, and internal workflows.
+The API portal supports internal development, robot-agent integration, skill interface documentation, and team-side workflow documentation.
 
-## Content Strategy
+## Portal Content
 
-Because the physical product is still in an early stage, the website focuses on showing real engineering work:
+The website presents ISACAI as a product portal with clear technical and collaboration surfaces:
 
 - multi-page information architecture
-- product positioning and system architecture
+- platform positioning and system architecture
 - developer API examples
 - rosbridge WebSocket interface examples
 - skills.yaml schema
 - action group to skill abstraction
-- validation plan
+- validation path
 - compatibility matrix
-- pilot packages
+- solution programs
 - roadmap
 - internal API portal link
 
-This makes the company look like a serious embodied AI infrastructure startup instead of a temporary demo page.
+The portal helps customers, developers, labs, and partners understand what VLAClaw does, how it connects to ROS2 robots, and where collaboration can start.
 
-## Safety Claims
+## Safety Model
 
-The site intentionally avoids overclaiming:
+The site describes a skill-level control architecture:
 
-- It does not claim full autonomy.
-- It does not claim the AI directly controls motors.
-- It does not claim mass production or large-scale deployment.
-- It states that OpenClaw selects validated skills while ROS2 robot controllers handle real-time execution.
+- OpenClaw plans and selects validated robot skills.
+- Skill Server checks parameters, safety limits, and execution state.
+- rosbridge carries WebSocket / JSON messages between the upper-computer layer and ROS2.
+- ROS2 robot controllers handle real-time motion and hardware execution.
+- Sensor feedback supports monitoring, recovery, and workflow iteration.
 
 ## Useful Commands
 

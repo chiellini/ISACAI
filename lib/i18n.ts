@@ -23,7 +23,7 @@ export const translations = {
       subtitle:
         'VLAClaw connects OpenClaw intelligence with ROS2-enabled robots through rosbridge, enabling voice interaction, visual perception, validated skill execution, and closed-loop embodied control.',
       coreLine:
-        'We do not let AI directly drive motors. We let AI orchestrate validated robot skills.',
+        'OpenClaw plans at the validated skill layer while ROS2 controllers handle real-time robot execution.',
       ctaPrimary: 'Explore Architecture',
       ctaSecondary: 'View Skill API',
       ctaTertiary: 'Contact Us',
@@ -48,7 +48,7 @@ export const translations = {
       eyebrow: 'Choose Your Entry',
       title: 'Start from the question you care about.',
       description:
-        'The homepage is now a gateway. Investors, developers, labs, and customers should not need to read one long page from top to bottom.',
+        'The homepage is structured as a product portal: platform, developer API, solutions, company background, and collaboration entry are separated into clear routes.',
       cards: [
         {
           title: 'Platform',
@@ -65,7 +65,7 @@ export const translations = {
         {
           title: 'Solutions',
           href: '/solutions',
-          description: 'Use cases, demo scenarios, pilot packages, education, exhibition, and OEM integration paths.',
+          description: 'Use cases, demo workflows, education, exhibition, and OEM integration paths.',
           cta: 'View Solutions',
         },
         {
@@ -77,7 +77,7 @@ export const translations = {
         {
           title: 'Contact',
           href: '/contact',
-          description: 'Choose technical integration, research collaboration, or product pilot deployment.',
+          description: 'Choose technical integration, research collaboration, or solution deployment.',
           cta: 'Start Conversation',
         },
       ],
@@ -125,10 +125,10 @@ export const translations = {
       },
     },
     validation: {
-      eyebrow: 'Build Stage',
-      title: 'Software-first validation before hardware-heavy scaling.',
+      eyebrow: 'Platform Validation',
+      title: 'Interface-first validation for reliable robot-agent deployment.',
       description:
-        'At the current startup stage, the website should make the engineering path visible: what can be tested in software, what must be verified on real robots, and how each milestone reduces deployment risk.',
+        'VLAClaw organizes the engineering path around interfaces, skill contracts, safety checks, and repeatable ROS2 robot workflows so each capability can be tested and extended systematically.',
       labels: { goal: 'Goal', evidence: 'Evidence', next: 'Next' },
       cards: [
         {
@@ -150,18 +150,18 @@ export const translations = {
           next: 'Test refusal behavior and recovery flow on repeated unsafe commands.',
         },
         {
-          title: 'Demo readiness',
-          promise: 'Create credible demos even before productized hardware.',
+          title: 'Demo workflow readiness',
+          promise: 'Package voice, vision, action-group, and developer-integration flows into repeatable robot demos.',
           evidence: 'Voice greeting, visual interaction, safe action group, and developer integration workflows.',
-          next: 'Replace schematic visuals with real robot footage as prototypes mature.',
+          next: 'Add robot logs, field footage, and deployment notes as each workflow is verified.',
         },
       ],
     },
     workProof: {
-      eyebrow: 'Engineering Work',
-      title: 'The current asset is not only a concept page. It is an infrastructure build-out.',
+      eyebrow: 'Platform Surface',
+      title: 'A product portal backed by developer infrastructure.',
       description:
-        'Before productized hardware is ready, ISACAI is making the platform credible through software surfaces, integration contracts, developer portals, schemas, workflows, and bilingual product documentation.',
+        'ISACAI brings the company website, API portal, skill schema, rosbridge integration patterns, demo workflows, and bilingual product documentation into one connected platform surface.',
       portal: {
         title: 'Internal API Portal',
         url: 'http://isacai.space',
@@ -192,13 +192,13 @@ export const translations = {
         },
         {
           title: 'Demo workflow library',
-          status: 'Pilot preparation',
+          status: 'Deployment workflow',
           detail: 'Frames voice greeting, visual interaction, safe patrol, and developer integration as repeatable demo workflows.',
         },
         {
           title: 'Bilingual product materials',
-          status: 'Fundraising and partnership asset',
-          detail: 'Makes the project understandable to investors, labs, robot teams, education customers, and Hong Kong / mainland partners.',
+          status: 'Product communication layer',
+          detail: 'Makes the platform understandable to labs, robot teams, education customers, OEM partners, and Hong Kong / mainland collaborators.',
         },
       ],
     },
@@ -230,7 +230,7 @@ export const translations = {
       eyebrow: 'Integration Workflow',
       title: 'A practical path from an existing ROS2 robot to an OpenClaw-controlled demo.',
       description:
-        'This is the implementation story customers and developers need: VLAClaw does not require replacing the robot controller. It maps existing robot capabilities into observations and validated skills.',
+        'This is the implementation story customers and developers need: VLAClaw works with existing robot controllers and maps robot capabilities into observations and validated skills.',
       steps: [
         {
           title: 'Audit robot interfaces',
@@ -448,7 +448,7 @@ export const translations = {
       eyebrow: 'Demo Scenarios',
       title: 'Input -> reasoning -> skill -> ROS2 execution -> feedback.',
       description:
-        'Demos are framed as reliable workflows, not claims of full autonomy. Each behavior remains bounded by skills and robot-side controllers.',
+        'Each demo is organized as a repeatable workflow with clear inputs, skill choices, ROS2 execution, and feedback signals.',
       cards: [
         {
           title: 'Voice Greeting',
@@ -503,17 +503,17 @@ export const translations = {
       cards: [
         { title: 'Robotics Education', problem: 'Students need a practical bridge between ROS2, VLA, and robot control.', solution: 'Use VLAClaw as a lab platform for topics, skills, and agent workflows.', outcome: 'Faster teaching demos and reproducible student projects.' },
         { title: 'Embodied AI Research', problem: 'Researchers need real robot feedback without hand-building every interface.', solution: 'Expose observations and skills through stable APIs for VLA/VLM/LLM experiments.', outcome: 'Closed-loop experiments with clear safety boundaries.' },
-        { title: 'Exhibition Interaction', problem: 'Demo robots need reliable greeting, voice, expression, and staged behavior.', solution: 'Chain validated skills for voice-first interactions and visual greetings.', outcome: 'More credible live demos with bounded recovery.' },
-        { title: 'Inspection Prototype', problem: 'Low-cost patrol demos need camera, IMU, and status feedback.', solution: 'Use sensor-aware skills for movement, scene capture, report, and return-home flows.', outcome: 'A practical prototype before industrial hardening.' },
+        { title: 'Exhibition Interaction', problem: 'Demo robots need reliable greeting, voice, expression, and staged behavior.', solution: 'Chain validated skills for voice-first interactions and visual greetings.', outcome: 'More stable live demos with bounded recovery.' },
+        { title: 'Inspection Workflow', problem: 'Patrol and inspection demos need camera, IMU, and status feedback.', solution: 'Use sensor-aware skills for movement, scene capture, report, and return-home flows.', outcome: 'A practical workflow that can be hardened for deployment.' },
         { title: 'Robot OEM Integration', problem: 'Manufacturers need AI features without rewriting the robot control stack.', solution: 'Keep ROS2 lower control and add an upper-computer agent gateway.', outcome: 'A clearer path from remote control to AI-enabled products.' },
-        { title: 'Developer Platform', problem: 'App developers want robot access without maintaining full ROS2 environments.', solution: 'Use WebSocket JSON and the Skill API as the integration surface.', outcome: 'Faster prototypes across Windows, Linux, and macOS hosts.' },
+        { title: 'Developer Platform', problem: 'App developers want robot access without maintaining full ROS2 environments.', solution: 'Use WebSocket JSON and the Skill API as the integration surface.', outcome: 'Faster integrations across Windows, Linux, and macOS hosts.' },
       ],
     },
     offerings: {
-      eyebrow: 'Pilot Offers',
-      title: 'Concrete collaboration packages for an early-stage embodied AI startup.',
+      eyebrow: 'Integration Packages',
+      title: 'Focused deployment programs for robot teams and partners.',
       description:
-        'Instead of pretending the platform is already a mass-produced hardware product, ISACAI can offer focused pilot packages that convert real robot capabilities into working embodied AI demos.',
+        'ISACAI provides structured integration programs that connect ROS2 robots, skill libraries, OpenClaw workflows, and developer APIs into working embodied AI experiences.',
       cards: [
         {
           title: 'ROS2 Robot Integration Sprint',
@@ -529,9 +529,9 @@ export const translations = {
         },
         {
           title: 'Exhibition Interaction Prototype',
-          ideal: 'For showrooms, startup events, and innovation demos.',
+          ideal: 'For showrooms, innovation showcases, and interactive product demonstrations.',
           includes: ['Voice greeting script', 'action-group skills', 'display expression flow', 'operator safety panel', 'demo runbook'],
-          outcome: 'A reliable staged interaction that communicates embodied AI without overclaiming full autonomy.',
+          outcome: 'A reliable staged interaction with clear operator controls, repeatable workflows, and visible safety boundaries.',
         },
       ],
     },
@@ -539,7 +539,7 @@ export const translations = {
       eyebrow: 'Resources',
       title: 'Engineering notes that make the platform feel reproducible.',
       description:
-        'The website should become a living product and research surface, not only a landing page. These article tracks are ready for real posts and demo logs.',
+        'The company portal carries product documentation, engineering notes, demo logs, and research observations, with space for future articles, cases, and release updates.',
       cards: [
         { category: 'Engineering Note', title: 'How rosbridge makes ROS2 robots accessible to AI agents', summary: 'A practical guide to WebSocket JSON, topic subscription, and service calls.' },
         { category: 'Demo Log', title: 'Turning sit_wave.d6a into an OpenClaw skill', summary: 'How authored action groups become semantic, validated robot capabilities.' },
@@ -578,25 +578,25 @@ export const translations = {
     },
     faq: {
       eyebrow: 'FAQ',
-      title: 'Clear answers for customers, developers, and investors.',
+      title: 'Platform questions, answered.',
       description:
-        'A richer startup website should proactively answer the questions people will ask when the product is still moving from prototype to pilot.',
+        'Key answers about VLAClaw, ROS2 integration, Skill Server boundaries, developer access, and deployment workflows.',
       items: [
         {
           question: 'Is VLAClaw a robot controller?',
-          answer: 'No. VLAClaw is an intelligent upper-computer and skill orchestration layer. Robot-side ROS2 nodes remain responsible for real-time motion and hardware control.',
+          answer: 'VLAClaw is an intelligent upper-computer and skill orchestration layer. Robot-side ROS2 nodes remain responsible for real-time motion and hardware control.',
         },
         {
           question: 'Does the AI directly output motor commands?',
-          answer: 'No. The model outputs skill choices and bounded parameters. Skill Server validates the command before ROS2 executes the underlying action.',
+          answer: 'The model outputs skill choices and bounded parameters. Skill Server validates the command before ROS2 executes the underlying action.',
         },
         {
           question: 'Do developers need to install ROS2 on the host?',
           answer: 'Not for the primary integration path. The host can connect through rosbridge WebSocket and JSON messages while the robot runs ROS2.',
         },
         {
-          question: 'What can be shown before final hardware is ready?',
-          answer: 'The architecture, Skill API, rosbridge examples, action-group mapping, developer workflows, and software demos can be shown first. Real robot footage can be added as prototypes mature.',
+          question: 'What can be evaluated first?',
+          answer: 'Teams can review the architecture, Skill API, rosbridge examples, action-group mapping, developer workflows, and demo runbooks, then connect the same contracts to robot-side ROS2 systems.',
         },
         {
           question: 'Which robots are easiest to support?',
@@ -612,7 +612,7 @@ export const translations = {
       channels: [
         { title: 'Technical Integration', description: 'For robot manufacturers, labs, and developers connecting ROS2 robots to VLAClaw.', cta: 'Request Technical Discussion' },
         { title: 'Research Collaboration', description: 'For universities and embodied AI teams working on VLA, OpenClaw, skill learning, and closed-loop planning.', cta: 'Explore Research Collaboration' },
-        { title: 'Product / Pilot Deployment', description: 'For education, exhibition, demo, and OEM partners who need a deployable robot experience.', cta: 'Contact Partnership Team' },
+        { title: 'Solution Deployment', description: 'For education, exhibition, demo, and OEM partners who need a deployable robot experience.', cta: 'Contact Partnership Team' },
       ],
       form: {
         name: 'Name',
@@ -654,7 +654,7 @@ export const translations = {
       subtitle:
         'VLAClaw 基于 OpenClaw 构建智能上位机系统，通过 rosbridge 连接四足机器人、机械臂与交互设备，将语音、视觉、状态感知和机器人技能编排为稳定可靠的任务闭环。',
       coreLine:
-        '我们不让大模型直接控制电机，而是让大模型选择经过验证的机器人技能。',
+        'OpenClaw 在经过验证的技能层完成规划，ROS2 控制器负责实时机器人执行。',
       ctaPrimary: '查看系统架构',
       ctaSecondary: '查看 Skill API',
       ctaTertiary: '联系我们',
@@ -677,9 +677,9 @@ export const translations = {
     },
     entries: {
       eyebrow: '选择入口',
-      title: '从你关心的问题进入，而不是从头读到尾。',
+      title: '按角色选择入口，快速进入平台内容。',
       description:
-        '首页现在是入口网关。投资人、开发者、实验室和客户不应该像读 Word 文档一样从上往下拖。',
+        '首页按产品门户组织：平台、开发者 API、解决方案、公司背景和合作入口分开呈现，访问者可以直接进入对应路径。',
       cards: [
         {
           title: 'Platform',
@@ -696,7 +696,7 @@ export const translations = {
         {
           title: 'Solutions',
           href: '/solutions',
-          description: '应用场景、演示流程、试点合作包、教育、展厅和 OEM 接入路径。',
+          description: '应用场景、演示流程、教育、展厅和 OEM 接入路径。',
           cta: '查看解决方案',
         },
         {
@@ -708,7 +708,7 @@ export const translations = {
         {
           title: 'Contact',
           href: '/contact',
-          description: '选择技术接入、科研合作或产品试点部署。',
+          description: '选择技术接入、科研合作或解决方案部署。',
           cta: '开始沟通',
         },
       ],
@@ -743,7 +743,7 @@ export const translations = {
     },
     insight: {
       eyebrow: '产品洞察',
-      title: '不是替代 ROS2，而是在 ROS2 之上构建智能上位机。',
+      title: '在 ROS2 之上构建智能上位机层。',
       description:
         'VLAClaw 保留机器人端 ROS2 节点的稳定运动控制，同时增加 OpenClaw 层来负责感知、规划、技能校验和执行监控。',
       traditional: {
@@ -756,10 +756,10 @@ export const translations = {
       },
     },
     validation: {
-      eyebrow: '建设阶段',
-      title: '先做软件与接口验证，再进入重硬件规模化。',
+      eyebrow: '平台验证',
+      title: '面向可靠机器人智能体部署的接口优先验证。',
       description:
-        '创业早期没有成熟实物并不可怕，关键是把工程路径讲清楚：哪些能力可以先用软件验证，哪些必须上真实机器人验证，每个里程碑如何降低部署风险。',
+        'VLAClaw 围绕接口、技能契约、安全校验和可复用 ROS2 机器人工作流组织工程路径，让每项能力都能被系统化测试和扩展。',
       labels: { goal: '目标', evidence: '证据', next: '下一步' },
       cards: [
         {
@@ -776,23 +776,23 @@ export const translations = {
         },
         {
           title: '安全边界',
-          promise: '让模型输出停留在 skill 层，而不是底层电机控制层。',
+          promise: '将模型输出约束在 skill 层，由 ROS2 机器人控制器执行底层动作。',
           evidence: 'Skill Server 检查速度、时长、机器人姿态、IMU 稳定性和急停。',
           next: '测试不安全指令的拒绝行为和恢复流程。',
         },
         {
-          title: '演示就绪',
-          promise: '即使硬件尚未产品化，也能做可信的演示路径。',
+          title: '演示工作流就绪',
+          promise: '将语音、视觉、动作组和开发者接入流程封装成可复用的机器人演示。',
           evidence: '语音问候、视觉互动、安全动作组和开发者接入工作流。',
-          next: '随着原型成熟，用真实机器人视频替换架构示意视觉。',
+          next: '随着每条工作流验证完成，补充机器人日志、现场视频和部署说明。',
         },
       ],
     },
     workProof: {
-      eyebrow: '工程工作量',
-      title: '当前资产不只是一个概念页，而是一套平台基础设施的搭建。',
+      eyebrow: '平台入口',
+      title: '由开发者基础设施支撑的产品门户。',
       description:
-        '在产品化硬件成熟之前，ISACAI 先通过软件界面、接口契约、开发者 API 站、schema、工作流和中英文产品材料来建立可信度。',
+        'ISACAI 将公司官网、API Portal、Skill schema、rosbridge 接入模式、demo workflows 与中英文产品材料组织成统一的平台入口。',
       portal: {
         title: '内部 API Portal',
         url: 'http://isacai.space',
@@ -823,13 +823,13 @@ export const translations = {
         },
         {
           title: 'Demo workflow 库',
-          status: '试点准备',
+          status: '部署工作流',
           detail: '把语音问候、视觉互动、安全巡检和开发者接入组织成可复用的演示工作流。',
         },
         {
           title: '中英文产品材料',
-          status: '融资与合作资产',
-          detail: '让投资人、实验室、机器人团队、教育客户和香港/内地合作方都能看懂项目。',
+          status: '产品沟通层',
+          detail: '让实验室、机器人团队、教育客户、OEM 合作方和香港/内地伙伴都能看懂平台。',
         },
       ],
     },
@@ -966,9 +966,9 @@ export const translations = {
     },
     philosophy: {
       eyebrow: '安全哲学',
-      title: '技能级控制，而不是危险的电机级生成。',
+      title: '技能级控制，面向安全执行边界。',
       description:
-        'VLAClaw 将动作组、ROS2 命令、service 和导航行为抽象成语义化 robot skills。模型选择技能和参数，而不是生成底层执行器数值。',
+        'VLAClaw 将动作组、ROS2 命令、service 和导航行为抽象成语义化 robot skills。模型负责选择技能和参数，底层执行由机器人端控制器完成。',
       direct: {
         title: 'AI 直接控制电机',
         items: ['输出关节角 / PWM / 力矩', '真实硬件上难验证', '失败恢复不清晰', '四足平衡风险高', '动作组能力难复用'],
@@ -1079,7 +1079,7 @@ export const translations = {
       eyebrow: '演示场景',
       title: 'Input -> Reasoning -> Skill -> ROS2 Execution -> Feedback。',
       description:
-        '演示被设计成可靠工作流，而不是夸大成完全自主。每个行为都被限制在技能和机器人端控制器边界内。',
+        '每个 demo 都被组织成可复用工作流，包含清晰输入、技能选择、ROS2 执行和反馈信号。',
       cards: [
         {
           title: '语音问候',
@@ -1115,7 +1115,7 @@ export const translations = {
       eyebrow: '产品模块',
       title: '面向机器人具身智能的产品矩阵。',
       description:
-        'VLAClaw 不是单个遥控页面，而是一套平台栈。每个模块都对应智能上位机层中的明确角色。',
+        'VLAClaw 是一套面向智能上位机层的平台栈，每个模块都承担明确的产品和工程角色。',
       cards: [
         { title: 'OpenClaw Runtime', description: '智能体循环、工具调用、任务规划、上下文记忆和云端回退。', tags: ['VLM / LLM', 'Memory', 'Planner'] },
         { title: 'ROSBridge Adapter', description: '面向 ROS2 topic 发布订阅、service 调用和 JSON 序列化的 WebSocket client。', tags: ['rosbridge', '9090', 'JSON'] },
@@ -1134,17 +1134,17 @@ export const translations = {
       cards: [
         { title: '机器人教学平台', problem: '学生需要把 ROS2、VLA 和机器人控制真正连起来。', solution: '用 VLAClaw 做 topic、skill 和 agent workflow 实验平台。', outcome: '更快完成教学 demo 和可复现实验项目。' },
         { title: '具身智能科研', problem: '研究者需要真实机器人反馈，但不想手写所有接口。', solution: '用稳定 API 暴露 observation 和 skills，支持 VLA/VLM/LLM 实验。', outcome: '带清晰安全边界的闭环实验。' },
-        { title: '展厅互动', problem: '展示机器人需要可靠的问候、语音、表情和舞台化行为。', solution: '用经过验证的技能链完成语音互动和视觉问候。', outcome: '更可信的现场 demo 和有边界的恢复能力。' },
-        { title: '巡检原型', problem: '低成本巡检 demo 需要摄像头、IMU 和状态反馈。', solution: '使用感知技能完成移动、场景拍摄、报告和返回。', outcome: '工业强化前的可行原型。' },
+        { title: '展厅互动', problem: '展示机器人需要可靠的问候、语音、表情和舞台化行为。', solution: '用经过验证的技能链完成语音互动和视觉问候。', outcome: '更稳定的现场 demo 和有边界的恢复能力。' },
+        { title: '巡检工作流', problem: '巡检 demo 需要摄像头、IMU 和状态反馈。', solution: '使用感知技能完成移动、场景拍摄、报告和返回。', outcome: '可继续加固为部署方案的任务工作流。' },
         { title: '机器人 OEM 接入', problem: '厂商想增加 AI 能力，但不想重写机器人控制栈。', solution: '保留 ROS2 下位机控制，增加智能上位机网关。', outcome: '从遥控产品到 AI 产品的清晰升级路径。' },
-        { title: '开发者平台', problem: '应用开发者想接机器人，但不想维护完整 ROS2 环境。', solution: '以 WebSocket JSON 和 Skill API 作为集成表面。', outcome: '在 Windows、Linux、macOS 上更快做原型。' },
+        { title: '开发者平台', problem: '应用开发者想接机器人，但不想维护完整 ROS2 环境。', solution: '以 WebSocket JSON 和 Skill API 作为集成表面。', outcome: '在 Windows、Linux、macOS 上更快完成集成。' },
       ],
     },
     offerings: {
-      eyebrow: '试点合作',
-      title: '适合早期具身智能创业团队的具体合作包。',
+      eyebrow: '集成方案',
+      title: '面向机器人团队与合作伙伴的聚焦部署方案。',
       description:
-        '不要假装平台已经是量产硬件产品。ISACAI 现阶段更适合提供聚焦的试点合作，把真实机器人能力转成可运行的具身智能 demo。',
+        'ISACAI 提供结构化集成方案，将 ROS2 机器人、技能库、OpenClaw 工作流和 Developer API 连接成可运行的具身智能体验。',
       cards: [
         {
           title: 'ROS2 Robot Integration Sprint',
@@ -1160,9 +1160,9 @@ export const translations = {
         },
         {
           title: 'Exhibition Interaction Prototype',
-          ideal: '适合展厅、创业赛事和创新展示。',
+          ideal: '适合展厅、创新展示和互动产品演示。',
           includes: ['语音问候脚本', '动作组 skills', '表情显示流程', '操作员安全面板', '演示 runbook'],
-          outcome: '做出稳定的舞台化互动，不夸大完全自主，也能讲清具身智能价值。',
+          outcome: '做出稳定的舞台化互动，保留清晰的操作员控制、可复用流程和安全边界。',
         },
       ],
     },
@@ -1170,7 +1170,7 @@ export const translations = {
       eyebrow: '资源',
       title: '让平台可复现的工程笔记。',
       description:
-        '公司官网应该成为持续的产品和研究入口，而不只是 landing page。以下栏目已经为真实文章和 demo log 预留。',
+        '公司门户同时承载产品说明、工程笔记、demo 记录和研究观察，为后续文档、案例和版本更新预留入口。',
       cards: [
         { category: '工程笔记', title: 'rosbridge 如何让 AI agent 接入 ROS2 机器人', summary: '讲清 WebSocket JSON、topic 订阅和 service 调用的实践路径。' },
         { category: 'Demo Log', title: '把 sit_wave.d6a 转换成 OpenClaw skill', summary: '说明动作组如何变成语义化、可验证的机器人能力。' },
@@ -1209,25 +1209,25 @@ export const translations = {
     },
     faq: {
       eyebrow: '常见问题',
-      title: '给客户、开发者和投资人的清晰回答。',
+      title: '平台使用与接入说明。',
       description:
-        '创业官网内容要厚，就要主动回答外界会问的问题，尤其是在产品仍处于从原型到试点的阶段。',
+        '围绕 VLAClaw、ROS2 接入、Skill Server 边界、开发者入口和部署流程的关键说明。',
       items: [
         {
           question: 'VLAClaw 是机器人控制器吗？',
-          answer: '不是。VLAClaw 是智能上位机和技能编排层。机器人端 ROS2 节点仍然负责实时运动和硬件控制。',
+          answer: 'VLAClaw 是智能上位机和技能编排层。机器人端 ROS2 节点仍然负责实时运动和硬件控制。',
         },
         {
           question: 'AI 会直接输出电机命令吗？',
-          answer: '不会。模型输出的是技能选择和有边界的参数。Skill Server 校验之后，再由 ROS2 执行底层动作。',
+          answer: '模型输出的是技能选择和有边界的参数。Skill Server 校验之后，再由 ROS2 执行底层动作。',
         },
         {
           question: '开发者必须在上位机安装 ROS2 吗？',
           answer: '核心接入路径不需要。上位机可以通过 rosbridge WebSocket 和 JSON 消息连接，ROS2 运行在机器人端。',
         },
         {
-          question: '最终硬件未成熟前，网站可以展示什么？',
-          answer: '可以先展示架构、Skill API、rosbridge 示例、动作组映射、开发者工作流和软件 demo。随着原型成熟，再补真实机器人视频。',
+          question: '可以优先验证哪些能力？',
+          answer: '团队可以先评估系统架构、Skill API、rosbridge 示例、动作组映射、开发者工作流和演示 runbook，再把同一套接口契约连接到机器人端 ROS2 系统。',
         },
         {
           question: '最容易支持哪些机器人？',
@@ -1243,7 +1243,7 @@ export const translations = {
       channels: [
         { title: 'Technical Integration', description: '面向机器人厂商、实验室和开发者，把 ROS2 机器人接入 VLAClaw。', cta: '预约技术讨论' },
         { title: 'Research Collaboration', description: '面向高校和具身智能团队，合作 VLA、OpenClaw、skill learning 和闭环规划。', cta: '探索科研合作' },
-        { title: 'Product / Pilot Deployment', description: '面向教育、展厅、演示和 OEM 合作方，部署可运行的机器人体验。', cta: '联系合作团队' },
+        { title: 'Solution Deployment', description: '面向教育、展厅、演示和 OEM 合作方，部署可运行的机器人体验。', cta: '联系合作团队' },
       ],
       form: {
         name: '姓名',
