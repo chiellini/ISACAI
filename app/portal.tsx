@@ -43,6 +43,7 @@ const urls = {
 
 const compliance = {
   icp: '粤ICP备2026050877号',
+  filingEntity: '广州多智慧体人工智能科技有限公司',
 }
 
 const company = {
@@ -139,7 +140,14 @@ const copy = {
         eyebrow: 'Compliance',
         title: '域名、备案与合规展示。',
         description:
-          'ISACAI 门户展示已取得的 ICP 备案号，并链接到工信部备案系统。后续如取得公安联网备案号，可在页脚继续补充。',
+          'ISACAI 门户展示备案主体、变更主体与主办单位名称，并链接到工信部备案系统。备案信息已完成备案主体更新。',
+        recordsTitle: '备案主体与变更信息',
+        records: [
+          { label: '备案主体', value: compliance.filingEntity },
+          { label: '变更主体', value: compliance.filingEntity },
+          { label: '主办单位名称', value: compliance.filingEntity },
+          { label: 'ICP 主体备案号', value: compliance.icp },
+        ],
       },
       contact: {
         eyebrow: 'Contact',
@@ -248,8 +256,8 @@ const copy = {
         a: '保留，但不再作为官网唯一主角。它会作为 ISACAI 在具身智能和机器人方向的研发项目入口出现。',
       },
       {
-        q: '备案号为什么显示待补充？',
-        a: '我没有在公开检索和本地材料里确认到正式 ICP 编号，所以先预留位置。拿到工信部备案号后，应替换为真实编号并链接备案系统。',
+        q: 'ICP备案信息是否已更新？',
+        a: '备案信息已补充：备案主体和主办单位为“广州多智慧体人工智能科技有限公司”，ICP 备案号为粤ICP备2026050877号。',
       },
     ],
     footer: {
@@ -329,7 +337,14 @@ const copy = {
         eyebrow: 'Compliance',
         title: 'Domains, ICP, and compliance display.',
         description:
-          'The ISACAI portal displays the approved ICP filing number and links it to the MIIT filing system. A public security filing number can be added later if approved.',
+          'The ISACAI portal displays filing subject, amending subject, and hosting unit information, and links to the MIIT filing system.',
+        recordsTitle: 'ICP and compliance records',
+        records: [
+          { label: 'Filing subject', value: compliance.filingEntity },
+          { label: 'Amended filing subject', value: compliance.filingEntity },
+          { label: 'Hosting unit', value: compliance.filingEntity },
+          { label: 'ICP filing number', value: compliance.icp },
+        ],
       },
       contact: {
         eyebrow: 'Contact',
@@ -432,8 +447,8 @@ const copy = {
         a: 'Yes. It is retained as an embodied intelligence and robotics R&D project, but no longer the only homepage focus.',
       },
       {
-        q: 'Why are filing numbers marked as pending?',
-        a: 'No official ICP number was confirmed from public search or local materials, so the field is reserved. Replace it with the approved MIIT filing number before production release.',
+        q: 'Has filing information been updated?',
+        a: 'Filing information has been updated: the filing subject, amended filing subject, and hosting unit are Guangzhou Multi-Intelligence Artificial Intelligence Technology Co., Ltd., with ICP filing number 粤ICP备2026050877号.',
       },
     ],
     footer: {
@@ -869,6 +884,17 @@ export function ComplianceSection() {
           <ComplianceCard title="Company Portal" value={urls.portal} href={urls.portal} />
           <ComplianceCard title="ISACAPI Platform" value={urls.api} href={urls.api} />
           <ComplianceCard title="ICP Filing" value={compliance.icp} href={urls.miit} />
+        </div>
+        <div className="mt-6 rounded-lg border border-border bg-white p-5 shadow-sm">
+          <h3 className="text-lg font-semibold">{c.sections.compliance.recordsTitle}</h3>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {c.sections.compliance.records.map((item) => (
+              <div key={item.label} className="rounded-md border border-slate-200 bg-slate-50 p-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">{item.label}</p>
+                <p className="mt-2 text-sm leading-6 text-slate-800">{item.value}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
