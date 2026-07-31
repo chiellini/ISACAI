@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'Antigravity API',
     'model gateway',
     'enterprise AI infrastructure',
-    'api.isacai.cn',
+    'isacai.space',
     'isacai.cn',
   ],
   authors: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ISACAI | Company Portal for ISACAPI',
     description:
-      'Company portal for ISACAI and ISACAPI, the AI API gateway platform hosted at api.isacai.cn.',
+      'Company portal for ISACAI and ISACAPI, the AI API gateway platform hosted at isacai.space.',
     type: 'website',
     siteName: 'ISACAI',
   },

@@ -34,7 +34,7 @@ import { useMemo, useState } from 'react'
 
 const urls = {
   portal: 'https://isacai.cn',
-  api: 'https://api.isacai.cn',
+  api: 'https://isacai.space',
   githubIsacai: 'https://github.com/chiellini/ISACAI',
   githubIsacapi: 'https://github.com/chiellini/ISACAPI',
   legacyHome: 'https://isacai.space/home',
@@ -80,21 +80,21 @@ const copy = {
       eyebrow: 'ISACAI 官方门户',
       title: 'ISACAI',
       subtitle:
-        'ISACAI 是面向 AI API 基础设施、智能体服务和具身智能应用的公司门户。isacai.cn 承载公司信息与项目入口，api.isacai.cn 承载主产品 ISACAPI。',
+        'ISACAI 是面向 AI API 基础设施、智能体服务和具身智能应用的公司门户。isacai.cn 承载公司信息与项目入口，isacai.space 承载主产品 ISACAPI。',
       primary: '进入 ISACAPI',
       secondary: '查看 GitHub',
       tertiary: '联系团队',
       note: '门户定位：公司信息、产品入口、技术文档、办公室与合规备案集中展示。',
       metrics: [
         { value: 'ISACAPI', label: '主产品 / AI API 网关平台' },
-        { value: 'api.isacai.cn', label: '生产服务入口' },
+        { value: 'isacai.space', label: '生产服务入口' },
         { value: 'Go + Vue', label: '后端网关与管理控制台' },
         { value: 'HK + GZ', label: '香港主体与广州办公室' },
       ],
       map: [
         '公司门户 isacai.cn',
         '主产品 ISACAPI',
-        'API 服务 api.isacai.cn',
+        'API 服务 isacai.space',
         '开发文档与 GitHub',
         '公司信息与办公室',
       ],
@@ -132,7 +132,7 @@ const copy = {
       },
       developers: {
         eyebrow: 'Developers',
-        title: '开发者从 api.isacai.cn 开始。',
+        title: '开发者从 isacai.space 开始。',
         description:
           '开发者入口聚焦 ISACAPI 的 OpenAI-compatible API、Antigravity 接入、Docker 部署、系统服务安装、管理后台和模型别名配置。',
       },
@@ -166,7 +166,7 @@ const copy = {
         title: 'ISACAPI 服务平台',
         description: 'AI API 网关、Key 分发、用量计费、账号池调度和管理后台。',
         href: urls.api,
-        label: 'api.isacai.cn',
+        label: 'isacai.space',
       },
       {
         title: 'ISACAPI 开源仓库',
@@ -223,7 +223,7 @@ const copy = {
       '/antigravity/v1beta/',
     ],
     developerSteps: [
-      '访问 api.isacai.cn 获取平台入口与 API Key。',
+      '访问 isacai.space 获取平台入口与 API Key。',
       '选择 OpenAI-compatible、Antigravity、Gemini 或其他可用通道。',
       '在业务服务里配置 Base URL 与平台生成的 API Key。',
       '通过管理后台查看用量、失败请求、余额、并发和服务状态。',
@@ -247,8 +247,8 @@ const copy = {
     },
     faq: [
       {
-        q: 'isacai.cn 和 api.isacai.cn 怎么分工？',
-        a: 'isacai.cn 是公司门户，展示 ISACAI 的公司信息、产品入口、办公室地址和联系入口。api.isacai.cn 是 ISACAPI 主产品的服务平台。',
+        q: 'isacai.cn 和 isacai.space 怎么分工？',
+        a: 'isacai.cn 是公司门户，展示 ISACAI 的公司信息、产品入口、办公室地址和联系入口。isacai.space 是 ISACAPI 主产品的服务平台。',
       },
       {
         q: 'VLAClaw 还保留吗？',
@@ -282,18 +282,18 @@ const copy = {
       eyebrow: 'Official ISACAI Portal',
       title: 'ISACAI',
       subtitle:
-        'ISACAI is the company portal for AI API infrastructure, agent services, and embodied intelligence projects. isacai.cn hosts the company portal, while api.isacai.cn hosts the main product: ISACAPI.',
+        'ISACAI is the company portal for AI API infrastructure, agent services, and embodied intelligence projects. isacai.cn hosts the company portal, while isacai.space hosts the main product: ISACAPI.',
       primary: 'Open ISACAPI',
       secondary: 'View GitHub',
       tertiary: 'Contact Team',
       note: 'Portal role: company information, product entrances, developer resources, office addresses, and compliance information in one place.',
       metrics: [
         { value: 'ISACAPI', label: 'Main product / AI API gateway platform' },
-        { value: 'api.isacai.cn', label: 'Production service entrance' },
+        { value: 'isacai.space', label: 'Production service entrance' },
         { value: 'Go + Vue', label: 'Gateway backend and admin console' },
         { value: 'HK + GZ', label: 'Hong Kong entity and Guangzhou office' },
       ],
-      map: ['Company portal isacai.cn', 'Main product ISACAPI', 'API service api.isacai.cn', 'Docs and GitHub', 'Company and office'],
+      map: ['Company portal isacai.cn', 'Main product ISACAPI', 'API service isacai.space', 'Docs and GitHub', 'Company and office'],
     },
     sections: {
       portal: {
@@ -328,7 +328,7 @@ const copy = {
       },
       developers: {
         eyebrow: 'Developers',
-        title: 'Developers start from api.isacai.cn.',
+        title: 'Developers start from isacai.space.',
         description:
           'The developer entrance focuses on ISACAPI OpenAI-compatible APIs, Antigravity integration, Docker deployment, systemd installation, admin console, and model alias configuration.',
       },
@@ -362,7 +362,7 @@ const copy = {
         title: 'ISACAPI Service Platform',
         description: 'AI API gateway, key distribution, usage billing, account scheduling, and admin console.',
         href: urls.api,
-        label: 'api.isacai.cn',
+        label: 'isacai.space',
       },
       {
         title: 'ISACAPI Repository',
@@ -413,7 +413,7 @@ const copy = {
     ],
     endpoints: ['/v1/responses', '/v1/chat/completions', '/v1/models', '/antigravity/v1/messages', '/antigravity/v1beta/'],
     developerSteps: [
-      'Visit api.isacai.cn for the platform entrance and API Keys.',
+      'Visit isacai.space for the platform entrance and API Keys.',
       'Choose OpenAI-compatible, Antigravity, Gemini, or another available channel.',
       'Configure your service with the Base URL and platform-generated API Key.',
       'Use the admin console to inspect usage, failed requests, balance, concurrency, and service status.',
@@ -437,8 +437,8 @@ const copy = {
     },
     faq: [
       {
-        q: 'How do isacai.cn and api.isacai.cn differ?',
-        a: 'isacai.cn is the company portal for ISACAI. api.isacai.cn is the service platform for the main product, ISACAPI.',
+        q: 'How do isacai.cn and isacai.space differ?',
+        a: 'isacai.cn is the company portal for ISACAI. isacai.space is the service platform for the main product, ISACAPI.',
       },
       {
         q: 'Is VLAClaw still part of the site?',
@@ -691,7 +691,7 @@ export function ProductSection() {
             <div>
               <div className="flex items-center gap-3">
                 <SquareTerminal className="h-7 w-7 text-cyan-700" />
-                <h3 className="text-xl font-semibold text-cyan-950">api.isacai.cn</h3>
+                <h3 className="text-xl font-semibold text-cyan-950">isacai.space</h3>
               </div>
               <p className="mt-3 max-w-3xl text-sm leading-6 text-cyan-900/75">{urls.api}</p>
             </div>
@@ -1002,7 +1002,7 @@ export function Footer() {
               <div className="mt-4 flex flex-wrap gap-2">
                 {[
                   { label: 'isacai.cn', href: urls.portal },
-                  { label: 'api.isacai.cn', href: urls.api },
+                  { label: 'isacai.space', href: urls.api },
                   { label: 'GitHub', href: urls.githubIsacapi },
                   { label: 'isacai.space/home', href: urls.legacyHome },
                 ].map((item) => (
