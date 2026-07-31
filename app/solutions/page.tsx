@@ -2,12 +2,12 @@
 
 import { LanguageProvider } from '@/components/LanguageProvider'
 import {
-  DemoSection,
+  ContactSection,
+  EntryPortalSection,
   Footer,
   Navigation,
-  OfferingsSection,
-  UseCasesSection,
-} from '@/app/page'
+  VLAClawSection,
+} from '@/app/portal'
 
 export default function SolutionsPage() {
   return (
@@ -15,9 +15,9 @@ export default function SolutionsPage() {
       <main>
         <Navigation />
         <div className="pt-16">
-          <UseCasesSection />
-          <DemoSection />
-          <OfferingsSection />
+          <EntryPortalSection />
+          <VLAClawSection />
+          <ContactSection />
           <Footer />
         </div>
       </main>

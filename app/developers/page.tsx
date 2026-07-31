@@ -5,12 +5,10 @@ import {
   DeveloperSection,
   FAQSection,
   Footer,
+  InfrastructureSection,
   Navigation,
-  ResourcesSection,
-  SkillsSection,
-  WorkProofSection,
-  WorkflowSection,
-} from '@/app/page'
+  ProductSection,
+} from '@/app/portal'
 
 export default function DevelopersPage() {
   return (
@@ -18,11 +16,9 @@ export default function DevelopersPage() {
       <main>
         <Navigation />
         <div className="pt-16">
-          <WorkProofSection />
+          <ProductSection />
+          <InfrastructureSection />
           <DeveloperSection />
-          <SkillsSection />
-          <WorkflowSection />
-          <ResourcesSection />
           <FAQSection />
           <Footer />
         </div>

@@ -239,7 +239,6 @@ const copy = {
     },
     contact: {
       business: 'rigaudiere@isacai.cn',
-      product: 'chiellini.lee@gmail.com',
       channels: [
         { title: '产品试用', text: '申请 ISACAPI 账号、API Key、模型通道或私有部署评估。' },
         { title: '企业部署', text: '讨论账号池、支付、计费、日志、审计和内网部署方案。' },
@@ -430,7 +429,6 @@ const copy = {
     },
     contact: {
       business: 'rigaudiere@isacai.cn',
-      product: 'chiellini.lee@gmail.com',
       channels: [
         { title: 'Product trial', text: 'Request an ISACAPI account, API Key, model channel, or private deployment review.' },
         { title: 'Enterprise deployment', text: 'Discuss account pools, payment, billing, logs, audit, and internal deployment plans.' },

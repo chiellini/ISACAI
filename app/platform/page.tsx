@@ -2,18 +2,13 @@
 
 import { LanguageProvider } from '@/components/LanguageProvider'
 import {
-  ArchitectureSection,
-  CompatibilitySection,
   Footer,
+  InfrastructureSection,
   Navigation,
-  PhilosophySection,
-  ProductInsightSection,
-  ProductModulesSection,
-  RoadmapSection,
-  SolutionSection,
-  ValidationSection,
-  WorkflowSection,
-} from '@/app/page'
+  ProductSection,
+  ComplianceSection,
+  ContactSection,
+} from '@/app/portal'
 
 export default function PlatformPage() {
   return (
@@ -21,15 +16,10 @@ export default function PlatformPage() {
       <main>
         <Navigation />
         <div className="pt-16">
-          <ProductInsightSection />
-          <ValidationSection />
-          <SolutionSection />
-          <WorkflowSection />
-          <CompatibilitySection />
-          <ArchitectureSection />
-          <PhilosophySection />
-          <ProductModulesSection />
-          <RoadmapSection />
+          <ProductSection />
+          <InfrastructureSection />
+          <ComplianceSection />
+          <ContactSection />
           <Footer />
         </div>
       </main>

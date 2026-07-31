@@ -2,34 +2,33 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ISACAI VLAClaw | OpenClaw-Powered Embodied AI for ROS2 Robots',
+  title: 'ISACAI | Company Portal for ISACAPI',
   description:
-    'VLAClaw is an OpenClaw-powered upper-computer platform that connects ROS2 robots through rosbridge, enabling voice interaction, visual perception, skill orchestration, and safe embodied AI execution.',
+    'ISACAI is the company portal for ISACAPI, an AI API gateway platform for API key distribution, quota management, billing, scheduling, and enterprise AI service operations.',
   keywords: [
     'ISACAI',
-    'VLAClaw',
-    'OpenClaw',
-    'embodied AI',
-    'ROS2 robot',
-    'rosbridge',
-    'robot dog',
-    'Raspberry Pi 5',
-    'skill server',
-    'robot upper computer',
-    'VLA robot',
-    'VLM',
-    'LLM',
-    'quadruped robot',
-    'robot skill orchestration',
-    'cloud-edge AI',
+    'ISACAPI',
+    'AI API gateway',
+    'API key distribution',
+    'subscription quota',
+    'AI billing',
+    'OpenAI compatible API',
+    'Antigravity API',
+    'model gateway',
+    'enterprise AI infrastructure',
+    'api.isacai.cn',
+    'isacai.cn',
   ],
-  authors: [{ name: 'Hong Kong GettingRice Artificial Intelligence Limited' }],
+  authors: [
+    { name: 'Hong Kong GettingRice Artificial Intelligence Limited' },
+    { name: 'Guangzhou Multi-Agent Artificial Intelligence Technology Co., Ltd.' },
+  ],
   openGraph: {
-    title: 'ISACAI VLAClaw | Skill-Orchestrated Embodied AI for ROS2 Robots',
+    title: 'ISACAI | Company Portal for ISACAPI',
     description:
-      'An OpenClaw-powered upper-computer and skill orchestration platform for ROS2-enabled embodied robots.',
+      'Company portal for ISACAI and ISACAPI, the AI API gateway platform hosted at api.isacai.cn.',
     type: 'website',
-    siteName: 'ISACAI VLAClaw',
+    siteName: 'ISACAI',
   },
 }
 

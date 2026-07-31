@@ -3,11 +3,12 @@
 import { LanguageProvider } from '@/components/LanguageProvider'
 import {
   ContactSection,
+  EntryPortalSection,
   FAQSection,
   Footer,
   Navigation,
-  OfferingsSection,
-} from '@/app/page'
+  OfficeSection,
+} from '@/app/portal'
 
 export default function ContactPage() {
   return (
@@ -16,7 +17,8 @@ export default function ContactPage() {
         <Navigation />
         <div className="pt-16">
           <ContactSection />
-          <OfferingsSection />
+          <OfficeSection />
+          <EntryPortalSection />
           <FAQSection />
           <Footer />
         </div>

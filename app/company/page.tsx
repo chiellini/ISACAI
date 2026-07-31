@@ -2,14 +2,13 @@
 
 import { LanguageProvider } from '@/components/LanguageProvider'
 import {
+  CompanySection,
+  ComplianceSection,
   FAQSection,
   Footer,
   Navigation,
-  ResourcesSection,
-  RoadmapSection,
-  TeamSection,
-  WorkProofSection,
-} from '@/app/page'
+  OfficeSection,
+} from '@/app/portal'
 
 export default function CompanyPage() {
   return (
@@ -17,10 +16,9 @@ export default function CompanyPage() {
       <main>
         <Navigation />
         <div className="pt-16">
-          <TeamSection />
-          <WorkProofSection />
-          <RoadmapSection />
-          <ResourcesSection />
+          <CompanySection />
+          <OfficeSection />
+          <ComplianceSection />
           <FAQSection />
           <Footer />
         </div>
