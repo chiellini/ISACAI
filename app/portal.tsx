@@ -505,7 +505,7 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between gap-3">
           <button onClick={() => go('/')} className="flex items-center gap-3 text-left">
             <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-white">
-              <Image src="/isac icon.png" alt="ISACAI icon" fill sizes="40px" className="object-cover" />
+              <Image src="/公司icon.jpeg" alt="ISACAI company icon" fill sizes="40px" className="object-contain" />
             </span>
             <span>
               <span className="block text-sm font-semibold leading-tight">ISACAI</span>
@@ -993,7 +993,7 @@ export function Footer() {
         <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-start">
           <div className="flex items-start gap-3">
             <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-slate-200">
-              <Image src="/isac icon.png" alt="ISACAI icon" fill sizes="40px" className="object-cover" />
+              <Image src="/公司icon.jpeg" alt="ISACAI company icon" fill sizes="40px" className="object-contain" />
             </span>
             <div>
               <p className="font-semibold">{c.footer.title}</p>

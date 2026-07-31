@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     { name: 'Hong Kong GettingRice Artificial Intelligence Limited' },
     { name: 'Guangzhou Multi-Agent Artificial Intelligence Technology Co., Ltd.' },
   ],
+  icons: {
+    icon: [{ url: '/公司icon.jpeg', type: 'image/jpeg' }],
+    shortcut: '/公司icon.jpeg',
+    apple: '/公司icon.jpeg',
+  },
   openGraph: {
     title: 'ISACAI | Company Portal for ISACAPI',
     description:
