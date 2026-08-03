@@ -104,16 +104,16 @@ const copy = {
           '首页作为 ISACAI 的导航中枢，展示公司信息、技术项目、办公室、备案与合作入口。isacai.space 为外部合作方网站，与本站无隶属关系。',
       },
       product: {
-        eyebrow: 'Partner Boundary',
-        title: '合作方服务与本站保持独立。',
+        eyebrow: '本站产品',
+        title: 'VLAClaw：面向具身智能的上位机与智能体工作台。',
         description:
-          '如需访问 isacai.space 的相关服务，请直接前往合作方网站。该服务由合作方独立运营，本站不提供 API、账号、计费或技术支持。',
+          'VLAClaw 是 ISACAI 自有的具身智能研发项目，连接 ROS2 机器人、视觉感知、语音交互与可编排技能，面向机器人应用验证与边缘侧智能执行。',
       },
       infrastructure: {
-        eyebrow: 'Service Boundary',
-        title: '清晰区分本站与外部服务边界。',
+        eyebrow: 'Product Capabilities',
+        title: '连接机器人、感知与智能体工作流。',
         description:
-          '本站不运营 isacai.space 的 API、账号、计费、请求转发或管理后台。相关服务与接口规则请以合作方网站的公开信息为准。',
+          'VLAClaw 将设备连接、感知输入、任务规划和技能执行组织成可扩展的机器人上位机工作流。外部合作方服务与本站产品保持独立。',
       },
       company: {
         eyebrow: 'Company',
@@ -185,31 +185,31 @@ const copy = {
       },
     ],
     productFeatures: [
-      '合作方入口仅作为外部链接展示',
-      '本站不保存合作方账号或 API Key',
-      '本站不处理合作方计费、额度或请求转发',
-      '服务可用性与接口变更以合作方公告为准',
-      '合作联系通过本站公开入口发起',
-      '办公室与公司信息可通过本站核验',
-      'ICP 备案信息与主体信息公开展示',
-      '技术项目与研发方向独立展示',
+      'ROS2 与 rosbridge 设备连接',
+      '语音交互与视觉感知输入',
+      'OpenClaw skill server 技能编排',
+      '机器人狗、摄像头与边缘硬件接入',
+      '可插拔的任务流程与技能模块',
+      '云边协同的智能体执行路径',
+      '面向真实机器人场景的快速验证',
+      '研发演示、实验记录与项目沉淀',
     ],
     infrastructure: [
       {
-        title: 'External Partner',
-        text: 'isacai.space is operated independently by the external partner.',
+        title: 'Robot Connectivity',
+        text: 'Connect ROS2 devices and robot-side services through rosbridge and edge components.',
       },
       {
-        title: 'Service Boundary',
-        text: 'This portal does not provide the partner APIs, accounts, billing, or request forwarding.',
+        title: 'Multimodal Interaction',
+        text: 'Combine voice, camera, visual perception, and task context for embodied interaction.',
       },
       {
-        title: 'Company Portal',
-        text: 'isacai.cn presents ISACAI company information, projects, offices, and contact routes.',
+        title: 'Skill Orchestration',
+        text: 'Compose reusable OpenClaw skills and task workflows for different robot scenarios.',
       },
       {
-        title: 'Cooperation',
-        text: 'Company, research, and embodied intelligence cooperation can be initiated from this portal.',
+        title: 'Cloud-Edge Execution',
+        text: 'Keep time-sensitive execution near the robot while coordinating higher-level intelligence.',
       },
     ],
     endpoints: [],
@@ -294,16 +294,16 @@ const copy = {
           'The homepage is an ISACAI navigation hub for company information, technology projects, office details, compliance records, and cooperation. isacai.space is an independent external partner website with no affiliation to this portal.',
       },
       product: {
-        eyebrow: 'Partner Boundary',
-        title: 'Partner services remain independent from this portal.',
+        eyebrow: 'Our Product',
+        title: 'VLAClaw: an embodied intelligence workbench for robots and agents.',
         description:
-          'For services available at isacai.space, visit the partner website directly. The partner independently operates those services; this portal does not provide APIs, accounts, billing, or technical support for them.',
+          'VLAClaw is an ISACAI-owned embodied intelligence R&D project connecting ROS2 robots, visual perception, voice interaction, and composable skills for real-world robot applications and edge execution.',
       },
       infrastructure: {
-        eyebrow: 'Service Boundary',
-        title: 'A clear boundary between this portal and external services.',
+        eyebrow: 'Product Capabilities',
+        title: 'Connecting robots, perception, and agent workflows.',
         description:
-          'This portal does not operate the APIs, accounts, billing, request forwarding, or admin console at isacai.space. Refer to the partner website for service details.',
+          'VLAClaw organizes device connectivity, perception inputs, task planning, and skill execution into an extensible robot-side workbench. External partner services remain independent from this product.',
       },
       company: {
         eyebrow: 'Company',
@@ -375,31 +375,31 @@ const copy = {
       },
     ],
     productFeatures: [
-      'The partner entrance is shown only as an external link',
-      'This portal does not store partner accounts or API Keys',
-      'This portal does not process partner billing, quota, or request forwarding',
-      'Service availability and interface changes are controlled by the partner',
-      'Cooperation requests can be started through this portal',
-      'Company and office information can be verified here',
-      'ICP filing and entity information are publicly displayed',
-      'Technology projects and research directions are presented independently',
+      'ROS2 and rosbridge robot connectivity',
+      'Voice interaction and visual perception inputs',
+      'OpenClaw skill server orchestration',
+      'Robot dog, camera, and edge hardware integration',
+      'Composable task flows and reusable skill modules',
+      'Cloud-edge paths for embodied agent execution',
+      'Rapid validation in real robot scenarios',
+      'Research demos, experiments, and project artifacts',
     ],
     infrastructure: [
       {
-        title: 'External Partner',
-        text: 'isacai.space is operated independently by the external partner.',
+        title: 'Robot Connectivity',
+        text: 'Connect ROS2 devices and robot-side services through rosbridge and edge components.',
       },
       {
-        title: 'Service Boundary',
-        text: 'This portal does not provide the partner APIs, accounts, billing, or request forwarding.',
+        title: 'Multimodal Interaction',
+        text: 'Combine voice, camera, visual perception, and task context for embodied interaction.',
       },
       {
-        title: 'Company Portal',
-        text: 'isacai.cn presents ISACAI company information, projects, offices, and contact routes.',
+        title: 'Skill Orchestration',
+        text: 'Compose reusable OpenClaw skills and task workflows for different robot scenarios.',
       },
       {
-        title: 'Cooperation',
-        text: 'Company, research, and embodied intelligence cooperation can be initiated from this portal.',
+        title: 'Cloud-Edge Execution',
+        text: 'Keep time-sensitive execution near the robot while coordinating higher-level intelligence.',
       },
     ],
     endpoints: [],
@@ -628,9 +628,9 @@ function HeroSection() {
             </div>
 
             <div className="mt-5 rounded-md border border-amber-300/20 bg-amber-300/10 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-200">Main Product</p>
-              <p className="mt-2 text-xl font-semibold">External Partner</p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">Company portal for AI research, embodied intelligence, and cooperation</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-200">Our Product</p>
+              <p className="mt-2 text-xl font-semibold">VLAClaw</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">Embodied intelligence workbench for ROS2 robots and agent skills</p>
             </div>
           </div>
         </div>
@@ -682,13 +682,13 @@ export function ProductSection() {
             <div>
               <div className="flex items-center gap-3">
                 <SquareTerminal className="h-7 w-7 text-cyan-700" />
-                <h3 className="text-xl font-semibold text-cyan-950">External Partner</h3>
+                <h3 className="text-xl font-semibold text-cyan-950">VLAClaw</h3>
               </div>
-              <p className="mt-3 max-w-3xl text-sm leading-6 text-cyan-900/75">External partner website. This portal is not affiliated with its services.</p>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-cyan-900/75">ISACAI 自有具身智能研发项目，面向 ROS2 机器人、感知交互与技能编排。</p>
             </div>
-            <a href={urls.partner} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-slate-950 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-slate-800">
-              Visit Partner
-              <ExternalLink className="ml-2 h-4 w-4" />
+            <a href="/solutions" className="inline-flex min-h-11 items-center justify-center rounded-md bg-slate-950 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-slate-800">
+              View Project
+              <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </div>
         </div>
@@ -769,7 +769,7 @@ export function DeveloperSection() {
               <span>OpenAI-compatible example</span>
               <SquareTerminal className="h-4 w-4 text-cyan-300" />
             </div>
-            <pre className="overflow-x-auto whitespace-pre p-4 text-xs leading-6 text-slate-100 sm:text-sm">{'API documentation, accounts, and technical support are provided by the external partner at isacai.space.'}</pre>
+            <pre className="overflow-x-auto whitespace-pre p-4 text-xs leading-6 text-slate-100 sm:text-sm">{'VLAClaw workflow\n\nROS2 device -> perception -> agent planning -> skill execution\n\nOpenClaw skills coordinate robot-side actions.'}</pre>
           </div>
         </div>
       </div>
@@ -946,7 +946,7 @@ export function VLAClawSection() {
     () => [
       { title: 'Embodied AI R&D', text: 'VLAClaw remains a research and demonstration project for robot interaction, ROS2 integration, and embodied agent workflows.' },
       { title: 'OpenClaw / ROS2', text: 'The project keeps the OpenClaw, rosbridge, robot dog, sensor, and skill orchestration material as a technical archive.' },
-      { title: 'Independent partner', text: 'The public homepage identifies the external partner separately from ISACAI and does not present its services as part of this portal.' },
+      { title: 'Research direction', text: 'VLAClaw provides a project base for testing embodied agents, robot interaction, and edge-side intelligence.' },
     ],
     [],
   )
