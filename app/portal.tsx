@@ -34,10 +34,8 @@ import { useMemo, useState } from 'react'
 
 const urls = {
   portal: 'https://isacai.cn',
-  api: 'https://isacai.space',
+  partner: 'https://isacai.space',
   githubIsacai: 'https://github.com/chiellini/ISACAI',
-  githubIsacapi: 'https://github.com/chiellini/ISACAPI',
-  legacyHome: 'https://isacai.space/home',
   miit: 'https://beian.miit.gov.cn',
 }
 
@@ -69,32 +67,31 @@ const copy = {
     langLabel: 'EN',
     nav: [
       { label: '门户', href: '/' },
-      { label: 'ISACAPI', href: '/platform' },
+      { label: '合作方入口', href: urls.partner },
       { label: '开发者', href: '/developers' },
       { label: '公司', href: '/company' },
       { label: '联系', href: '/contact' },
     ],
-    navCta: '进入 API 平台',
+    navCta: '访问合作方',
     brandSubtitle: '公司门户',
     hero: {
       eyebrow: 'ISACAI 官方门户',
       title: 'ISACAI',
       subtitle:
-        'ISACAI 是面向 AI API 基础设施、智能体服务和具身智能应用的公司门户。isacai.cn 承载公司信息与项目入口，isacai.space 承载主产品 ISACAPI。',
-      primary: '进入 ISACAPI',
+        'ISACAI 是面向智能体服务、具身智能应用和 AI 技术研发的公司门户。isacai.cn 承载公司信息、项目入口与合作联系；isacai.space 为外部合作方网站，与本站无隶属关系。',
+      primary: '访问合作方',
       secondary: '查看 GitHub',
       tertiary: '联系团队',
       note: '门户定位：公司信息、产品入口、技术文档、办公室与合规备案集中展示。',
       metrics: [
-        { value: 'ISACAPI', label: '主产品 / AI API 网关平台' },
-        { value: 'isacai.space', label: '生产服务入口' },
-        { value: 'Go + Vue', label: '后端网关与管理控制台' },
+        { value: 'isacai.cn', label: '本站公司门户' },
+        { value: '合作方', label: '外部服务入口' },
+        { value: 'AI R&D', label: '技术研发方向' },
         { value: 'HK + GZ', label: '香港主体与广州办公室' },
       ],
       map: [
         '公司门户 isacai.cn',
-        '主产品 ISACAPI',
-        'API 服务 isacai.space',
+        '合作方入口 isacai.space',
         '开发文档与 GitHub',
         '公司信息与办公室',
       ],
@@ -102,21 +99,21 @@ const copy = {
     sections: {
       portal: {
         eyebrow: 'Portal',
-        title: '一个门户，连接公司、产品和开发者入口。',
+        title: '一个门户，连接公司、项目与合作联系。',
         description:
-          '首页不再作为单一产品介绍页，而是作为 ISACAI 的导航中枢。访客可以从这里进入 API 平台、开源仓库、公司信息、办公室地址和合作联系。',
+          '首页作为 ISACAI 的导航中枢，展示公司信息、技术项目、办公室、备案与合作入口。isacai.space 为外部合作方网站，与本站无隶属关系。',
       },
       product: {
-        eyebrow: 'Main Product',
-        title: 'ISACAPI 是 ISACAI 的主产品。',
+        eyebrow: 'Partner Boundary',
+        title: '合作方服务与本站保持独立。',
         description:
-          'ISACAPI 是面向 AI 产品订阅额度分发与管理的 API 网关平台。用户通过平台生成的 API Key 访问上游 AI 服务，平台负责鉴权、计费、负载均衡、请求转发、调度与用量治理。',
+          '如需访问 isacai.space 的相关服务，请直接前往合作方网站。该服务由合作方独立运营，本站不提供 API、账号、计费或技术支持。',
       },
       infrastructure: {
-        eyebrow: 'Infrastructure',
-        title: '从 API Key 到上游模型的统一运营层。',
+        eyebrow: 'Service Boundary',
+        title: '清晰区分本站与外部服务边界。',
         description:
-          'ISACAPI 将账号池、模型别名、支付、限流、并发控制、用量记录和管理后台组织成一个可部署、可迁移、可运维的 AI 服务平台。',
+          '本站不运营 isacai.space 的 API、账号、计费、请求转发或管理后台。相关服务与接口规则请以合作方网站的公开信息为准。',
       },
       company: {
         eyebrow: 'Company',
@@ -132,9 +129,9 @@ const copy = {
       },
       developers: {
         eyebrow: 'Developers',
-        title: '开发者从 isacai.space 开始。',
+        title: '开发者资料与合作方入口分开。',
         description:
-          '开发者入口聚焦 ISACAPI 的 OpenAI-compatible API、Antigravity 接入、Docker 部署、系统服务安装、管理后台和模型别名配置。',
+          '本站仅展示 ISACAI 的公司与技术项目信息。API 服务由外部合作方提供，开发者请直接访问 isacai.space 获取合作方的官方资料。',
       },
       compliance: {
         eyebrow: 'Compliance',
@@ -158,21 +155,21 @@ const copy = {
       faq: {
         eyebrow: 'FAQ',
         title: '常见问题。',
-        description: '把门户站、主产品和部署边界说清楚。',
+        description: '把本站与外部合作方的边界说清楚。',
       },
     },
     portalCards: [
       {
-        title: 'ISACAPI 服务平台',
-        description: 'AI API 网关、Key 分发、用量计费、账号池调度和管理后台。',
-        href: urls.api,
-        label: 'isacai.space',
+        title: '合作方服务入口',
+        description: '外部合作方独立运营的服务平台。账号、计费、接口和技术支持请以合作方页面为准。',
+        href: urls.partner,
+        label: '外部合作方 / isacai.space',
       },
       {
-        title: 'ISACAPI 开源仓库',
-        description: '主产品源码、部署脚本、Docker Compose、支付与网关文档。',
-        href: urls.githubIsacapi,
-        label: 'GitHub / ISACAPI',
+        title: 'ISACAI 开源仓库',
+        description: '本站公司资料、技术项目与研发方向的公开代码入口。',
+        href: urls.githubIsacai,
+        label: 'GitHub / ISACAI',
       },
       {
         title: 'ISACAI 公司门户',
@@ -188,45 +185,39 @@ const copy = {
       },
     ],
     productFeatures: [
-      '多上游账号管理，支持 OAuth 与 API Key 类型',
-      '平台生成 API Key，面向用户、团队和分组分发',
-      'Token 级用量追踪、成本计算与余额管理',
-      '智能账号选择、负载均衡和粘性会话',
-      '用户级与账号级并发控制、RPM/TPM 限流',
-      '内置 EasyPay、支付宝、微信支付、Stripe 支付能力',
-      '管理后台监控用户、账号、用量、日志与系统状态',
-      '支持外部系统 iframe 嵌入，扩展管理后台工作流',
+      '合作方入口仅作为外部链接展示',
+      '本站不保存合作方账号或 API Key',
+      '本站不处理合作方计费、额度或请求转发',
+      '服务可用性与接口变更以合作方公告为准',
+      '合作联系通过本站公开入口发起',
+      '办公室与公司信息可通过本站核验',
+      'ICP 备案信息与主体信息公开展示',
+      '技术项目与研发方向独立展示',
     ],
     infrastructure: [
       {
-        title: 'API Gateway',
-        text: '兼容 OpenAI 风格接口，并提供 Responses、Chat Completions、Models 等常用路径。',
+        title: 'External Partner',
+        text: 'isacai.space is operated independently by the external partner.',
       },
       {
-        title: 'Account Pool',
-        text: '统一管理上游账号、分组、额度、可用性、失败重试和调度策略。',
+        title: 'Service Boundary',
+        text: 'This portal does not provide the partner APIs, accounts, billing, or request forwarding.',
       },
       {
-        title: 'Billing & Quota',
-        text: '围绕用户余额、订阅、用量记录和 token 价格表建立可审计的计费层。',
+        title: 'Company Portal',
+        text: 'isacai.cn presents ISACAI company information, projects, offices, and contact routes.',
       },
       {
-        title: 'Admin Console',
-        text: 'Vue 管理后台覆盖账号、用户、支付、监控、公告、API Key 和运维配置。',
+        title: 'Cooperation',
+        text: 'Company, research, and embodied intelligence cooperation can be initiated from this portal.',
       },
     ],
-    endpoints: [
-      '/v1/responses',
-      '/v1/chat/completions',
-      '/v1/models',
-      '/antigravity/v1/messages',
-      '/antigravity/v1beta/',
-    ],
+    endpoints: [],
     developerSteps: [
-      '访问 isacai.space 获取平台入口与 API Key。',
-      '选择 OpenAI-compatible、Antigravity、Gemini 或其他可用通道。',
-      '在业务服务里配置 Base URL 与平台生成的 API Key。',
-      '通过管理后台查看用量、失败请求、余额、并发和服务状态。',
+      '本站不提供 API Key、接口转发或外部服务账号。',
+      '如需相关服务，请直接访问合作方网站 isacai.space。',
+      '合作方的接口、账号、计费和服务状态由合作方负责。',
+      '关于 ISACAI 的公司、项目或合作事宜，请通过本站联系入口沟通。',
     ],
     companyLabels: {
       hk: '香港主体',
@@ -240,7 +231,7 @@ const copy = {
     contact: {
       business: 'rigaudiere@isacai.cn',
       channels: [
-        { title: '产品试用', text: '申请 ISACAPI 账号、API Key、模型通道或私有部署评估。' },
+        { title: '合作联系', text: '公司合作、研究合作、办公室访问和具身智能项目咨询。外部合作方服务请直接联系合作方。' },
         { title: '企业部署', text: '讨论账号池、支付、计费、日志、审计和内网部署方案。' },
         { title: '合作与办公室拜访', text: '商务合作、园区合作、研究合作或广州办公室访问预约。' },
       ],
@@ -248,7 +239,7 @@ const copy = {
     faq: [
       {
         q: 'isacai.cn 和 isacai.space 怎么分工？',
-        a: 'isacai.cn 是公司门户，展示 ISACAI 的公司信息、产品入口、办公室地址和联系入口。isacai.space 是 ISACAPI 主产品的服务平台。',
+        a: 'isacai.cn 是 ISACAI 的公司门户。isacai.space 是外部合作方网站，与本站没有隶属关系；相关服务请以合作方页面为准。',
       },
       {
         q: 'VLAClaw 还保留吗？',
@@ -271,48 +262,48 @@ const copy = {
     langLabel: '中文',
     nav: [
       { label: 'Portal', href: '/' },
-      { label: 'ISACAPI', href: '/platform' },
+      { label: 'Partner', href: urls.partner },
       { label: 'Developers', href: '/developers' },
       { label: 'Company', href: '/company' },
       { label: 'Contact', href: '/contact' },
     ],
-    navCta: 'Open API Platform',
+    navCta: 'Visit Partner',
     brandSubtitle: 'Company Portal',
     hero: {
       eyebrow: 'Official ISACAI Portal',
       title: 'ISACAI',
       subtitle:
-        'ISACAI is the company portal for AI API infrastructure, agent services, and embodied intelligence projects. isacai.cn hosts the company portal, while isacai.space hosts the main product: ISACAPI.',
-      primary: 'Open ISACAPI',
+        'ISACAI is the company portal for agent services, embodied intelligence, and AI technology research. isacai.cn hosts company information and project entries; isacai.space is an independent external partner website with no affiliation to this portal.',
+      primary: 'Visit Partner',
       secondary: 'View GitHub',
       tertiary: 'Contact Team',
       note: 'Portal role: company information, product entrances, developer resources, office addresses, and compliance information in one place.',
       metrics: [
-        { value: 'ISACAPI', label: 'Main product / AI API gateway platform' },
-        { value: 'isacai.space', label: 'Production service entrance' },
-        { value: 'Go + Vue', label: 'Gateway backend and admin console' },
+        { value: 'isacai.cn', label: 'Company portal' },
+        { value: 'Partner', label: 'External service entrance' },
+        { value: 'AI R&D', label: 'Technology direction' },
         { value: 'HK + GZ', label: 'Hong Kong entity and Guangzhou office' },
       ],
-      map: ['Company portal isacai.cn', 'Main product ISACAPI', 'API service isacai.space', 'Docs and GitHub', 'Company and office'],
+      map: ['Company portal isacai.cn', 'Partner entrance isacai.space', 'VLAClaw project', 'Docs and GitHub', 'Company and office'],
     },
     sections: {
       portal: {
         eyebrow: 'Portal',
-        title: 'One portal for the company, products, and developers.',
+        title: 'One portal for the company, projects, and cooperation.',
         description:
-          'The homepage is now an ISACAI navigation hub instead of a single product landing page. Visitors can enter the API platform, open-source repositories, company profile, office information, and contact routes.',
+          'The homepage is an ISACAI navigation hub for company information, technology projects, office details, compliance records, and cooperation. isacai.space is an independent external partner website with no affiliation to this portal.',
       },
       product: {
-        eyebrow: 'Main Product',
-        title: 'ISACAPI is the main product of ISACAI.',
+        eyebrow: 'Partner Boundary',
+        title: 'Partner services remain independent from this portal.',
         description:
-          'ISACAPI is an AI API gateway platform for distributing and managing subscription quotas. Users call upstream AI services with platform-generated API Keys, while ISACAPI handles authentication, billing, load balancing, forwarding, scheduling, and usage governance.',
+          'For services available at isacai.space, visit the partner website directly. The partner independently operates those services; this portal does not provide APIs, accounts, billing, or technical support for them.',
       },
       infrastructure: {
-        eyebrow: 'Infrastructure',
-        title: 'A unified operations layer from API Keys to upstream models.',
+        eyebrow: 'Service Boundary',
+        title: 'A clear boundary between this portal and external services.',
         description:
-          'ISACAPI brings account pools, model aliases, payments, rate limits, concurrency controls, usage records, and an admin console into one deployable AI service platform.',
+          'This portal does not operate the APIs, accounts, billing, request forwarding, or admin console at isacai.space. Refer to the partner website for service details.',
       },
       company: {
         eyebrow: 'Company',
@@ -328,9 +319,9 @@ const copy = {
       },
       developers: {
         eyebrow: 'Developers',
-        title: 'Developers start from isacai.space.',
+        title: 'Developer information and partner access stay separate.',
         description:
-          'The developer entrance focuses on ISACAPI OpenAI-compatible APIs, Antigravity integration, Docker deployment, systemd installation, admin console, and model alias configuration.',
+          'This portal only presents ISACAI company and technology project information. API services are provided by an external partner; developers should use the partner website for its official materials.',
       },
       compliance: {
         eyebrow: 'Compliance',
@@ -354,21 +345,21 @@ const copy = {
       faq: {
         eyebrow: 'FAQ',
         title: 'Common questions.',
-        description: 'Clear boundaries for the portal, main product, and deployment routes.',
+        description: 'Clear boundaries between this portal and external partner services.',
       },
     },
     portalCards: [
       {
-        title: 'ISACAPI Service Platform',
-        description: 'AI API gateway, key distribution, usage billing, account scheduling, and admin console.',
-        href: urls.api,
-        label: 'isacai.space',
+        title: 'Partner Service Entrance',
+        description: 'An externally operated partner service. Accounts, billing, interfaces, and support are handled by the partner.',
+        href: urls.partner,
+        label: 'External partner / isacai.space',
       },
       {
-        title: 'ISACAPI Repository',
-        description: 'Main product source code, deployment scripts, Docker Compose, payment docs, and gateway docs.',
-        href: urls.githubIsacapi,
-        label: 'GitHub / ISACAPI',
+        title: 'ISACAI Repository',
+        description: 'Public code and project materials belonging to this portal and ISACAI technology work.',
+        href: urls.githubIsacai,
+        label: 'GitHub / ISACAI',
       },
       {
         title: 'ISACAI Company Portal',
@@ -384,39 +375,39 @@ const copy = {
       },
     ],
     productFeatures: [
-      'Multi-account management for OAuth and API Key upstreams',
-      'Platform-generated API Keys for users, teams, and groups',
-      'Token-level usage tracking, cost calculation, and balance management',
-      'Smart account selection, load balancing, and sticky sessions',
-      'Per-user and per-account concurrency, RPM, and TPM controls',
-      'Built-in EasyPay, Alipay, WeChat Pay, and Stripe support',
-      'Admin console for users, accounts, usage, logs, and system status',
-      'External system embedding through iframe for admin workflows',
+      'The partner entrance is shown only as an external link',
+      'This portal does not store partner accounts or API Keys',
+      'This portal does not process partner billing, quota, or request forwarding',
+      'Service availability and interface changes are controlled by the partner',
+      'Cooperation requests can be started through this portal',
+      'Company and office information can be verified here',
+      'ICP filing and entity information are publicly displayed',
+      'Technology projects and research directions are presented independently',
     ],
     infrastructure: [
       {
-        title: 'API Gateway',
-        text: 'OpenAI-style compatibility with common routes including Responses, Chat Completions, and Models.',
+        title: 'External Partner',
+        text: 'isacai.space is operated independently by the external partner.',
       },
       {
-        title: 'Account Pool',
-        text: 'Centralized upstream accounts, groups, quotas, availability, retries, and scheduling policies.',
+        title: 'Service Boundary',
+        text: 'This portal does not provide the partner APIs, accounts, billing, or request forwarding.',
       },
       {
-        title: 'Billing & Quota',
-        text: 'Auditable billing around user balances, subscriptions, usage records, and token price tables.',
+        title: 'Company Portal',
+        text: 'isacai.cn presents ISACAI company information, projects, offices, and contact routes.',
       },
       {
-        title: 'Admin Console',
-        text: 'Vue console for accounts, users, payments, monitoring, announcements, API Keys, and operations settings.',
+        title: 'Cooperation',
+        text: 'Company, research, and embodied intelligence cooperation can be initiated from this portal.',
       },
     ],
-    endpoints: ['/v1/responses', '/v1/chat/completions', '/v1/models', '/antigravity/v1/messages', '/antigravity/v1beta/'],
+    endpoints: [],
     developerSteps: [
-      'Visit isacai.space for the platform entrance and API Keys.',
-      'Choose OpenAI-compatible, Antigravity, Gemini, or another available channel.',
-      'Configure your service with the Base URL and platform-generated API Key.',
-      'Use the admin console to inspect usage, failed requests, balance, concurrency, and service status.',
+      'This portal does not provide API Keys, request forwarding, or partner service accounts.',
+      'Visit the external partner website directly for its services and official materials.',
+      'The partner is responsible for its interfaces, accounts, billing, and service status.',
+      'Contact this portal about ISACAI company, project, or cooperation matters.',
     ],
     companyLabels: {
       hk: 'Hong Kong entity',
@@ -430,7 +421,7 @@ const copy = {
     contact: {
       business: 'rigaudiere@isacai.cn',
       channels: [
-        { title: 'Product trial', text: 'Request an ISACAPI account, API Key, model channel, or private deployment review.' },
+        { title: 'Cooperation', text: 'Company cooperation, research cooperation, office visits, and embodied intelligence project inquiries. Contact the partner directly about its services.' },
         { title: 'Enterprise deployment', text: 'Discuss account pools, payment, billing, logs, audit, and internal deployment plans.' },
         { title: 'Partnership and visits', text: 'Book business cooperation, park collaboration, research projects, or Guangzhou office visits.' },
       ],
@@ -438,7 +429,7 @@ const copy = {
     faq: [
       {
         q: 'How do isacai.cn and isacai.space differ?',
-        a: 'isacai.cn is the company portal for ISACAI. isacai.space is the service platform for the main product, ISACAPI.',
+        a: 'isacai.cn is the ISACAI company portal. isacai.space is an independent external partner website with no affiliation to this portal; refer to the partner for its services.',
       },
       {
         q: 'Is VLAClaw still part of the site?',
@@ -531,7 +522,7 @@ export function Navigation() {
               <span>{c.langLabel}</span>
             </button>
             <a
-              href={urls.api}
+              href={urls.partner}
               target="_blank"
               rel="noreferrer"
               className="hidden min-h-9 items-center justify-center rounded-md bg-slate-950 px-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:inline-flex"
@@ -558,7 +549,7 @@ export function Navigation() {
                 {item.label}
               </button>
             ))}
-            <a href={urls.api} target="_blank" rel="noreferrer" className="rounded-md border border-cyan-200 bg-cyan-50 px-3 py-2 text-sm font-semibold text-cyan-800">
+            <a href={urls.partner} target="_blank" rel="noreferrer" className="rounded-md border border-cyan-200 bg-cyan-50 px-3 py-2 text-sm font-semibold text-cyan-800">
               {c.navCta}
             </a>
           </div>
@@ -586,11 +577,11 @@ function HeroSection() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={urls.api} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-slate-950 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">
+            <a href={urls.partner} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-slate-950 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">
               {c.hero.primary}
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
-            <a href={urls.githubIsacapi} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-100">
+            <a href={urls.githubIsacai} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-100">
               {c.hero.secondary}
               <Code2 className="ml-2 h-4 w-4" />
             </a>
@@ -638,8 +629,8 @@ function HeroSection() {
 
             <div className="mt-5 rounded-md border border-amber-300/20 bg-amber-300/10 p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-200">Main Product</p>
-              <p className="mt-2 text-xl font-semibold">ISACAPI</p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">AI API Gateway Platform for Subscription Quota Distribution</p>
+              <p className="mt-2 text-xl font-semibold">External Partner</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">Company portal for AI research, embodied intelligence, and cooperation</p>
             </div>
           </div>
         </div>
@@ -691,12 +682,12 @@ export function ProductSection() {
             <div>
               <div className="flex items-center gap-3">
                 <SquareTerminal className="h-7 w-7 text-cyan-700" />
-                <h3 className="text-xl font-semibold text-cyan-950">isacai.space</h3>
+                <h3 className="text-xl font-semibold text-cyan-950">External Partner</h3>
               </div>
-              <p className="mt-3 max-w-3xl text-sm leading-6 text-cyan-900/75">{urls.api}</p>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-cyan-900/75">External partner website. This portal is not affiliated with its services.</p>
             </div>
-            <a href={urls.api} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-slate-950 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-slate-800">
-              Open ISACAPI
+            <a href={urls.partner} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-slate-950 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-slate-800">
+              Visit Partner
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </div>
@@ -778,13 +769,7 @@ export function DeveloperSection() {
               <span>OpenAI-compatible example</span>
               <SquareTerminal className="h-4 w-4 text-cyan-300" />
             </div>
-            <pre className="overflow-x-auto whitespace-pre p-4 text-xs leading-6 text-slate-100 sm:text-sm">{`curl ${urls.api}/v1/chat/completions \\
-  -H "Authorization: Bearer sk-..." \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "model": "isac-gpt-fast",
-    "messages": [{"role": "user", "content": "Hello ISACAPI"}]
-  }'`}</pre>
+            <pre className="overflow-x-auto whitespace-pre p-4 text-xs leading-6 text-slate-100 sm:text-sm">{'API documentation, accounts, and technical support are provided by the external partner at isacai.space.'}</pre>
           </div>
         </div>
       </div>
@@ -880,7 +865,7 @@ export function ComplianceSection() {
         <SectionHeader eyebrow={c.sections.compliance.eyebrow} title={c.sections.compliance.title} description={c.sections.compliance.description} />
         <div className="grid gap-5 md:grid-cols-3">
           <ComplianceCard title="Company Portal" value={urls.portal} href={urls.portal} />
-          <ComplianceCard title="ISACAPI Platform" value={urls.api} href={urls.api} />
+          <ComplianceCard title="External Partner" value={urls.partner} href={urls.partner} />
           <ComplianceCard title="ICP Filing" value={compliance.icp} href={urls.miit} />
         </div>
         <div className="mt-6 rounded-lg border border-border bg-white p-5 shadow-sm">
@@ -961,7 +946,7 @@ export function VLAClawSection() {
     () => [
       { title: 'Embodied AI R&D', text: 'VLAClaw remains a research and demonstration project for robot interaction, ROS2 integration, and embodied agent workflows.' },
       { title: 'OpenClaw / ROS2', text: 'The project keeps the OpenClaw, rosbridge, robot dog, sensor, and skill orchestration material as a technical archive.' },
-      { title: 'Not the portal focus', text: 'The public homepage now routes visitors to company and ISACAPI product entrances first.' },
+      { title: 'Independent partner', text: 'The public homepage identifies the external partner separately from ISACAI and does not present its services as part of this portal.' },
     ],
     [],
   )
@@ -969,7 +954,7 @@ export function VLAClawSection() {
   return (
     <section className="section-padding bg-slate-50">
       <div className="section-container">
-        <SectionHeader eyebrow="VLAClaw" title="Embodied intelligence remains a project entrance." description="VLAClaw is retained as a technology and demonstration project under ISACAI, while ISACAPI becomes the main product entry." />
+        <SectionHeader eyebrow="VLAClaw" title="Embodied intelligence remains a project entrance." description="VLAClaw is retained as a technology and demonstration project under ISACAI. External partner services are presented separately." />
         <div className="grid gap-5 md:grid-cols-3">
           {cards.map((card) => (
             <div key={card.title} className="rounded-lg border border-border bg-white p-5 shadow-sm">
@@ -1002,9 +987,8 @@ export function Footer() {
               <div className="mt-4 flex flex-wrap gap-2">
                 {[
                   { label: 'isacai.cn', href: urls.portal },
-                  { label: 'isacai.space', href: urls.api },
-                  { label: 'GitHub', href: urls.githubIsacapi },
-                  { label: 'isacai.space/home', href: urls.legacyHome },
+                  { label: 'Partner', href: urls.partner },
+                  { label: 'GitHub / ISACAI', href: urls.githubIsacai },
                 ].map((item) => (
                   <a key={item.href} href={item.href} target="_blank" rel="noreferrer" className="tech-chip">
                     {item.label}

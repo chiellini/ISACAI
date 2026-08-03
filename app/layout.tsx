@@ -2,21 +2,15 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ISACAI | Company Portal for ISACAPI',
+  title: 'ISACAI | Company Portal',
   description:
-    'ISACAI is the company portal for ISACAPI, an AI API gateway platform for API key distribution, quota management, billing, scheduling, and enterprise AI service operations.',
+    'ISACAI is a company portal for AI research, embodied intelligence projects, company information, and cooperation.',
   keywords: [
     'ISACAI',
-    'ISACAPI',
-    'AI API gateway',
-    'API key distribution',
-    'subscription quota',
-    'AI billing',
-    'OpenAI compatible API',
-    'Antigravity API',
-    'model gateway',
-    'enterprise AI infrastructure',
-    'isacai.space',
+    'embodied intelligence',
+    'AI research',
+    'robotics projects',
+    'enterprise cooperation',
     'isacai.cn',
   ],
   authors: [
@@ -29,9 +23,9 @@ export const metadata: Metadata = {
     apple: '/公司icon.jpeg',
   },
   openGraph: {
-    title: 'ISACAI | Company Portal for ISACAPI',
+    title: 'ISACAI | Company Portal',
     description:
-      'Company portal for ISACAI and ISACAPI, the AI API gateway platform hosted at isacai.space.',
+      'Company portal for ISACAI, its technology projects, company information, and cooperation routes.',
     type: 'website',
     siteName: 'ISACAI',
   },
