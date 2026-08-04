@@ -4,31 +4,16 @@ import Image from 'next/image'
 import { LanguageProvider, useLanguage } from '@/components/LanguageProvider'
 import {
   ArrowRight,
-  BadgeCheck,
+  ArrowUpRight,
   BookOpen,
-  Bot,
-  Building2,
-  CheckCircle2,
-  ChevronRight,
-  Code2,
-  Database,
   ExternalLink,
   FileText,
   Globe2,
   Home,
-  KeyRound,
   Mail,
   Menu,
-  Network,
-  PanelTop,
-  Rocket,
-  Route,
-  ServerCog,
-  ShieldCheck,
   SquareTerminal,
-  Users,
   X,
-  Zap,
 } from 'lucide-react'
 import { useMemo, useState } from 'react'
 
@@ -75,69 +60,49 @@ const copy = {
     navCta: '访问合作方',
     brandSubtitle: '公司门户',
     hero: {
-      eyebrow: 'ISACAI 官方门户',
       title: 'ISACAI',
+      headline: '智能体服务与具身智能的公司门户',
       subtitle:
-        'ISACAI 是面向智能体服务、具身智能应用和 AI 技术研发的公司门户。isacai.cn 承载公司信息、项目入口与合作联系；isacai.space 为外部合作方网站，与本站无隶属关系。',
+        'isacai.cn 承载公司信息、项目入口与合作联系；isacai.space 为外部合作方网站，与本站无隶属关系。',
       primary: '访问合作方',
-      secondary: '查看 GitHub',
-      tertiary: '联系团队',
-      note: '门户定位：公司信息、产品入口、技术文档、办公室与合规备案集中展示。',
-      metrics: [
-        { value: 'isacai.cn', label: '本站公司门户' },
-        { value: '合作方', label: '外部服务入口' },
-        { value: 'AI R&D', label: '技术研发方向' },
-        { value: 'HK + GZ', label: '香港主体与广州办公室' },
-      ],
-      map: [
-        '公司门户 isacai.cn',
-        '合作方入口 isacai.space',
-        '开发文档与 GitHub',
-        '公司信息与办公室',
-      ],
+      secondary: '联系团队',
     },
     sections: {
       portal: {
-        eyebrow: 'Portal',
-        title: '一个门户，连接公司、项目与合作联系。',
-        description:
-          '首页作为 ISACAI 的导航中枢，展示公司信息、技术项目、办公室、备案与合作入口。isacai.space 为外部合作方网站，与本站无隶属关系。',
+        kicker: '入口',
+        title: '从这里进入公司、项目与合作。',
+        description: '首页作为导航中枢，串联门户、开源仓库、合作方服务与 VLAClaw 研发项目。',
       },
       product: {
-        eyebrow: '本站产品',
-        title: 'VLAClaw：面向具身智能的上位机与智能体工作台。',
+        kicker: '本站产品',
+        title: 'VLAClaw：面向具身智能的上位机工作台。',
         description:
-          'VLAClaw 是 ISACAI 自有的具身智能研发项目，连接 ROS2 机器人、视觉感知、语音交互与可编排技能，面向机器人应用验证与边缘侧智能执行。',
+          '连接 ROS2 机器人、视觉感知、语音交互与可编排技能，面向机器人应用验证与边缘侧智能执行。',
       },
       infrastructure: {
-        eyebrow: 'Product Capabilities',
+        kicker: '能力',
         title: '连接机器人、感知与智能体工作流。',
-        description:
-          'VLAClaw 将设备连接、感知输入、任务规划和技能执行组织成可扩展的机器人上位机工作流。外部合作方服务与本站产品保持独立。',
+        description: '将设备连接、感知输入、任务规划与技能执行组织成可扩展的机器人上位机路径。',
       },
       company: {
-        eyebrow: 'Company',
-        title: '公司主体与办公室信息。',
-        description:
-          '门户站展示公开公司信息，方便客户、合作伙伴、开发者和服务商确认 ISACAI 的经营主体、办公室地址与联系入口。',
+        kicker: '公司',
+        title: '主体与办公室信息公开。',
+        description: '方便客户、合作伙伴与开发者确认经营主体、地址与联系入口。',
       },
       office: {
-        eyebrow: 'Office',
-        title: '办公室与访问安排。',
-        description:
-          '广州办公室负责大陆业务、产品交付与日常运营；香港主体承接公司注册、跨境合作与研发背景。商务拜访请提前邮件预约。',
+        kicker: '办公室',
+        title: '访问安排。',
+        description: '广州办公室负责大陆业务与交付；香港主体承接注册与跨境合作。拜访请提前邮件预约。',
       },
       developers: {
-        eyebrow: 'Developers',
-        title: '开发者资料与合作方入口分开。',
-        description:
-          '本站仅展示 ISACAI 的公司与技术项目信息。API 服务由外部合作方提供，开发者请直接访问 isacai.space 获取合作方的官方资料。',
+        kicker: '开发者',
+        title: '本站资料与合作方入口分开。',
+        description: 'API 服务由外部合作方提供；开发者请直接访问 isacai.space。',
       },
       compliance: {
-        eyebrow: 'Compliance',
-        title: '域名、备案与合规展示。',
-        description:
-          'ISACAI 门户展示备案主体、变更主体与主办单位名称，并链接到工信部备案系统。备案信息已完成备案主体更新。',
+        kicker: '合规',
+        title: '域名、备案与主办单位。',
+        description: '备案信息已完成主体更新，并链接至工信部备案系统。',
         recordsTitle: '备案主体与变更信息',
         records: [
           { label: '备案主体', value: compliance.filingEntity },
@@ -147,13 +112,12 @@ const copy = {
         ],
       },
       contact: {
-        eyebrow: 'Contact',
+        kicker: '联系',
         title: '联系 ISACAI。',
-        description:
-          '产品试用、私有部署、API 网关集成、企业合作和具身智能项目咨询，都可以从这里发起。',
+        description: '产品试用、私有部署、企业合作与具身智能项目咨询，都可以从这里发起。',
       },
       faq: {
-        eyebrow: 'FAQ',
+        kicker: 'FAQ',
         title: '常见问题。',
         description: '把本站与外部合作方的边界说清楚。',
       },
@@ -163,13 +127,13 @@ const copy = {
         title: '合作方服务入口',
         description: '外部合作方独立运营的服务平台。账号、计费、接口和技术支持请以合作方页面为准。',
         href: urls.partner,
-        label: '外部合作方 / isacai.space',
+        label: 'isacai.space',
       },
       {
         title: 'ISACAI 开源仓库',
         description: '本站公司资料、技术项目与研发方向的公开代码入口。',
         href: urls.githubIsacai,
-        label: 'GitHub / ISACAI',
+        label: 'GitHub',
       },
       {
         title: 'ISACAI 公司门户',
@@ -179,7 +143,7 @@ const copy = {
       },
       {
         title: 'VLAClaw 项目',
-        description: '具身智能与机器人方向的研发项目，作为 ISACAI 技术项目入口保留。',
+        description: '具身智能与机器人方向的研发项目，作为 ISACAI 技术项目入口。',
         href: '/solutions',
         label: 'Embodied AI',
       },
@@ -197,22 +161,22 @@ const copy = {
     infrastructure: [
       {
         title: 'Robot Connectivity',
-        text: 'Connect ROS2 devices and robot-side services through rosbridge and edge components.',
+        text: '通过 rosbridge 与边缘组件连接 ROS2 设备与机器人侧服务。',
       },
       {
         title: 'Multimodal Interaction',
-        text: 'Combine voice, camera, visual perception, and task context for embodied interaction.',
+        text: '融合语音、摄像头、视觉感知与任务上下文，完成具身交互。',
       },
       {
         title: 'Skill Orchestration',
-        text: 'Compose reusable OpenClaw skills and task workflows for different robot scenarios.',
+        text: '组合可复用的 OpenClaw 技能与任务工作流，适配不同机器人场景。',
       },
       {
         title: 'Cloud-Edge Execution',
-        text: 'Keep time-sensitive execution near the robot while coordinating higher-level intelligence.',
+        text: '时敏执行靠近机器人，高层智能在云边协同调度。',
       },
     ],
-    endpoints: [],
+    endpoints: [] as string[],
     developerSteps: [
       '本站不提供 API Key、接口转发或外部服务账号。',
       '如需相关服务，请直接访问合作方网站 isacai.space。',
@@ -231,9 +195,9 @@ const copy = {
     contact: {
       business: 'rigaudiere@isacai.cn',
       channels: [
-        { title: '合作联系', text: '公司合作、研究合作、办公室访问和具身智能项目咨询。外部合作方服务请直接联系合作方。' },
+        { title: '合作联系', text: '公司合作、研究合作、办公室访问和具身智能项目咨询。' },
         { title: '企业部署', text: '讨论账号池、支付、计费、日志、审计和内网部署方案。' },
-        { title: '合作与办公室拜访', text: '商务合作、园区合作、研究合作或广州办公室访问预约。' },
+        { title: '办公室拜访', text: '商务合作、园区合作、研究合作或广州办公室访问预约。' },
       ],
     },
     faq: [
@@ -252,11 +216,18 @@ const copy = {
     ],
     footer: {
       title: 'ISACAI',
-      subtitle: 'AI API infrastructure and embodied intelligence portal',
-      builtOn: '网站入口',
+      subtitle: '公司门户 · 具身智能研发',
       softwareContact: '软件开发交流联系方式：1027890648',
       copyright: '© 2026 ISACAI. All rights reserved.',
     },
+    office: {
+      gzTitle: '广州办公室',
+      gzNote: '大陆业务、产品交付、客户接入与部署协调。',
+      hkTitle: '香港主体',
+      hkNote: '公司注册、研究网络、跨境协作与公司治理。',
+    },
+    productCta: '查看项目',
+    productTagline: 'ISACAI 自有具身智能研发项目，面向 ROS2 机器人、感知交互与技能编排。',
   },
   en: {
     langLabel: '中文',
@@ -270,64 +241,49 @@ const copy = {
     navCta: 'Visit Partner',
     brandSubtitle: 'Company Portal',
     hero: {
-      eyebrow: 'Official ISACAI Portal',
       title: 'ISACAI',
+      headline: 'Company portal for agents and embodied intelligence',
       subtitle:
-        'ISACAI is the company portal for agent services, embodied intelligence, and AI technology research. isacai.cn hosts company information and project entries; isacai.space is an independent external partner website with no affiliation to this portal.',
+        'isacai.cn hosts company information and project entries; isacai.space is an independent partner site with no affiliation to this portal.',
       primary: 'Visit Partner',
-      secondary: 'View GitHub',
-      tertiary: 'Contact Team',
-      note: 'Portal role: company information, product entrances, developer resources, office addresses, and compliance information in one place.',
-      metrics: [
-        { value: 'isacai.cn', label: 'Company portal' },
-        { value: 'Partner', label: 'External service entrance' },
-        { value: 'AI R&D', label: 'Technology direction' },
-        { value: 'HK + GZ', label: 'Hong Kong entity and Guangzhou office' },
-      ],
-      map: ['Company portal isacai.cn', 'Partner entrance isacai.space', 'VLAClaw project', 'Docs and GitHub', 'Company and office'],
+      secondary: 'Contact Team',
     },
     sections: {
       portal: {
-        eyebrow: 'Portal',
-        title: 'One portal for the company, projects, and cooperation.',
-        description:
-          'The homepage is an ISACAI navigation hub for company information, technology projects, office details, compliance records, and cooperation. isacai.space is an independent external partner website with no affiliation to this portal.',
+        kicker: 'Entrances',
+        title: 'Enter the company, projects, and partnerships.',
+        description: 'A navigation hub linking the portal, open-source work, partner services, and VLAClaw research.',
       },
       product: {
-        eyebrow: 'Our Product',
-        title: 'VLAClaw: an embodied intelligence workbench for robots and agents.',
+        kicker: 'Our Product',
+        title: 'VLAClaw: an embodied intelligence workbench.',
         description:
-          'VLAClaw is an ISACAI-owned embodied intelligence R&D project connecting ROS2 robots, visual perception, voice interaction, and composable skills for real-world robot applications and edge execution.',
+          'Connect ROS2 robots, visual perception, voice interaction, and composable skills for real-world validation and edge execution.',
       },
       infrastructure: {
-        eyebrow: 'Product Capabilities',
-        title: 'Connecting robots, perception, and agent workflows.',
-        description:
-          'VLAClaw organizes device connectivity, perception inputs, task planning, and skill execution into an extensible robot-side workbench. External partner services remain independent from this product.',
+        kicker: 'Capabilities',
+        title: 'Robots, perception, and agent workflows.',
+        description: 'Organize connectivity, sensing, planning, and skill execution into an extensible robot-side path.',
       },
       company: {
-        eyebrow: 'Company',
-        title: 'Company entities and office information.',
-        description:
-          'The portal shows public company information so customers, partners, developers, and service providers can verify the operating entities, office addresses, and contact points.',
+        kicker: 'Company',
+        title: 'Entities and office information.',
+        description: 'Public records so partners and developers can verify operating entities and contact points.',
       },
       office: {
-        eyebrow: 'Office',
-        title: 'Office and visit arrangements.',
-        description:
-          'The Guangzhou office supports mainland operations, product delivery, and daily execution. The Hong Kong entity supports registration, cross-border collaboration, and research background. Visits are by email appointment.',
+        kicker: 'Office',
+        title: 'Visit arrangements.',
+        description: 'Guangzhou handles mainland delivery; Hong Kong covers registration and cross-border work. Visits by appointment.',
       },
       developers: {
-        eyebrow: 'Developers',
-        title: 'Developer information and partner access stay separate.',
-        description:
-          'This portal only presents ISACAI company and technology project information. API services are provided by an external partner; developers should use the partner website for its official materials.',
+        kicker: 'Developers',
+        title: 'Portal materials and partner access stay separate.',
+        description: 'API services come from the external partner; use isacai.space for their official materials.',
       },
       compliance: {
-        eyebrow: 'Compliance',
-        title: 'Domains, ICP, and compliance display.',
-        description:
-          'The ISACAI portal displays filing subject, amending subject, and hosting unit information, and links to the MIIT filing system.',
+        kicker: 'Compliance',
+        title: 'Domains, ICP, and hosting unit.',
+        description: 'Filing subject information is updated and linked to the MIIT system.',
         recordsTitle: 'ICP and compliance records',
         records: [
           { label: 'Filing subject', value: compliance.filingEntity },
@@ -337,39 +293,38 @@ const copy = {
         ],
       },
       contact: {
-        eyebrow: 'Contact',
+        kicker: 'Contact',
         title: 'Contact ISACAI.',
-        description:
-          'Start here for product trials, private deployment, API gateway integration, enterprise cooperation, and embodied intelligence project inquiries.',
+        description: 'Start here for trials, private deployment, enterprise cooperation, and embodied intelligence projects.',
       },
       faq: {
-        eyebrow: 'FAQ',
+        kicker: 'FAQ',
         title: 'Common questions.',
-        description: 'Clear boundaries between this portal and external partner services.',
+        description: 'Clear boundaries between this portal and partner services.',
       },
     },
     portalCards: [
       {
         title: 'Partner Service Entrance',
-        description: 'An externally operated partner service. Accounts, billing, interfaces, and support are handled by the partner.',
+        description: 'An externally operated partner service. Accounts, billing, and support are handled by the partner.',
         href: urls.partner,
-        label: 'External partner / isacai.space',
+        label: 'isacai.space',
       },
       {
         title: 'ISACAI Repository',
-        description: 'Public code and project materials belonging to this portal and ISACAI technology work.',
+        description: 'Public code and project materials for this portal and ISACAI technology work.',
         href: urls.githubIsacai,
-        label: 'GitHub / ISACAI',
+        label: 'GitHub',
       },
       {
         title: 'ISACAI Company Portal',
-        description: 'Company profile, office addresses, contact entry, compliance display, and project navigation.',
+        description: 'Company profile, office addresses, contact entry, compliance, and project navigation.',
         href: '/',
         label: 'isacai.cn',
       },
       {
         title: 'VLAClaw Project',
-        description: 'Embodied intelligence and robotics R&D project retained as a technology entrance under ISACAI.',
+        description: 'Embodied intelligence and robotics R&D retained as a technology entrance under ISACAI.',
         href: '/solutions',
         label: 'Embodied AI',
       },
@@ -402,7 +357,7 @@ const copy = {
         text: 'Keep time-sensitive execution near the robot while coordinating higher-level intelligence.',
       },
     ],
-    endpoints: [],
+    endpoints: [] as string[],
     developerSteps: [
       'This portal does not provide API Keys, request forwarding, or partner service accounts.',
       'Visit the external partner website directly for its services and official materials.',
@@ -421,33 +376,39 @@ const copy = {
     contact: {
       business: 'rigaudiere@isacai.cn',
       channels: [
-        { title: 'Cooperation', text: 'Company cooperation, research cooperation, office visits, and embodied intelligence project inquiries. Contact the partner directly about its services.' },
-        { title: 'Enterprise deployment', text: 'Discuss account pools, payment, billing, logs, audit, and internal deployment plans.' },
-        { title: 'Partnership and visits', text: 'Book business cooperation, park collaboration, research projects, or Guangzhou office visits.' },
+        { title: 'Cooperation', text: 'Company cooperation, research, office visits, and embodied intelligence projects.' },
+        { title: 'Enterprise deployment', text: 'Account pools, payment, billing, logs, audit, and internal deployment.' },
+        { title: 'Office visits', text: 'Business cooperation, park collaboration, research, or Guangzhou office visits.' },
       ],
     },
     faq: [
       {
         q: 'How do isacai.cn and isacai.space differ?',
-        a: 'isacai.cn is the ISACAI company portal. isacai.space is an independent external partner website with no affiliation to this portal; refer to the partner for its services.',
+        a: 'isacai.cn is the ISACAI company portal. isacai.space is an independent partner website with no affiliation to this portal.',
       },
       {
         q: 'Is VLAClaw still part of the site?',
-        a: 'Yes. It is retained as an embodied intelligence and robotics R&D project, but no longer the only homepage focus.',
+        a: 'Yes. It remains an embodied intelligence and robotics R&D project, but is no longer the only homepage focus.',
       },
       {
         q: 'Has filing information been updated?',
-        a: 'Filing information has been updated: the filing subject, amended filing subject, and hosting unit are Guangzhou Multi-Intelligence Artificial Intelligence Technology Co., Ltd., with ICP filing number 粤ICP备2026050877号.',
+        a: 'Yes. The filing subject and hosting unit are Guangzhou Multi-Intelligence Artificial Intelligence Technology Co., Ltd., ICP 粤ICP备2026050877号.',
       },
     ],
     footer: {
       title: 'ISACAI',
-      subtitle: 'AI API infrastructure and embodied intelligence portal',
-      builtOn: 'Site entrances',
+      subtitle: 'Company portal · Embodied intelligence R&D',
       softwareContact: 'Software development contact: 1027890648',
-      copyright:
-        '© 2026 ISACAI. All rights reserved.',
+      copyright: '© 2026 ISACAI. All rights reserved.',
     },
+    office: {
+      gzTitle: 'Guangzhou Office',
+      gzNote: 'Mainland operations, product delivery, onboarding, and deployment coordination.',
+      hkTitle: 'Hong Kong Entity',
+      hkNote: 'Registration, research network, cross-border collaboration, and corporate administration.',
+    },
+    productCta: 'View Project',
+    productTagline: 'ISACAI-owned embodied intelligence R&D for ROS2 robots, perception, and skill orchestration.',
   },
 } satisfies Record<Lang, Record<string, unknown>>
 
@@ -457,27 +418,33 @@ function useCopy() {
   return { lang, c: copy[lang], toggleLanguage }
 }
 
-function SectionHeader({
-  eyebrow,
+function SectionIntro({
+  kicker,
   title,
   description,
   tone = 'light',
-  align = 'center',
 }: {
-  eyebrow: string
+  kicker: string
   title: string
   description: string
   tone?: 'light' | 'dark'
-  align?: 'center' | 'left'
 }) {
   return (
-    <div className={align === 'center' ? 'mx-auto mb-10 max-w-3xl text-center' : 'mb-10 max-w-3xl'}>
-      <span className={tone === 'dark' ? 'eyebrow-dark' : 'eyebrow'}>{eyebrow}</span>
-      <h2 className={`mt-4 text-3xl font-semibold tracking-normal sm:text-4xl ${tone === 'dark' ? 'text-white' : 'text-foreground'}`}>
-        {title}
-      </h2>
-      <p className={`mt-4 text-base leading-7 sm:text-lg ${tone === 'dark' ? 'text-slate-300' : 'text-muted-foreground'}`}>{description}</p>
+    <div className="mb-12 max-w-3xl">
+      <p className={tone === 'dark' ? 'font-display text-xs font-semibold uppercase tracking-[0.22em] text-[hsl(18_72%_62%)]' : 'section-kicker'}>
+        {kicker}
+      </p>
+      <h2 className={`section-title ${tone === 'dark' ? 'text-white' : ''}`}>{title}</h2>
+      <p className={`section-lede ${tone === 'dark' ? 'text-white/60' : ''}`}>{description}</p>
     </div>
+  )
+}
+
+function BrandMark() {
+  return (
+    <span className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden border border-foreground/10 bg-white">
+      <Image src="/公司icon.jpeg" alt="ISACAI" fill sizes="36px" className="object-contain" />
+    </span>
   )
 }
 
@@ -491,22 +458,20 @@ export function Navigation() {
   }
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200 bg-white/92 text-slate-950 backdrop-blur-xl">
+    <nav className="nav-shell">
       <div className="section-container">
         <div className="flex h-16 items-center justify-between gap-3">
           <button onClick={() => go('/')} className="flex items-center gap-3 text-left">
-            <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-white">
-              <Image src="/公司icon.jpeg" alt="ISACAI company icon" fill sizes="40px" className="object-contain" />
-            </span>
+            <BrandMark />
             <span>
-              <span className="block text-sm font-semibold leading-tight">ISACAI</span>
-              <span className="block text-xs text-muted-foreground">{c.brandSubtitle}</span>
+              <span className="font-display block text-sm font-bold tracking-tight leading-tight">ISACAI</span>
+              <span className="block text-[11px] tracking-wide text-muted-foreground">{c.brandSubtitle}</span>
             </span>
           </button>
 
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="hidden items-center lg:flex">
             {c.nav.map((item) => (
-              <button key={item.href} onClick={() => go(item.href)} className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-950">
+              <button key={item.href} onClick={() => go(item.href)} className="nav-link">
                 {item.label}
               </button>
             ))}
@@ -515,24 +480,19 @@ export function Navigation() {
           <div className="flex items-center gap-2">
             <button
               onClick={toggleLanguage}
-              className="inline-flex min-h-9 items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+              className="inline-flex min-h-9 items-center justify-center gap-2 border border-foreground/10 bg-transparent px-3 text-sm font-medium text-foreground/70 transition hover:border-foreground/25 hover:text-foreground"
               aria-label="Switch language"
             >
-              <Globe2 className="h-4 w-4 text-cyan-700" />
+              <Globe2 className="h-3.5 w-3.5" />
               <span>{c.langLabel}</span>
             </button>
-            <a
-              href={urls.partner}
-              target="_blank"
-              rel="noreferrer"
-              className="hidden min-h-9 items-center justify-center rounded-md bg-slate-950 px-3 text-sm font-semibold text-white transition hover:bg-slate-800 sm:inline-flex"
-            >
+            <a href={urls.partner} target="_blank" rel="noreferrer" className="btn-primary hidden sm:inline-flex !min-h-9 !px-3 !text-xs">
               {c.navCta}
-              <ExternalLink className="ml-2 h-3.5 w-3.5" />
+              <ExternalLink className="h-3.5 w-3.5" />
             </a>
             <button
               onClick={() => setOpen((value) => !value)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-white lg:hidden"
+              className="inline-flex h-9 w-9 items-center justify-center border border-foreground/10 lg:hidden"
               aria-label="Open menu"
             >
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -542,14 +502,18 @@ export function Navigation() {
       </div>
 
       {open && (
-        <div className="border-t border-slate-200 bg-white lg:hidden">
-          <div className="section-container grid gap-2 py-4 sm:grid-cols-2">
+        <div className="border-t border-foreground/10 bg-[hsl(var(--paper))] lg:hidden">
+          <div className="section-container grid gap-1 py-4">
             {c.nav.map((item) => (
-              <button key={item.href} onClick={() => go(item.href)} className="rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-left text-sm text-slate-700">
+              <button
+                key={item.href}
+                onClick={() => go(item.href)}
+                className="border-b border-foreground/5 px-1 py-3 text-left text-sm font-medium text-foreground/80"
+              >
                 {item.label}
               </button>
             ))}
-            <a href={urls.partner} target="_blank" rel="noreferrer" className="rounded-md border border-cyan-200 bg-cyan-50 px-3 py-2 text-sm font-semibold text-cyan-800">
+            <a href={urls.partner} target="_blank" rel="noreferrer" className="btn-primary mt-3 justify-center">
               {c.navCta}
             </a>
           </div>
@@ -563,76 +527,21 @@ function HeroSection() {
   const { c } = useCopy()
 
   return (
-    <section id="home" className="overflow-hidden bg-white pt-16">
-      <div className="section-container grid min-h-[calc(100vh-4rem)] items-center gap-10 py-12 lg:grid-cols-[1.02fr_0.98fr] lg:py-16">
-        <div>
-          <span className="eyebrow">{c.hero.eyebrow}</span>
-          <h1 className="mt-5 text-5xl font-semibold tracking-normal text-slate-950 sm:text-6xl lg:text-7xl">{c.hero.title}</h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">{c.hero.subtitle}</p>
-          <div className="mt-6 max-w-2xl rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium leading-6 text-emerald-900">
-            <div className="flex gap-3">
-              <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-emerald-700" />
-              <span>{c.hero.note}</span>
-            </div>
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href={urls.partner} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md bg-slate-950 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">
-              {c.hero.primary}
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-            <a href={urls.githubIsacai} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-100">
-              {c.hero.secondary}
-              <Code2 className="ml-2 h-4 w-4" />
-            </a>
-            <a href="/contact" className="inline-flex min-h-11 items-center justify-center rounded-md border border-cyan-200 bg-cyan-50 px-5 py-2 text-sm font-semibold text-cyan-800 transition hover:bg-cyan-100">
-              {c.hero.tertiary}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </div>
-
-          <div className="mt-10 grid grid-cols-2 gap-3 xl:grid-cols-4">
-            {c.hero.metrics.map((metric) => (
-              <div key={metric.label} className="rounded-lg border border-slate-200 bg-slate-50 p-4">
-                <strong className="block text-lg font-semibold text-slate-950">{metric.value}</strong>
-                <span className="mt-1 block text-xs leading-5 text-slate-500">{metric.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full border border-cyan-200" aria-hidden="true" />
-          <div className="rounded-lg border border-slate-200 bg-slate-950 p-5 text-white shadow-2xl">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <div className="flex items-center gap-3">
-                <div className="relative h-11 w-11 overflow-hidden rounded-lg bg-white">
-                  <Image src="/isac icon.png" alt="ISACAI logo" fill sizes="44px" className="object-cover" />
-                </div>
-                <div>
-                  <p className="font-semibold">ISACAI Portal</p>
-                  <p className="text-xs text-slate-400">{urls.portal}</p>
-                </div>
-              </div>
-              <BadgeCheck className="h-6 w-6 text-emerald-300" />
-            </div>
-
-            <div className="mt-5 grid gap-3">
-              {c.hero.map.map((node, index) => (
-                <div key={node} className="grid grid-cols-[2rem_1fr_auto] items-center gap-3 rounded-md border border-white/10 bg-white/5 p-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-md bg-cyan-300 text-sm font-bold text-slate-950">{index + 1}</span>
-                  <span className="text-sm font-medium text-slate-100">{node}</span>
-                  <ChevronRight className="h-4 w-4 text-slate-500" />
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-5 rounded-md border border-amber-300/20 bg-amber-300/10 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber-200">Our Product</p>
-              <p className="mt-2 text-xl font-semibold">VLAClaw</p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">Embodied intelligence workbench for ROS2 robots and agent skills</p>
-            </div>
-          </div>
+    <section id="home" className="hero-plane pt-16">
+      <div className="hero-orbit" aria-hidden="true" />
+      <div className="section-container hero-content flex min-h-[calc(100svh-4rem)] flex-col justify-end pb-16 pt-20 sm:pb-20 lg:justify-center lg:pb-24">
+        <p className="hero-brand">{c.hero.title}</p>
+        <h1 className="hero-headline mt-6 max-w-2xl">{c.hero.headline}</h1>
+        <p className="hero-lede mt-5">{c.hero.subtitle}</p>
+        <div className="hero-actions mt-10 flex flex-wrap gap-3">
+          <a href={urls.partner} target="_blank" rel="noreferrer" className="btn-primary !bg-white !text-[hsl(var(--ink))] hover:!bg-[hsl(18_72%_56%)] hover:!text-white">
+            {c.hero.primary}
+            <ExternalLink className="h-4 w-4" />
+          </a>
+          <a href="/contact" className="btn-secondary !border-white/25 !text-white hover:!border-white/50 hover:!bg-white/5">
+            {c.hero.secondary}
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
@@ -641,25 +550,30 @@ function HeroSection() {
 
 export function EntryPortalSection() {
   const { c } = useCopy()
-  const icons = [SquareTerminal, Code2, Home, Bot]
 
   return (
-    <section className="section-padding bg-slate-50">
+    <section className="section-padding">
       <div className="section-container">
-        <SectionHeader eyebrow={c.sections.portal.eyebrow} title={c.sections.portal.title} description={c.sections.portal.description} />
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {c.portalCards.map((card, index) => {
-            const Icon = icons[index]
+        <SectionIntro kicker={c.sections.portal.kicker} title={c.sections.portal.title} description={c.sections.portal.description} />
+        <div>
+          {c.portalCards.map((card) => {
             const external = card.href.startsWith('http')
             return (
-              <a key={card.title} href={card.href} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} className="entry-card">
-                <Icon className="h-7 w-7 text-cyan-700" />
-                <h3 className="mt-5 text-xl font-semibold text-foreground">{card.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">{card.description}</p>
-                <span className="mt-6 inline-flex items-center text-sm font-semibold text-cyan-700">
-                  {card.label}
-                  {external ? <ExternalLink className="ml-2 h-4 w-4" /> : <ArrowRight className="ml-2 h-4 w-4" />}
-                </span>
+              <a
+                key={card.title}
+                href={card.href}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noreferrer' : undefined}
+                className="entry-row"
+              >
+                <div className="min-w-0">
+                  <h3 className="entry-row-title">{card.title}</h3>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">{card.description}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[hsl(var(--copper))]">
+                    {card.label}
+                    {external ? <ArrowUpRight className="h-3.5 w-3.5" /> : <ArrowRight className="h-3.5 w-3.5" />}
+                  </span>
+                </div>
               </a>
             )
           })}
@@ -671,38 +585,30 @@ export function EntryPortalSection() {
 
 export function ProductSection() {
   const { c } = useCopy()
-  const icons = [KeyRound, Users, Database, Route, ShieldCheck, BadgeCheck, PanelTop, Network]
 
   return (
-    <section id="product" className="section-padding bg-background">
+    <section id="product" className="section-padding border-t border-foreground/5 bg-[hsl(var(--paper))]">
       <div className="section-container">
-        <SectionHeader eyebrow={c.sections.product.eyebrow} title={c.sections.product.title} description={c.sections.product.description} />
-        <div className="mb-8 rounded-lg border border-cyan-200 bg-cyan-50 p-6">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <div className="flex items-center gap-3">
-                <SquareTerminal className="h-7 w-7 text-cyan-700" />
-                <h3 className="text-xl font-semibold text-cyan-950">VLAClaw</h3>
-              </div>
-              <p className="mt-3 max-w-3xl text-sm leading-6 text-cyan-900/75">ISACAI 自有具身智能研发项目，面向 ROS2 机器人、感知交互与技能编排。</p>
-            </div>
-            <a href="/solutions" className="inline-flex min-h-11 items-center justify-center rounded-md bg-slate-950 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-slate-800">
-              View Project
-              <ArrowRight className="ml-2 h-4 w-4" />
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+          <SectionIntro kicker={c.sections.product.kicker} title={c.sections.product.title} description={c.sections.product.description} />
+          <div className="lg:pb-4">
+            <p className="text-sm leading-7 text-muted-foreground">{c.productTagline}</p>
+            <a href="/solutions" className="btn-primary mt-6">
+              {c.productCta}
+              <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {c.productFeatures.map((feature, index) => {
-            const Icon = icons[index]
-            return (
-              <div key={feature} className="rounded-lg border border-border bg-white p-5 shadow-sm">
-                <Icon className="h-6 w-6 text-cyan-700" />
-                <p className="mt-4 text-sm leading-6 text-muted-foreground">{feature}</p>
-              </div>
-            )
-          })}
+        <div className="feature-rail mt-4">
+          {c.productFeatures.map((feature, index) => (
+            <div key={feature} className="feature-rail-item">
+              <span className="font-display w-10 shrink-0 text-sm font-semibold text-[hsl(var(--copper))]">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <p className="text-sm leading-6 text-foreground/80 sm:text-base">{feature}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -711,34 +617,36 @@ export function ProductSection() {
 
 export function InfrastructureSection() {
   const { c } = useCopy()
-  const icons = [ServerCog, Network, Database, PanelTop]
 
   return (
-    <section className="section-padding bg-slate-950 text-white">
-      <div className="section-container">
-        <SectionHeader eyebrow={c.sections.infrastructure.eyebrow} title={c.sections.infrastructure.title} description={c.sections.infrastructure.description} tone="dark" />
-        <div className="grid gap-5 lg:grid-cols-4">
-          {c.infrastructure.map((item, index) => {
-            const Icon = icons[index]
-            return (
-              <div key={item.title} className="work-card">
-                <Icon className="h-7 w-7 text-cyan-200" />
-                <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p>
-              </div>
-            )
-          })}
+    <section className="capability-band section-padding">
+      <div className="section-container relative">
+        <SectionIntro
+          kicker={c.sections.infrastructure.kicker}
+          title={c.sections.infrastructure.title}
+          description={c.sections.infrastructure.description}
+          tone="dark"
+        />
+        <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+          {c.infrastructure.map((item, index) => (
+            <div key={item.title} className="capability-item">
+              <p className="capability-index">{String(index + 1).padStart(2, '0')}</p>
+              <h3 className="font-display mt-4 text-lg font-semibold tracking-tight text-white">{item.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-white/55">{item.text}</p>
+            </div>
+          ))}
         </div>
-        <div className="mt-8 rounded-lg border border-white/10 bg-white/5 p-5">
-          <p className="text-sm font-semibold text-cyan-100">Common endpoints</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {c.endpoints.map((endpoint) => (
-              <span key={endpoint} className="rounded-md border border-white/10 bg-white/10 px-3 py-2 font-mono text-xs text-slate-200">
-                {endpoint}
-              </span>
-            ))}
+        {c.endpoints.length > 0 && (
+          <div className="mt-12 border-t border-white/10 pt-8">
+            <div className="flex flex-wrap gap-2">
+              {c.endpoints.map((endpoint) => (
+                <span key={endpoint} className="border border-white/10 px-3 py-2 font-mono text-xs text-white/60">
+                  {endpoint}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   )
@@ -748,28 +656,38 @@ export function DeveloperSection() {
   const { c } = useCopy()
 
   return (
-    <section id="developers" className="section-padding bg-background">
+    <section id="developers" className="section-padding">
       <div className="section-container">
-        <SectionHeader eyebrow={c.sections.developers.eyebrow} title={c.sections.developers.title} description={c.sections.developers.description} />
-        <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
-            <BookOpen className="h-7 w-7 text-cyan-700" />
-            <h3 className="mt-5 text-xl font-semibold">Developer route</h3>
-            <div className="mt-5 space-y-3">
+        <SectionIntro kicker={c.sections.developers.kicker} title={c.sections.developers.title} description={c.sections.developers.description} />
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <div className="mb-6 flex items-center gap-3">
+              <BookOpen className="h-5 w-5 text-[hsl(var(--copper))]" />
+              <h3 className="font-display text-lg font-semibold">Developer route</h3>
+            </div>
+            <ol className="space-y-0">
               {c.developerSteps.map((step, index) => (
-                <div key={step} className="flex gap-3 rounded-md border border-slate-200 bg-slate-50 p-3 text-sm leading-6 text-slate-700">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-slate-950 text-xs font-semibold text-cyan-200">{index + 1}</span>
-                  <span>{step}</span>
-                </div>
+                <li key={step} className="flex gap-4 border-t border-foreground/10 py-5">
+                  <span className="font-display text-sm font-semibold text-[hsl(var(--copper))]">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="text-sm leading-6 text-foreground/75">{step}</span>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
-          <div className="code-panel">
+          <div className="code-panel self-start">
             <div className="code-panel-header">
-              <span>OpenAI-compatible example</span>
-              <SquareTerminal className="h-4 w-4 text-cyan-300" />
+              <span>VLAClaw workflow</span>
+              <SquareTerminal className="h-4 w-4 text-[hsl(18_72%_62%)]" />
             </div>
-            <pre className="overflow-x-auto whitespace-pre p-4 text-xs leading-6 text-slate-100 sm:text-sm">{'VLAClaw workflow\n\nROS2 device -> perception -> agent planning -> skill execution\n\nOpenClaw skills coordinate robot-side actions.'}</pre>
+            <pre className="overflow-x-auto whitespace-pre p-5 text-xs leading-7 text-white/70 sm:text-sm">
+              {`ROS2 device
+  → perception
+  → agent planning
+  → skill execution
+
+OpenClaw skills coordinate
+robot-side actions.`}
+            </pre>
           </div>
         </div>
       </div>
@@ -782,51 +700,50 @@ export function CompanySection() {
   const labels = c.companyLabels
 
   return (
-    <section id="company" className="section-padding bg-slate-50">
+    <section id="company" className="section-padding border-t border-foreground/5 bg-[hsl(var(--paper))]">
       <div className="section-container">
-        <SectionHeader eyebrow={c.sections.company.eyebrow} title={c.sections.company.title} description={c.sections.company.description} />
-        <div className="grid gap-5 lg:grid-cols-2">
-          <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
-            <Building2 className="h-7 w-7 text-cyan-700" />
-            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-cyan-700">{labels.hk}</p>
-            <h3 className="mt-3 text-2xl font-semibold">{company.hk.name}</h3>
-            <p className="mt-1 text-lg text-muted-foreground">{company.hk.zh}</p>
-            <InfoRows
-              rows={[
-                [labels.companyNo, company.hk.number],
-                [labels.incorporated, company.hk.incorporated],
-              ]}
-            />
-          </div>
-          <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
-            <Building2 className="h-7 w-7 text-emerald-700" />
-            <p className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-emerald-700">{labels.gz}</p>
-            <h3 className="mt-3 text-2xl font-semibold">{company.gz.name}</h3>
-            <InfoRows
-              rows={[
-                [labels.creditCode, company.gz.creditCode],
-                [labels.legalRep, company.gz.legalRep],
-                [labels.incorporated, company.gz.incorporated],
-                [labels.address, company.gz.address],
-              ]}
-            />
-          </div>
+        <SectionIntro kicker={c.sections.company.kicker} title={c.sections.company.title} description={c.sections.company.description} />
+        <div className="grid gap-14 lg:grid-cols-2">
+          <article className="entity-block">
+            <p className="section-kicker">{labels.hk}</p>
+            <h3 className="font-display mt-4 text-2xl font-semibold tracking-tight">{company.hk.name}</h3>
+            <p className="mt-2 text-base text-muted-foreground">{company.hk.zh}</p>
+            <dl className="entity-meta">
+              <div>
+                <dt>{labels.companyNo}</dt>
+                <dd>{company.hk.number}</dd>
+              </div>
+              <div>
+                <dt>{labels.incorporated}</dt>
+                <dd>{company.hk.incorporated}</dd>
+              </div>
+            </dl>
+          </article>
+          <article className="entity-block">
+            <p className="section-kicker">{labels.gz}</p>
+            <h3 className="font-display mt-4 text-2xl font-semibold tracking-tight">{company.gz.name}</h3>
+            <dl className="entity-meta">
+              <div>
+                <dt>{labels.creditCode}</dt>
+                <dd>{company.gz.creditCode}</dd>
+              </div>
+              <div>
+                <dt>{labels.legalRep}</dt>
+                <dd>{company.gz.legalRep}</dd>
+              </div>
+              <div>
+                <dt>{labels.incorporated}</dt>
+                <dd>{company.gz.incorporated}</dd>
+              </div>
+              <div>
+                <dt>{labels.address}</dt>
+                <dd>{company.gz.address}</dd>
+              </div>
+            </dl>
+          </article>
         </div>
       </div>
     </section>
-  )
-}
-
-function InfoRows({ rows }: { rows: string[][] }) {
-  return (
-    <div className="mt-6 divide-y divide-slate-100 rounded-lg border border-slate-200">
-      {rows.map(([label, value]) => (
-        <div key={label} className="grid gap-1 p-3 text-sm sm:grid-cols-[10rem_1fr]">
-          <span className="font-medium text-slate-500">{label}</span>
-          <span className="font-medium leading-6 text-slate-800">{value}</span>
-        </div>
-      ))}
-    </div>
   )
 }
 
@@ -834,21 +751,27 @@ export function OfficeSection() {
   const { c } = useCopy()
 
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding">
       <div className="section-container">
-        <SectionHeader eyebrow={c.sections.office.eyebrow} title={c.sections.office.title} description={c.sections.office.description} />
-        <div className="grid gap-5 md:grid-cols-2">
-          <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
-            <Home className="h-7 w-7 text-cyan-700" />
-            <h3 className="mt-5 text-xl font-semibold">Guangzhou Office</h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">{company.gz.address}</p>
-            <p className="mt-4 rounded-md bg-cyan-50 p-3 text-sm font-medium text-cyan-900">Mainland operations, product delivery, customer onboarding, and deployment coordination.</p>
+        <SectionIntro kicker={c.sections.office.kicker} title={c.sections.office.title} description={c.sections.office.description} />
+        <div className="grid gap-10 md:grid-cols-2">
+          <div className="border-l-2 border-[hsl(var(--copper))] pl-6">
+            <div className="flex items-center gap-2 text-[hsl(var(--copper))]">
+              <Home className="h-4 w-4" />
+              <h3 className="font-display text-xl font-semibold text-foreground">{c.office.gzTitle}</h3>
+            </div>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">{company.gz.address}</p>
+            <p className="mt-4 text-sm font-medium leading-6 text-foreground/80">{c.office.gzNote}</p>
           </div>
-          <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
-            <Globe2 className="h-7 w-7 text-emerald-700" />
-            <h3 className="mt-5 text-xl font-semibold">Hong Kong Entity</h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">{company.hk.name} / {company.hk.zh}</p>
-            <p className="mt-4 rounded-md bg-emerald-50 p-3 text-sm font-medium text-emerald-900">Company registration, research network, cross-border collaboration, and corporate administration.</p>
+          <div className="border-l-2 border-[hsl(var(--steel))] pl-6">
+            <div className="flex items-center gap-2 text-[hsl(var(--steel))]">
+              <Globe2 className="h-4 w-4" />
+              <h3 className="font-display text-xl font-semibold text-foreground">{c.office.hkTitle}</h3>
+            </div>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">
+              {company.hk.name} / {company.hk.zh}
+            </p>
+            <p className="mt-4 text-sm font-medium leading-6 text-foreground/80">{c.office.hkNote}</p>
           </div>
         </div>
       </div>
@@ -860,36 +783,39 @@ export function ComplianceSection() {
   const { c } = useCopy()
 
   return (
-    <section className="section-padding bg-slate-50">
+    <section className="section-padding border-t border-foreground/5 bg-[hsl(var(--paper))]">
       <div className="section-container">
-        <SectionHeader eyebrow={c.sections.compliance.eyebrow} title={c.sections.compliance.title} description={c.sections.compliance.description} />
-        <div className="grid gap-5 md:grid-cols-3">
-          <ComplianceCard title="Company Portal" value={urls.portal} href={urls.portal} />
-          <ComplianceCard title="External Partner" value={urls.partner} href={urls.partner} />
-          <ComplianceCard title="ICP Filing" value={compliance.icp} href={urls.miit} />
+        <SectionIntro kicker={c.sections.compliance.kicker} title={c.sections.compliance.title} description={c.sections.compliance.description} />
+        <div className="grid gap-6 sm:grid-cols-3">
+          <ComplianceLink title="Company Portal" value={urls.portal} href={urls.portal} />
+          <ComplianceLink title="External Partner" value={urls.partner} href={urls.partner} />
+          <ComplianceLink title="ICP Filing" value={compliance.icp} href={urls.miit} />
         </div>
-        <div className="mt-6 rounded-lg border border-border bg-white p-5 shadow-sm">
-          <h3 className="text-lg font-semibold">{c.sections.compliance.recordsTitle}</h3>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 border-t border-foreground/10 pt-8">
+          <h3 className="font-display text-lg font-semibold">{c.sections.compliance.recordsTitle}</h3>
+          <dl className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {c.sections.compliance.records.map((item) => (
-              <div key={item.label} className="rounded-md border border-slate-200 bg-slate-50 p-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">{item.label}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-800">{item.value}</p>
+              <div key={item.label}>
+                <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">{item.label}</dt>
+                <dd className="mt-2 text-sm leading-6 text-foreground">{item.value}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
     </section>
   )
 }
 
-function ComplianceCard({ title, value, href }: { title: string; value: string; href: string }) {
+function ComplianceLink({ title, value, href }: { title: string; value: string; href: string }) {
   return (
-    <a href={href} target="_blank" rel="noreferrer" className="rounded-lg border border-border bg-white p-5 shadow-sm transition hover:border-cyan-300 hover:shadow-md">
-      <FileText className="h-6 w-6 text-cyan-700" />
-      <h3 className="mt-5 text-lg font-semibold">{title}</h3>
-      <p className="mt-2 break-words text-sm leading-6 text-muted-foreground">{value}</p>
+    <a href={href} target="_blank" rel="noreferrer" className="group block border-t border-foreground/15 pt-5 transition hover:border-[hsl(var(--copper))]">
+      <div className="flex items-start justify-between gap-3">
+        <FileText className="h-4 w-4 text-[hsl(var(--copper))]" />
+        <ArrowUpRight className="h-4 w-4 text-foreground/30 transition group-hover:text-[hsl(var(--copper))]" />
+      </div>
+      <h3 className="font-display mt-4 text-base font-semibold">{title}</h3>
+      <p className="mt-2 break-all text-sm leading-6 text-muted-foreground">{value}</p>
     </a>
   )
 }
@@ -898,24 +824,24 @@ export function ContactSection() {
   const { c } = useCopy()
 
   return (
-    <section id="contact" className="section-padding bg-slate-950 text-white">
-      <div className="section-container">
-        <SectionHeader eyebrow={c.sections.contact.eyebrow} title={c.sections.contact.title} description={c.sections.contact.description} tone="dark" />
-        <div className="grid gap-5 lg:grid-cols-3">
+    <section id="contact" className="contact-plane section-padding">
+      <div className="section-container relative z-[1]">
+        <SectionIntro kicker={c.sections.contact.kicker} title={c.sections.contact.title} description={c.sections.contact.description} tone="dark" />
+        <div className="grid gap-8 border-t border-white/10 pt-10 md:grid-cols-3">
           {c.contact.channels.map((channel) => (
-            <div key={channel.title} className="contact-card">
-              <Mail className="h-7 w-7 text-cyan-200" />
-              <h3 className="mt-5 text-xl font-semibold text-white">{channel.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-300">{channel.text}</p>
+            <div key={channel.title}>
+              <h3 className="font-display text-lg font-semibold text-white">{channel.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-white/55">{channel.text}</p>
             </div>
           ))}
         </div>
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
-          <a href={`mailto:${c.contact.business}`} className="rounded-lg border border-white/10 bg-white/5 p-6 transition hover:bg-white/10">
-            <p className="text-sm text-slate-400">Business email</p>
-            <p className="mt-2 text-xl font-semibold text-white">{c.contact.business}</p>
-          </a>
-        </div>
+        <a
+          href={`mailto:${c.contact.business}`}
+          className="mt-12 inline-flex items-center gap-3 border-b border-white/30 pb-2 font-display text-2xl font-semibold tracking-tight text-white transition hover:border-[hsl(18_72%_56%)] hover:text-[hsl(18_72%_70%)] sm:text-3xl"
+        >
+          <Mail className="h-6 w-6 shrink-0 opacity-70" />
+          {c.contact.business}
+        </a>
       </div>
     </section>
   )
@@ -925,14 +851,14 @@ export function FAQSection() {
   const { c } = useCopy()
 
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding">
       <div className="section-container">
-        <SectionHeader eyebrow={c.sections.faq.eyebrow} title={c.sections.faq.title} description={c.sections.faq.description} />
-        <div className="mx-auto grid max-w-5xl gap-4">
+        <SectionIntro kicker={c.sections.faq.kicker} title={c.sections.faq.title} description={c.sections.faq.description} />
+        <div className="max-w-3xl">
           {c.faq.map((item) => (
-            <div key={item.q} className="faq-card">
-              <h3 className="text-lg font-semibold">{item.q}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{item.a}</p>
+            <div key={item.q} className="faq-item">
+              <h3 className="font-display text-lg font-semibold tracking-tight">{item.q}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground sm:text-base">{item.a}</p>
             </div>
           ))}
         </div>
@@ -942,24 +868,40 @@ export function FAQSection() {
 }
 
 export function VLAClawSection() {
+  const { lang } = useCopy()
   const cards = useMemo(
-    () => [
-      { title: 'Embodied AI R&D', text: 'VLAClaw remains a research and demonstration project for robot interaction, ROS2 integration, and embodied agent workflows.' },
-      { title: 'OpenClaw / ROS2', text: 'The project keeps the OpenClaw, rosbridge, robot dog, sensor, and skill orchestration material as a technical archive.' },
-      { title: 'Research direction', text: 'VLAClaw provides a project base for testing embodied agents, robot interaction, and edge-side intelligence.' },
-    ],
-    [],
+    () =>
+      lang === 'zh'
+        ? [
+            { title: '具身智能研发', text: 'VLAClaw 作为机器人交互、ROS2 集成与具身智能体工作流的研究与演示项目保留。' },
+            { title: 'OpenClaw / ROS2', text: '保留 OpenClaw、rosbridge、机器狗、传感器与技能编排相关技术材料作为档案。' },
+            { title: '研究方向', text: '为具身智能体、机器人交互与边缘侧智能提供可验证的项目底座。' },
+          ]
+        : [
+            { title: 'Embodied AI R&D', text: 'VLAClaw remains a research and demonstration project for robot interaction, ROS2 integration, and embodied agent workflows.' },
+            { title: 'OpenClaw / ROS2', text: 'Keeps OpenClaw, rosbridge, robot dog, sensor, and skill orchestration material as a technical archive.' },
+            { title: 'Research direction', text: 'A project base for testing embodied agents, robot interaction, and edge-side intelligence.' },
+          ],
+    [lang],
   )
 
   return (
-    <section className="section-padding bg-slate-50">
+    <section className="section-padding border-t border-foreground/5 bg-[hsl(var(--paper))]">
       <div className="section-container">
-        <SectionHeader eyebrow="VLAClaw" title="Embodied intelligence remains a project entrance." description="VLAClaw is retained as a technology and demonstration project under ISACAI. External partner services are presented separately." />
-        <div className="grid gap-5 md:grid-cols-3">
-          {cards.map((card) => (
-            <div key={card.title} className="rounded-lg border border-border bg-white p-5 shadow-sm">
-              <Bot className="h-6 w-6 text-cyan-700" />
-              <h3 className="mt-5 text-lg font-semibold">{card.title}</h3>
+        <SectionIntro
+          kicker="VLAClaw"
+          title={lang === 'zh' ? '具身智能仍是技术项目入口。' : 'Embodied intelligence remains a project entrance.'}
+          description={
+            lang === 'zh'
+              ? 'VLAClaw 作为 ISACAI 旗下的技术与演示项目保留；外部合作方服务单独呈现。'
+              : 'VLAClaw is retained as a technology and demonstration project under ISACAI. Partner services are presented separately.'
+          }
+        />
+        <div className="grid gap-10 md:grid-cols-3">
+          {cards.map((card, index) => (
+            <div key={card.title} className="border-t border-foreground/15 pt-6">
+              <p className="font-display text-sm font-semibold text-[hsl(var(--copper))]">{String(index + 1).padStart(2, '0')}</p>
+              <h3 className="font-display mt-3 text-lg font-semibold">{card.title}</h3>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">{card.text}</p>
             </div>
           ))}
@@ -973,24 +915,22 @@ export function Footer() {
   const { c } = useCopy()
 
   return (
-    <footer className="border-t border-border bg-white py-10">
+    <footer className="footer-shell">
       <div className="section-container">
-        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-start">
+        <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
           <div className="flex items-start gap-3">
-            <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-slate-200">
-              <Image src="/公司icon.jpeg" alt="ISACAI company icon" fill sizes="40px" className="object-contain" />
-            </span>
+            <BrandMark />
             <div>
-              <p className="font-semibold">{c.footer.title}</p>
-              <p className="text-sm text-muted-foreground">{c.footer.subtitle}</p>
+              <p className="font-display font-bold tracking-tight">{c.footer.title}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{c.footer.subtitle}</p>
               <p className="mt-2 text-sm text-muted-foreground">{c.footer.softwareContact}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
                 {[
                   { label: 'isacai.cn', href: urls.portal },
                   { label: 'Partner', href: urls.partner },
-                  { label: 'GitHub / ISACAI', href: urls.githubIsacai },
+                  { label: 'GitHub', href: urls.githubIsacai },
                 ].map((item) => (
-                  <a key={item.href} href={item.href} target="_blank" rel="noreferrer" className="tech-chip">
+                  <a key={item.href} href={item.href} target="_blank" rel="noreferrer" className="font-medium text-foreground/70 underline-offset-4 transition hover:text-[hsl(var(--copper))] hover:underline">
                     {item.label}
                   </a>
                 ))}
@@ -999,7 +939,7 @@ export function Footer() {
           </div>
           <div className="text-sm leading-6 text-muted-foreground md:text-right">
             <p>{c.footer.copyright}</p>
-            <a href={urls.miit} target="_blank" rel="noreferrer" className="mt-2 block hover:text-cyan-700">
+            <a href={urls.miit} target="_blank" rel="noreferrer" className="mt-2 block transition hover:text-[hsl(var(--copper))]">
               {compliance.icp}
             </a>
           </div>

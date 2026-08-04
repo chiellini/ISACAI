@@ -4,28 +4,31 @@
 
 @layer base {
   :root {
-    --background: 210 24% 98%;
-    --foreground: 218 38% 12%;
+    --background: 210 18% 96%;
+    --foreground: 220 22% 8%;
     --card: 0 0% 100%;
-    --card-foreground: 218 38% 12%;
+    --card-foreground: 220 22% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 218 38% 12%;
-    --primary: 192 82% 38%;
+    --popover-foreground: 220 22% 8%;
+    --primary: 18 72% 46%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 24% 94%;
-    --secondary-foreground: 218 38% 12%;
-    --muted: 210 20% 93%;
-    --muted-foreground: 218 12% 42%;
-    --accent: 159 72% 40%;
-    --accent-foreground: 0 0% 100%;
+    --secondary: 210 14% 92%;
+    --secondary-foreground: 220 22% 8%;
+    --muted: 210 12% 91%;
+    --muted-foreground: 215 10% 40%;
+    --accent: 205 28% 34%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 22% 86%;
-    --input: 214 22% 86%;
-    --ring: 192 82% 38%;
-    --radius: 0.5rem;
-    --shadow-card: 0 1px 2px hsl(218 38% 12% / 0.05), 0 10px 26px hsl(218 38% 12% / 0.08);
-    --shadow-subtle: 0 12px 34px hsl(218 38% 12% / 0.08);
+    --border: 214 14% 84%;
+    --input: 214 14% 84%;
+    --ring: 18 72% 46%;
+    --radius: 0.25rem;
+    --ink: 220 22% 8%;
+    --mist: 210 18% 96%;
+    --copper: 18 72% 46%;
+    --steel: 205 28% 34%;
+    --paper: 40 20% 98%;
   }
 }
 
@@ -40,247 +43,342 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-family: var(--font-body), "DM Sans", ui-sans-serif, sans-serif;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 10% -10%, hsl(205 28% 34% / 0.06), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 0%, hsl(18 72% 46% / 0.05), transparent 50%),
+      linear-gradient(180deg, hsl(var(--mist)), hsl(var(--mist)));
+    background-attachment: fixed;
   }
 
   ::selection {
-    @apply bg-cyan-200 text-slate-950;
+    background: hsl(18 72% 46% / 0.22);
+    color: hsl(220 22% 8%);
   }
 }
 
 @layer components {
   .section-container {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-6xl px-5 sm:px-8 lg:px-10;
   }
 
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-20 sm:py-24 lg:py-28;
   }
 
-  .hero-shell {
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-      linear-gradient(135deg, #07111f 0%, #102033 48%, #17142a 100%);
-    background-size: 42px 42px, 42px 42px, auto;
-    position: relative;
-    overflow: hidden;
+  .font-display {
+    font-family: var(--font-display), Syne, ui-sans-serif, sans-serif;
   }
 
-  .hero-shell::after {
+  .nav-shell {
+    @apply fixed left-0 right-0 top-0 z-50 border-b border-black/5;
+    background: hsl(40 20% 98% / 0.82);
+    backdrop-filter: blur(16px) saturate(1.2);
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 text-sm font-medium text-foreground/65 transition;
+  }
+
+  .nav-link:hover {
+    @apply text-foreground;
+  }
+
+  .nav-link::after {
     content: "";
     position: absolute;
-    inset: auto 0 0 0;
-    height: 170px;
-    background: linear-gradient(to bottom, transparent, hsl(var(--background)));
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.35rem;
+    height: 1px;
+    background: hsl(var(--copper));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 px-5 text-sm font-semibold text-white transition;
+    background: hsl(var(--ink));
+  }
+
+  .btn-primary:hover {
+    background: hsl(var(--copper));
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 border border-foreground/15 bg-transparent px-5 text-sm font-semibold text-foreground transition;
+  }
+
+  .btn-secondary:hover {
+    @apply border-foreground/40 bg-foreground/5;
+  }
+
+  .btn-ghost {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 px-4 text-sm font-semibold text-foreground/70 transition hover:text-foreground;
+  }
+
+  .hero-plane {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 100svh;
+    background:
+      linear-gradient(105deg, hsl(220 22% 8%) 0%, hsl(210 24% 14%) 42%, hsl(205 28% 22%) 72%, hsl(18 40% 28%) 100%);
+  }
+
+  .hero-plane::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 70% 40%, black 20%, transparent 75%);
+    animation: grid-drift 28s linear infinite;
     pointer-events: none;
   }
 
-  .hero-map {
-    @apply relative overflow-hidden rounded-lg border border-white/10 bg-slate-900/75 p-4 shadow-2xl;
+  .hero-plane::after {
+    content: "";
+    position: absolute;
+    inset: auto -20% -30% 30%;
+    height: 70%;
+    background: radial-gradient(closest-side, hsl(18 72% 46% / 0.35), transparent 70%);
+    filter: blur(8px);
+    animation: glow-breathe 8s ease-in-out infinite;
+    pointer-events: none;
   }
 
-  .hero-map-grid {
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-brand {
+    @apply font-display font-bold tracking-[-0.04em] text-white;
+    font-size: clamp(3.5rem, 12vw, 8.5rem);
+    line-height: 0.92;
+    animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-headline {
+    @apply font-display font-semibold tracking-[-0.02em] text-white/95;
+    font-size: clamp(1.35rem, 2.6vw, 2rem);
+    animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+  }
+
+  .hero-lede {
+    @apply max-w-xl text-base leading-7 text-white/65 sm:text-lg sm:leading-8;
+    animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
+  }
+
+  .hero-actions {
+    animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+  }
+
+  .hero-orbit {
+    position: absolute;
+    right: -8%;
+    top: 18%;
+    width: min(52vw, 520px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    animation: spin-slow 48s linear infinite;
+    pointer-events: none;
+  }
+
+  .hero-orbit::before,
+  .hero-orbit::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: hsl(18 72% 56%);
+  }
+
+  .hero-orbit::before {
+    width: 10px;
+    height: 10px;
+    top: 12%;
+    left: 50%;
+    box-shadow: 0 0 0 6px hsl(18 72% 46% / 0.2);
+  }
+
+  .hero-orbit::after {
+    width: 6px;
+    height: 6px;
+    bottom: 22%;
+    left: 18%;
+    background: hsl(205 40% 70%);
+  }
+
+  .section-kicker {
+    @apply font-display text-xs font-semibold uppercase tracking-[0.22em] text-[hsl(var(--copper))];
+  }
+
+  .section-title {
+    @apply font-display mt-3 text-3xl font-semibold tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15];
+  }
+
+  .section-lede {
+    @apply mt-4 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8;
+  }
+
+  .entry-row {
+    @apply flex items-start justify-between gap-6 border-b border-foreground/10 py-7 transition;
+  }
+
+  .entry-row:first-child {
+    @apply border-t;
+  }
+
+  .entry-row:hover {
+    @apply border-foreground/25;
+  }
+
+  .entry-row-title {
+    @apply font-display text-xl font-semibold tracking-[-0.01em] text-foreground transition sm:text-2xl;
+  }
+
+  .entry-row:hover .entry-row-title {
+    color: hsl(var(--copper));
+  }
+
+  .capability-band {
+    @apply relative overflow-hidden bg-[hsl(var(--ink))] text-white;
+  }
+
+  .capability-band::before {
+    content: "";
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(rgba(103, 232, 249, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(103, 232, 249, 0.08) 1px, transparent 1px);
-    background-size: 28px 28px;
-    opacity: 0.8;
+      linear-gradient(90deg, transparent, hsl(18 72% 46% / 0.08), transparent),
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: auto, 100% 48px;
+    pointer-events: none;
   }
 
-  .flow-node {
-    @apply flex w-full items-center gap-3 rounded-md border border-white/10 bg-white/10 px-4 py-2.5 text-sm font-medium text-slate-100 backdrop-blur;
+  .capability-item {
+    @apply relative border-t border-white/10 py-8 first:border-t-0 sm:border-t-0 sm:border-l sm:border-white/10 sm:px-6 sm:py-0 sm:first:border-l-0 sm:first:pl-0;
   }
 
-  .flow-node-active {
-    @apply border-emerald-300/40 bg-emerald-300/10 text-emerald-50;
+  .capability-index {
+    @apply font-display text-sm font-semibold tracking-[0.16em] text-[hsl(18_72%_62%)];
   }
 
-  .flow-index {
-    @apply flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-cyan-300 text-xs font-bold text-slate-950;
+  .feature-rail {
+    @apply grid gap-0 border-y border-foreground/10;
   }
 
-  .nav-link-dark {
-    @apply rounded-md px-2 py-1 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-cyan-100;
+  .feature-rail-item {
+    @apply flex items-start gap-4 border-b border-foreground/10 py-5 last:border-b-0 sm:items-center;
   }
 
-  .mobile-nav-item {
-    @apply rounded-md border border-white/10 bg-white/5 px-3 py-2 text-left text-sm text-slate-200;
+  .entity-block {
+    @apply border-t border-foreground/15 pt-8;
   }
 
-  .eyebrow {
-    @apply inline-flex items-center rounded-md bg-cyan-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-700;
+  .entity-meta {
+    @apply mt-6 grid gap-4 sm:grid-cols-2;
   }
 
-  .eyebrow-dark {
-    @apply inline-flex items-center rounded-md border border-cyan-200/25 bg-cyan-200/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-100;
+  .entity-meta dt {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground;
   }
 
-  .tech-chip {
-    @apply inline-flex items-center rounded-md border border-cyan-200/70 bg-cyan-50 px-2.5 py-1 text-xs font-medium text-cyan-800;
+  .entity-meta dd {
+    @apply mt-1 text-sm font-medium leading-6 text-foreground;
   }
 
-  .tech-chip-dark {
-    @apply inline-flex items-center rounded-md border border-white/10 bg-white/10 px-2.5 py-1 text-xs font-medium text-slate-200;
+  .faq-item {
+    @apply border-b border-foreground/10 py-6;
   }
 
-  .metric-tile {
-    @apply rounded-lg border border-white/10 bg-white/10 p-4;
+  .faq-item:first-child {
+    @apply border-t;
   }
 
-  .metric-tile strong {
-    @apply block text-2xl font-semibold text-cyan-200;
+  .contact-plane {
+    @apply relative overflow-hidden bg-[hsl(var(--ink))] text-white;
   }
 
-  .metric-tile span {
-    @apply mt-1 block text-xs leading-5 text-slate-400;
-  }
-
-  .company-card {
-    @apply rounded-lg border-border bg-white transition duration-200;
-  }
-
-  .company-card:hover {
-    border-color: rgb(14 116 144 / 0.34);
-    box-shadow: var(--shadow-subtle);
-    transform: translateY(-2px);
-  }
-
-  .entry-card {
-    @apply block rounded-lg border border-border bg-white p-6 transition duration-200;
-    box-shadow: var(--shadow-card);
-  }
-
-  .entry-card:hover {
-    border-color: rgb(14 116 144 / 0.4);
-    box-shadow: var(--shadow-subtle);
-    transform: translateY(-3px);
-  }
-
-  .compare-panel {
-    @apply rounded-lg border border-border bg-white p-6;
-    box-shadow: var(--shadow-card);
-  }
-
-  .compare-panel-primary {
-    @apply border-cyan-200 bg-cyan-50/60;
-  }
-
-  .loop-step {
-    @apply inline-flex min-h-9 items-center rounded-md border border-border bg-white px-3 py-1.5 text-sm font-semibold text-foreground;
-  }
-
-  .workflow-card {
-    @apply rounded-lg border border-border bg-white p-5;
-    box-shadow: var(--shadow-card);
-  }
-
-  .workflow-card:hover {
-    border-color: rgb(14 116 144 / 0.34);
-    box-shadow: var(--shadow-subtle);
-  }
-
-  .workflow-number {
-    @apply flex h-9 w-9 items-center justify-center rounded-md bg-slate-950 text-sm font-semibold text-cyan-200;
-  }
-
-  .compat-row {
-    @apply rounded-md border border-border bg-slate-50 p-4;
-  }
-
-  .architecture-layer {
-    @apply rounded-lg border border-white/10 bg-white/5 p-5;
-  }
-
-  .data-flow-panel {
-    @apply rounded-lg border border-white/10 bg-white/5 p-5;
-  }
-
-  .work-card {
-    @apply rounded-lg border border-white/10 bg-white/5 p-6;
-  }
-
-  .work-card:hover {
-    @apply border-cyan-200/30 bg-white/10;
-  }
-
-  .risk-panel,
-  .safe-panel {
-    @apply rounded-lg border bg-white p-6;
-    box-shadow: var(--shadow-card);
-  }
-
-  .risk-panel {
-    @apply border-rose-200;
-  }
-
-  .safe-panel {
-    @apply border-emerald-200 bg-emerald-50/40;
-  }
-
-  .risk-panel h3,
-  .safe-panel h3 {
-    @apply text-xl font-semibold;
-  }
-
-  .risk-row,
-  .safe-row {
-    @apply flex items-start gap-3 rounded-md border bg-white p-3 text-sm leading-6 text-muted-foreground;
-  }
-
-  .risk-row {
-    @apply border-rose-100;
-  }
-
-  .safe-row {
-    @apply border-emerald-100;
-  }
-
-  .skill-item {
-    @apply rounded-md border border-border bg-slate-50 p-3;
+  .contact-plane::after {
+    content: "";
+    position: absolute;
+    right: -10%;
+    bottom: -40%;
+    width: 50%;
+    height: 90%;
+    background: radial-gradient(closest-side, hsl(18 72% 46% / 0.28), transparent 70%);
+    pointer-events: none;
   }
 
   .code-panel {
-    @apply overflow-hidden rounded-lg border border-slate-800 bg-slate-950 shadow-xl;
+    @apply overflow-hidden border border-white/10 bg-[hsl(220_22%_6%)];
   }
 
   .code-panel-header {
-    @apply flex items-center justify-between border-b border-slate-800 bg-slate-900 px-4 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200;
+    @apply flex items-center justify-between border-b border-white/10 px-4 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/50;
   }
 
-  .developer-cta {
-    @apply rounded-lg border border-border bg-white p-6;
-    box-shadow: var(--shadow-card);
+  .footer-shell {
+    @apply border-t border-foreground/10 bg-[hsl(var(--paper))] py-12;
   }
+}
 
-  .demo-card,
-  .contact-card,
-  .offer-card {
-    @apply rounded-lg border border-white/10 bg-white/5 p-6;
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
-
-  .faq-card {
-    @apply rounded-lg border border-border bg-white p-5;
-    box-shadow: var(--shadow-card);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .roadmap-item {
-    @apply relative grid gap-4 md:grid-cols-[2rem_1fr];
+@keyframes grid-drift {
+  from {
+    transform: translate3d(0, 0, 0);
   }
-
-  .roadmap-number {
-    @apply z-10 flex h-8 w-8 items-center justify-center rounded-md bg-slate-950 text-sm font-semibold text-cyan-200;
+  to {
+    transform: translate3d(56px, 56px, 0);
   }
+}
 
-  .roadmap-content {
-    @apply rounded-lg border border-border bg-white p-5;
-    box-shadow: var(--shadow-card);
+@keyframes glow-breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
   }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
 
-  .form-input {
-    @apply w-full rounded-md border border-white/10 bg-white/10 px-3 py-2 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-300;
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-brand,
+  .hero-headline,
+  .hero-lede,
+  .hero-actions,
+  .hero-orbit,
+  .hero-plane::before,
+  .hero-plane::after {
+    animation: none !important;
   }
 }

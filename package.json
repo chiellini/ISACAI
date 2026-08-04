@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "latest",
-    "react-dom": "latest",
-    "next": "latest",
+    "caniuse-lite": "^1.0.30001803",
     "class-variance-authority": "latest",
     "clsx": "latest",
     "lucide-react": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "tailwind-merge": "latest",
     "tailwindcss-animate": "latest"
   },
