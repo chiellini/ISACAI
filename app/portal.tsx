@@ -10,7 +10,6 @@ import {
   FileText,
   Globe2,
   Home,
-  Mail,
   Menu,
   SquareTerminal,
   X,
@@ -30,18 +29,9 @@ const compliance = {
 }
 
 const company = {
-  hk: {
-    name: 'Hong Kong GettingRice Artificial Intelligence Limited',
-    zh: '香港得米人工智能有限公司',
-    number: '80324505',
-    incorporated: '2026-05-05',
-  },
   gz: {
     name: '广州多智慧体人工智能科技有限公司',
-    creditCode: '91440113MAKAK4TP10',
-    legalRep: '李泽霖',
-    incorporated: '2026-04-10',
-    address: '广州市番禺区钟村街汉兴东路 10 号 1711',
+    en: 'Guangzhou Multi-Agent Artificial Intelligence Technology Co., Ltd.',
   },
 }
 
@@ -61,7 +51,7 @@ const copy = {
     brandSubtitle: '公司门户',
     hero: {
       title: 'ISACAI',
-      headline: '智能体服务与具身智能的公司门户',
+      headline: '机器人系统集成与技术服务的公司门户',
       subtitle:
         'isacai.cn 承载公司信息、项目入口与合作联系；isacai.space 为外部合作方网站，与本站无隶属关系。',
       primary: '访问合作方',
@@ -75,24 +65,24 @@ const copy = {
       },
       product: {
         kicker: '本站产品',
-        title: 'VLAClaw：面向具身智能的上位机工作台。',
+        title: 'VLAClaw：面向机器人应用的上位机工作台。',
         description:
-          '连接 ROS2 机器人、视觉感知、语音交互与可编排技能，面向机器人应用验证与边缘侧智能执行。',
+          '连接 ROS2 机器人、视觉感知、语音交互与可编排技能，面向机器人应用验证与边缘侧部署执行。',
       },
       infrastructure: {
         kicker: '能力',
-        title: '连接机器人、感知与智能体工作流。',
+        title: '连接机器人、感知与任务工作流。',
         description: '将设备连接、感知输入、任务规划与技能执行组织成可扩展的机器人上位机路径。',
       },
       company: {
         kicker: '公司',
-        title: '主体与办公室信息公开。',
-        description: '方便客户、合作伙伴与开发者确认经营主体、地址与联系入口。',
+        title: '经营主体信息公开。',
+        description: '方便客户、合作伙伴与开发者确认经营主体与联系入口。',
       },
       office: {
         kicker: '办公室',
         title: '访问安排。',
-        description: '广州办公室负责大陆业务与交付；香港主体承接注册与跨境合作。拜访请提前邮件预约。',
+        description: '广州办公室负责业务运营与项目交付。拜访请提前通过微信或 QQ 预约。',
       },
       developers: {
         kicker: '开发者',
@@ -114,7 +104,7 @@ const copy = {
       contact: {
         kicker: '联系',
         title: '联系 ISACAI。',
-        description: '产品试用、私有部署、企业合作与具身智能项目咨询，都可以从这里发起。',
+        description: '产品试用、私有部署、企业合作与机器人项目咨询，都可以从这里发起。',
       },
       faq: {
         kicker: 'FAQ',
@@ -137,15 +127,15 @@ const copy = {
       },
       {
         title: 'ISACAI 公司门户',
-        description: '公司介绍、办公室地址、联系入口、备案与项目导航。',
+        description: '公司介绍、办公室信息、联系入口、备案与项目导航。',
         href: '/',
         label: 'isacai.cn',
       },
       {
         title: 'VLAClaw 项目',
-        description: '具身智能与机器人方向的研发项目，作为 ISACAI 技术项目入口。',
+        description: '机器人方向的研发项目，作为 ISACAI 技术项目入口。',
         href: '/solutions',
-        label: 'Embodied AI',
+        label: 'Robotics',
       },
     ],
     productFeatures: [
@@ -154,7 +144,7 @@ const copy = {
       'OpenClaw skill server 技能编排',
       '机器人狗、摄像头与边缘硬件接入',
       '可插拔的任务流程与技能模块',
-      '云边协同的智能体执行路径',
+      '云边协同的任务执行路径',
       '面向真实机器人场景的快速验证',
       '研发演示、实验记录与项目沉淀',
     ],
@@ -165,7 +155,7 @@ const copy = {
       },
       {
         title: 'Multimodal Interaction',
-        text: '融合语音、摄像头、视觉感知与任务上下文，完成具身交互。',
+        text: '融合语音、摄像头、视觉感知与任务上下文，完成自然的人机交互。',
       },
       {
         title: 'Skill Orchestration',
@@ -173,7 +163,7 @@ const copy = {
       },
       {
         title: 'Cloud-Edge Execution',
-        text: '时敏执行靠近机器人，高层智能在云边协同调度。',
+        text: '时敏执行靠近机器人，高层任务在云边协同调度。',
       },
     ],
     endpoints: [] as string[],
@@ -184,18 +174,13 @@ const copy = {
       '关于 ISACAI 的公司、项目或合作事宜，请通过本站联系入口沟通。',
     ],
     companyLabels: {
-      hk: '香港主体',
       gz: '大陆运营主体',
-      companyNo: '公司编号',
-      creditCode: '统一社会信用代码',
-      legalRep: '法定代表人',
-      incorporated: '成立日期',
-      address: '地址',
     },
     contact: {
-      business: 'rigaudiere@isacai.cn',
+      wechat: 'windzero12138',
+      qq: '458390862',
       channels: [
-        { title: '合作联系', text: '公司合作、研究合作、办公室访问和具身智能项目咨询。' },
+        { title: '合作联系', text: '公司合作、研究合作、办公室访问和机器人项目咨询。' },
         { title: '企业部署', text: '讨论账号池、支付、计费、日志、审计和内网部署方案。' },
         { title: '办公室拜访', text: '商务合作、园区合作、研究合作或广州办公室访问预约。' },
       ],
@@ -207,7 +192,7 @@ const copy = {
       },
       {
         q: 'VLAClaw 还保留吗？',
-        a: '保留，但不再作为官网唯一主角。它会作为 ISACAI 在具身智能和机器人方向的研发项目入口出现。',
+        a: '保留，但不再作为官网唯一主角。它会作为 ISACAI 在机器人方向的研发项目入口出现。',
       },
       {
         q: 'ICP备案信息是否已更新？',
@@ -216,18 +201,16 @@ const copy = {
     ],
     footer: {
       title: 'ISACAI',
-      subtitle: '公司门户 · 具身智能研发',
-      softwareContact: '软件开发交流联系方式：1027890648',
-      copyright: '© 2026 ISACAI. All rights reserved.',
+      subtitle: '公司门户 · 机器人软件与技术服务',
+      softwareContact: '联系方式：微信 windzero12138 · QQ 458390862',
+      copyright: '© 2026 广州多智慧体人工智能科技有限公司 版权所有',
     },
     office: {
       gzTitle: '广州办公室',
       gzNote: '大陆业务、产品交付、客户接入与部署协调。',
-      hkTitle: '香港主体',
-      hkNote: '公司注册、研究网络、跨境协作与公司治理。',
     },
     productCta: '查看项目',
-    productTagline: 'ISACAI 自有具身智能研发项目，面向 ROS2 机器人、感知交互与技能编排。',
+    productTagline: 'ISACAI 自有机器人研发项目，面向 ROS2 机器人、感知交互与技能编排。',
   },
   en: {
     langLabel: '中文',
@@ -242,7 +225,7 @@ const copy = {
     brandSubtitle: 'Company Portal',
     hero: {
       title: 'ISACAI',
-      headline: 'Company portal for agents and embodied intelligence',
+      headline: 'Company portal for robotics systems and technical services',
       subtitle:
         'isacai.cn hosts company information and project entries; isacai.space is an independent partner site with no affiliation to this portal.',
       primary: 'Visit Partner',
@@ -256,24 +239,24 @@ const copy = {
       },
       product: {
         kicker: 'Our Product',
-        title: 'VLAClaw: an embodied intelligence workbench.',
+        title: 'VLAClaw: a robot application workbench.',
         description:
           'Connect ROS2 robots, visual perception, voice interaction, and composable skills for real-world validation and edge execution.',
       },
       infrastructure: {
         kicker: 'Capabilities',
-        title: 'Robots, perception, and agent workflows.',
+        title: 'Robots, perception, and task workflows.',
         description: 'Organize connectivity, sensing, planning, and skill execution into an extensible robot-side path.',
       },
       company: {
         kicker: 'Company',
-        title: 'Entities and office information.',
-        description: 'Public records so partners and developers can verify operating entities and contact points.',
+        title: 'Operating entity information.',
+        description: 'Public record so partners and developers can verify the operating entity and contact points.',
       },
       office: {
         kicker: 'Office',
         title: 'Visit arrangements.',
-        description: 'Guangzhou handles mainland delivery; Hong Kong covers registration and cross-border work. Visits by appointment.',
+        description: 'The Guangzhou office handles operations and delivery. Visits by appointment via WeChat or QQ.',
       },
       developers: {
         kicker: 'Developers',
@@ -295,7 +278,7 @@ const copy = {
       contact: {
         kicker: 'Contact',
         title: 'Contact ISACAI.',
-        description: 'Start here for trials, private deployment, enterprise cooperation, and embodied intelligence projects.',
+        description: 'Start here for trials, private deployment, enterprise cooperation, and robotics projects.',
       },
       faq: {
         kicker: 'FAQ',
@@ -318,15 +301,15 @@ const copy = {
       },
       {
         title: 'ISACAI Company Portal',
-        description: 'Company profile, office addresses, contact entry, compliance, and project navigation.',
+        description: 'Company profile, office information, contact entry, compliance, and project navigation.',
         href: '/',
         label: 'isacai.cn',
       },
       {
         title: 'VLAClaw Project',
-        description: 'Embodied intelligence and robotics R&D retained as a technology entrance under ISACAI.',
+        description: 'Robotics R&D retained as a technology entrance under ISACAI.',
         href: '/solutions',
-        label: 'Embodied AI',
+        label: 'Robotics',
       },
     ],
     productFeatures: [
@@ -335,7 +318,7 @@ const copy = {
       'OpenClaw skill server orchestration',
       'Robot dog, camera, and edge hardware integration',
       'Composable task flows and reusable skill modules',
-      'Cloud-edge paths for embodied agent execution',
+      'Cloud-edge paths for robot task execution',
       'Rapid validation in real robot scenarios',
       'Research demos, experiments, and project artifacts',
     ],
@@ -346,7 +329,7 @@ const copy = {
       },
       {
         title: 'Multimodal Interaction',
-        text: 'Combine voice, camera, visual perception, and task context for embodied interaction.',
+        text: 'Combine voice, camera, visual perception, and task context for natural human-robot interaction.',
       },
       {
         title: 'Skill Orchestration',
@@ -354,7 +337,7 @@ const copy = {
       },
       {
         title: 'Cloud-Edge Execution',
-        text: 'Keep time-sensitive execution near the robot while coordinating higher-level intelligence.',
+        text: 'Keep time-sensitive execution near the robot while coordinating higher-level tasks.',
       },
     ],
     endpoints: [] as string[],
@@ -365,18 +348,13 @@ const copy = {
       'Contact this portal about ISACAI company, project, or cooperation matters.',
     ],
     companyLabels: {
-      hk: 'Hong Kong entity',
       gz: 'Mainland operating entity',
-      companyNo: 'Company No.',
-      creditCode: 'Unified Social Credit Code',
-      legalRep: 'Legal representative',
-      incorporated: 'Incorporated',
-      address: 'Address',
     },
     contact: {
-      business: 'rigaudiere@isacai.cn',
+      wechat: 'windzero12138',
+      qq: '458390862',
       channels: [
-        { title: 'Cooperation', text: 'Company cooperation, research, office visits, and embodied intelligence projects.' },
+        { title: 'Cooperation', text: 'Company cooperation, research, office visits, and robotics projects.' },
         { title: 'Enterprise deployment', text: 'Account pools, payment, billing, logs, audit, and internal deployment.' },
         { title: 'Office visits', text: 'Business cooperation, park collaboration, research, or Guangzhou office visits.' },
       ],
@@ -388,27 +366,25 @@ const copy = {
       },
       {
         q: 'Is VLAClaw still part of the site?',
-        a: 'Yes. It remains an embodied intelligence and robotics R&D project, but is no longer the only homepage focus.',
+        a: 'Yes. It remains a robotics R&D project, but is no longer the only homepage focus.',
       },
       {
         q: 'Has filing information been updated?',
-        a: 'Yes. The filing subject and hosting unit are Guangzhou Multi-Intelligence Artificial Intelligence Technology Co., Ltd., ICP 粤ICP备2026050877号.',
+        a: 'Yes. The filing subject and hosting unit are 广州多智慧体人工智能科技有限公司 (Guangzhou Multi-Agent Artificial Intelligence Technology Co., Ltd.), ICP 粤ICP备2026050877号.',
       },
     ],
     footer: {
       title: 'ISACAI',
-      subtitle: 'Company portal · Embodied intelligence R&D',
-      softwareContact: 'Software development contact: 1027890648',
-      copyright: '© 2026 ISACAI. All rights reserved.',
+      subtitle: 'Company portal · Robotics software & services',
+      softwareContact: 'Contact: WeChat windzero12138 · QQ 458390862',
+      copyright: '© 2026 Guangzhou Multi-Agent Artificial Intelligence Technology Co., Ltd. All rights reserved.',
     },
     office: {
       gzTitle: 'Guangzhou Office',
       gzNote: 'Mainland operations, product delivery, onboarding, and deployment coordination.',
-      hkTitle: 'Hong Kong Entity',
-      hkNote: 'Registration, research network, cross-border collaboration, and corporate administration.',
     },
     productCta: 'View Project',
-    productTagline: 'ISACAI-owned embodied intelligence R&D for ROS2 robots, perception, and skill orchestration.',
+    productTagline: 'ISACAI-owned robotics R&D for ROS2 robots, perception, and skill orchestration.',
   },
 } satisfies Record<Lang, Record<string, unknown>>
 
@@ -682,7 +658,7 @@ export function DeveloperSection() {
             <pre className="overflow-x-auto whitespace-pre p-5 text-xs leading-7 text-white/70 sm:text-sm">
               {`ROS2 device
   → perception
-  → agent planning
+  → task planning
   → skill execution
 
 OpenClaw skills coordinate
@@ -703,43 +679,11 @@ export function CompanySection() {
     <section id="company" className="section-padding border-t border-foreground/5 bg-[hsl(var(--paper))]">
       <div className="section-container">
         <SectionIntro kicker={c.sections.company.kicker} title={c.sections.company.title} description={c.sections.company.description} />
-        <div className="grid gap-14 lg:grid-cols-2">
-          <article className="entity-block">
-            <p className="section-kicker">{labels.hk}</p>
-            <h3 className="font-display mt-4 text-2xl font-semibold tracking-tight">{company.hk.name}</h3>
-            <p className="mt-2 text-base text-muted-foreground">{company.hk.zh}</p>
-            <dl className="entity-meta">
-              <div>
-                <dt>{labels.companyNo}</dt>
-                <dd>{company.hk.number}</dd>
-              </div>
-              <div>
-                <dt>{labels.incorporated}</dt>
-                <dd>{company.hk.incorporated}</dd>
-              </div>
-            </dl>
-          </article>
+        <div>
           <article className="entity-block">
             <p className="section-kicker">{labels.gz}</p>
             <h3 className="font-display mt-4 text-2xl font-semibold tracking-tight">{company.gz.name}</h3>
-            <dl className="entity-meta">
-              <div>
-                <dt>{labels.creditCode}</dt>
-                <dd>{company.gz.creditCode}</dd>
-              </div>
-              <div>
-                <dt>{labels.legalRep}</dt>
-                <dd>{company.gz.legalRep}</dd>
-              </div>
-              <div>
-                <dt>{labels.incorporated}</dt>
-                <dd>{company.gz.incorporated}</dd>
-              </div>
-              <div>
-                <dt>{labels.address}</dt>
-                <dd>{company.gz.address}</dd>
-              </div>
-            </dl>
+            <p className="mt-2 text-base text-muted-foreground">{company.gz.en}</p>
           </article>
         </div>
       </div>
@@ -754,24 +698,13 @@ export function OfficeSection() {
     <section className="section-padding">
       <div className="section-container">
         <SectionIntro kicker={c.sections.office.kicker} title={c.sections.office.title} description={c.sections.office.description} />
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-10">
           <div className="border-l-2 border-[hsl(var(--copper))] pl-6">
             <div className="flex items-center gap-2 text-[hsl(var(--copper))]">
               <Home className="h-4 w-4" />
               <h3 className="font-display text-xl font-semibold text-foreground">{c.office.gzTitle}</h3>
             </div>
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">{company.gz.address}</p>
             <p className="mt-4 text-sm font-medium leading-6 text-foreground/80">{c.office.gzNote}</p>
-          </div>
-          <div className="border-l-2 border-[hsl(var(--steel))] pl-6">
-            <div className="flex items-center gap-2 text-[hsl(var(--steel))]">
-              <Globe2 className="h-4 w-4" />
-              <h3 className="font-display text-xl font-semibold text-foreground">{c.office.hkTitle}</h3>
-            </div>
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">
-              {company.hk.name} / {company.hk.zh}
-            </p>
-            <p className="mt-4 text-sm font-medium leading-6 text-foreground/80">{c.office.hkNote}</p>
           </div>
         </div>
       </div>
@@ -821,7 +754,7 @@ function ComplianceLink({ title, value, href }: { title: string; value: string; 
 }
 
 export function ContactSection() {
-  const { c } = useCopy()
+  const { c, lang } = useCopy()
 
   return (
     <section id="contact" className="contact-plane section-padding">
@@ -835,13 +768,20 @@ export function ContactSection() {
             </div>
           ))}
         </div>
-        <a
-          href={`mailto:${c.contact.business}`}
-          className="mt-12 inline-flex items-center gap-3 border-b border-white/30 pb-2 font-display text-2xl font-semibold tracking-tight text-white transition hover:border-[hsl(18_72%_56%)] hover:text-[hsl(18_72%_70%)] sm:text-3xl"
-        >
-          <Mail className="h-6 w-6 shrink-0 opacity-70" />
-          {c.contact.business}
-        </a>
+        <div className="mt-12 flex flex-col gap-8 sm:flex-row sm:gap-16">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">{lang === 'zh' ? '微信' : 'WeChat'}</p>
+            <p className="mt-3 border-b border-white/30 pb-2 font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              {c.contact.wechat}
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">QQ</p>
+            <p className="mt-3 border-b border-white/30 pb-2 font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              {c.contact.qq}
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )
@@ -873,14 +813,14 @@ export function VLAClawSection() {
     () =>
       lang === 'zh'
         ? [
-            { title: '具身智能研发', text: 'VLAClaw 作为机器人交互、ROS2 集成与具身智能体工作流的研究与演示项目保留。' },
+            { title: '机器人研发', text: 'VLAClaw 作为机器人交互、ROS2 集成与任务工作流的研究与演示项目保留。' },
             { title: 'OpenClaw / ROS2', text: '保留 OpenClaw、rosbridge、机器狗、传感器与技能编排相关技术材料作为档案。' },
-            { title: '研究方向', text: '为具身智能体、机器人交互与边缘侧智能提供可验证的项目底座。' },
+            { title: '研究方向', text: '为机器人交互、技能编排与边缘侧部署提供可验证的项目底座。' },
           ]
         : [
-            { title: 'Embodied AI R&D', text: 'VLAClaw remains a research and demonstration project for robot interaction, ROS2 integration, and embodied agent workflows.' },
+            { title: 'Robotics R&D', text: 'VLAClaw remains a research and demonstration project for robot interaction, ROS2 integration, and task workflows.' },
             { title: 'OpenClaw / ROS2', text: 'Keeps OpenClaw, rosbridge, robot dog, sensor, and skill orchestration material as a technical archive.' },
-            { title: 'Research direction', text: 'A project base for testing embodied agents, robot interaction, and edge-side intelligence.' },
+            { title: 'Research direction', text: 'A project base for robot interaction, skill orchestration, and edge-side deployment.' },
           ],
     [lang],
   )
@@ -890,7 +830,7 @@ export function VLAClawSection() {
       <div className="section-container">
         <SectionIntro
           kicker="VLAClaw"
-          title={lang === 'zh' ? '具身智能仍是技术项目入口。' : 'Embodied intelligence remains a project entrance.'}
+          title={lang === 'zh' ? '机器人研发仍是技术项目入口。' : 'Robotics R&D remains a project entrance.'}
           description={
             lang === 'zh'
               ? 'VLAClaw 作为 ISACAI 旗下的技术与演示项目保留；外部合作方服务单独呈现。'

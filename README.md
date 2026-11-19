@@ -1,6 +1,6 @@
 # ISACAI Website
 
-Company and product portal for **ISACAI / Hong Kong GettingRice Artificial Intelligence Limited** and the **VLAClaw** platform.
+Company and product portal for **ISACAI / 广州多智慧体人工智能科技有限公司** and the **VLAClaw** platform.
 
 VLAClaw is an **OpenClaw-powered intelligent upper-computer and skill orchestration platform for ROS2 robots**. The website explains how ISACAI connects language, vision, robot sensors, validated robot skills, rosbridge, and ROS2 execution for robot dogs, robotic arms, and embodied edge devices.
 
@@ -243,5 +243,5 @@ git push origin main
 
 ## Maintainer
 
-Hong Kong GettingRice Artificial Intelligence Limited  
+广州多智慧体人工智能科技有限公司  
 ISACAI / VLAClaw

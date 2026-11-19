@@ -19,19 +19,16 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: 'ISACAI | Company Portal',
   description:
-    'ISACAI is a company portal for AI research, embodied intelligence projects, company information, and cooperation.',
+    'ISACAI is a company portal for robotics projects, technical services, company information, and cooperation.',
   keywords: [
     'ISACAI',
-    'embodied intelligence',
-    'AI research',
+    'robotics',
     'robotics projects',
+    'technical services',
     'enterprise cooperation',
     'isacai.cn',
   ],
-  authors: [
-    { name: 'Hong Kong GettingRice Artificial Intelligence Limited' },
-    { name: 'Guangzhou Multi-Agent Artificial Intelligence Technology Co., Ltd.' },
-  ],
+  authors: [{ name: 'Guangzhou Multi-Agent Artificial Intelligence Technology Co., Ltd.' }],
   icons: {
     icon: [{ url: '/公司icon.jpeg', type: 'image/jpeg' }],
     shortcut: '/公司icon.jpeg',
