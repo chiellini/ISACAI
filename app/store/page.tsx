@@ -7,348 +7,338 @@ import { BadgeCheck, Banknote, CheckCircle2, MessageCircle, Package, QrCode, Shi
 
 const wechat = 'windzero12138'
 
-const quote = {
-  date: '2026-11-12',
-  total: 5146,
-  totalZh: '伍仟壹佰肆拾陆元整',
-}
-
-type Item = {
+type Product = {
   name: { zh: string; en: string }
   spec: { zh: string; en: string }
   unit: { zh: string; en: string }
-  qty: number
-  unitPrice: number
-  amount: number
+  price: number
+  image: string
 }
 
-const items: Item[] = [
+type Category = {
+  id: string
+  name: { zh: string; en: string }
+  desc: { zh: string; en: string }
+  items: Product[]
+}
+
+const categories: Category[] = [
   {
-    name: { zh: '定位标签电池', en: 'UWB Tag Battery' },
-    spec: { zh: 'Panasonic CR2477；3V，一次性纽扣电池；按设备电池仓确认适配', en: 'Panasonic CR2477; 3V primary coin cell; fit confirmed per device battery compartment' },
-    unit: { zh: '粒', en: 'pc' },
-    qty: 10,
-    unitPrice: 48,
-    amount: 480,
+    id: 'cleaning',
+    name: { zh: '清洁与擦拭', en: 'Cleaning & Wipes' },
+    desc: { zh: '设备与传感器表面清洁', en: 'Surface cleaning for devices and sensors' },
+    items: [
+      {
+        name: { zh: '低尘擦拭纸', en: 'Low-Dust Wipes' },
+        spec: { zh: '金佰利 34155；110 × 210mm，280张/盒', en: 'Kimberly-Clark 34155; 110 × 210mm, 280 sheets/box' },
+        unit: { zh: '盒', en: 'box' },
+        price: 34,
+        image: '/images/store/wipes-paper.jpg',
+      },
+      {
+        name: { zh: '无尘擦拭布', en: 'Cleanroom Wipes' },
+        spec: { zh: '100 × 100mm，聚酯纤维，100片/包；非无菌型', en: '100 × 100mm, polyester, 100 pcs/pack; non-sterile' },
+        unit: { zh: '包', en: 'pack' },
+        price: 82,
+        image: '/images/store/wipes-cloth.jpg',
+      },
+      {
+        name: { zh: '海绵头擦拭棒', en: 'Foam-Tipped Swabs' },
+        spec: { zh: 'PP杆，海绵头，总长约70mm，100支/包；非无菌型', en: 'PP stick, foam head, ~70mm long, 100 pcs/pack; non-sterile' },
+        unit: { zh: '包', en: 'pack' },
+        price: 149,
+        image: '/images/store/swabs.jpg',
+      },
+      {
+        name: { zh: '电子级异丙醇清洁剂', en: 'Electronic-Grade IPA Cleaner' },
+        spec: { zh: '99.9% 异丙醇，500ml/瓶', en: '99.9% isopropyl alcohol, 500ml/bottle' },
+        unit: { zh: '瓶', en: 'bottle' },
+        price: 50,
+        image: '/images/store/ipa-cleaner.jpg',
+      },
+    ],
   },
   {
-    name: { zh: '双面固定胶带', en: 'Double-Sided Mounting Tape' },
-    spec: { zh: '3M 9448A；宽10mm × 长50m/卷', en: '3M 9448A; 10mm wide × 50m per roll' },
-    unit: { zh: '卷', en: 'roll' },
-    qty: 5,
-    unitPrice: 58,
-    amount: 290,
+    id: 'protection',
+    name: { zh: '防护与防静电', en: 'Protection & ESD' },
+    desc: { zh: '操作防护与静电防护', en: 'Handling and ESD protection' },
+    items: [
+      {
+        name: { zh: '一次性丁腈手套', en: 'Disposable Nitrile Gloves' },
+        spec: { zh: '无粉、非无菌，100只/盒（50双）；M/L尺码下单确认', en: 'Powder-free, non-sterile, 100 pcs/box (50 pairs); M/L size on request' },
+        unit: { zh: '盒', en: 'box' },
+        price: 138,
+        image: '/images/store/nitrile-gloves.jpg',
+      },
+      {
+        name: { zh: '防静电屏蔽包装袋', en: 'Anti-Static Shielding Bags' },
+        spec: { zh: '外尺寸100 × 150mm，平口可热封，100只/包', en: '100 × 150mm outer, heat-sealable flat, 100 pcs/pack' },
+        unit: { zh: '包', en: 'pack' },
+        price: 209,
+        image: '/images/store/esd-bag.jpg',
+      },
+      {
+        name: { zh: '防静电腕带', en: 'Anti-Static Wrist Strap' },
+        spec: { zh: '双线接地腕带，配接地线与鳄鱼夹', en: 'Dual-conductor grounded strap with cord and clip' },
+        unit: { zh: '条', en: 'pc' },
+        price: 25,
+        image: '/images/store/esd-strap.jpg',
+      },
+    ],
   },
   {
-    name: { zh: '尼龙扎带', en: 'Nylon Cable Ties' },
-    spec: { zh: 'PA66；4.8 × 200mm，黑色，100根/包', en: 'PA66; 4.8 × 200mm, black, 100 pcs per pack' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 4,
-    unitPrice: 76,
-    amount: 304,
+    id: 'assembly',
+    name: { zh: '装配与紧固', en: 'Assembly & Fastening' },
+    desc: { zh: '安装固定、粘接与标识', en: 'Mounting, bonding, and labeling' },
+    items: [
+      {
+        name: { zh: '双面固定胶带', en: 'Double-Sided Mounting Tape' },
+        spec: { zh: '3M 9448A；宽10mm × 长50m/卷', en: '3M 9448A; 10mm wide × 50m/roll' },
+        unit: { zh: '卷', en: 'roll' },
+        price: 58,
+        image: '/images/store/tape-3m9448a.jpg',
+      },
+      {
+        name: { zh: '3M VHB 双面胶贴', en: '3M VHB Adhesive Tape' },
+        spec: { zh: '4920 型，宽19mm × 长1m', en: 'Type 4920, 19mm wide × 1m' },
+        unit: { zh: '卷', en: 'roll' },
+        price: 60,
+        image: '/images/store/vhb-tape.jpg',
+      },
+      {
+        name: { zh: '尼龙扎带', en: 'Nylon Cable Ties' },
+        spec: { zh: 'PA66；4.8 × 200mm，黑色，100根/包', en: 'PA66; 4.8 × 200mm, black, 100 pcs/pack' },
+        unit: { zh: '包', en: 'pack' },
+        price: 76,
+        image: '/images/store/cable-ties.jpg',
+      },
+      {
+        name: { zh: '背胶密封泡棉条', en: 'Self-Adhesive Foam Sealing Strip' },
+        spec: { zh: '闭孔EPDM；宽10mm × 厚2mm × 长10m/卷', en: 'Closed-cell EPDM; 10mm wide × 2mm thick × 10m/roll' },
+        unit: { zh: '卷', en: 'roll' },
+        price: 194,
+        image: '/images/store/foam-strip.jpg',
+      },
+      {
+        name: { zh: '不锈钢螺丝螺母套装', en: 'Stainless Screw & Nut Kit' },
+        spec: { zh: 'M2/M2.5/M3/M4 常用规格，含平垫弹垫，分格收纳盒', en: 'M2/M2.5/M3/M4 common sizes, with washers, grid case' },
+        unit: { zh: '套', en: 'set' },
+        price: 50,
+        image: '/images/store/screws-kit.jpg',
+      },
+      {
+        name: { zh: '尼龙六角隔离柱套装', en: 'Nylon Hex Standoff Kit' },
+        spec: { zh: 'M3 双通/单通，6/8/10/15/20mm，共100只', en: 'M3 double/single ended, 6/8/10/15/20mm, 100 pcs' },
+        unit: { zh: '套', en: 'set' },
+        price: 40,
+        image: '/images/store/standoffs.jpg',
+      },
+      {
+        name: { zh: 'PET 不干胶标识标签', en: 'PET Adhesive Labels' },
+        spec: { zh: '50 × 30mm，白色，1000枚/卷；热转印用，不含碳带', en: '50 × 30mm, white, 1000 pcs/roll; thermal transfer, ribbon not included' },
+        unit: { zh: '卷', en: 'roll' },
+        price: 198,
+        image: '/images/store/pet-labels.jpg',
+      },
+    ],
   },
   {
-    name: { zh: 'PET 不干胶标识标签', en: 'PET Adhesive Labels' },
-    spec: { zh: '50 × 30mm，白色，1000枚/卷；热转印用，不含碳带', en: '50 × 30mm, white, 1000 pcs per roll; thermal transfer use, ribbon not included' },
-    unit: { zh: '卷', en: 'roll' },
-    qty: 2,
-    unitPrice: 198,
-    amount: 396,
+    id: 'wiring',
+    name: { zh: '电工与焊接', en: 'Wiring & Soldering' },
+    desc: { zh: '线束加工与电路维护', en: 'Wiring and circuit maintenance' },
+    items: [
+      {
+        name: { zh: '热缩绝缘管材料盒', en: 'Heat-Shrink Tubing Kit' },
+        spec: { zh: '2:1；内径2/3/4/6/8/10mm各50段，100mm/段，共300段', en: '2:1; IDs 2/3/4/6/8/10mm, 50 pcs each, 100mm long, 300 total' },
+        unit: { zh: '盒', en: 'box' },
+        price: 174,
+        image: '/images/store/heatshrink-kit.jpg',
+      },
+      {
+        name: { zh: '管型预绝缘压接端头', en: 'Pre-Insulated Crimp Ferrules' },
+        spec: { zh: '0.5/0.75/1/1.5/2.5mm²各100只，共500只/包', en: '0.5/0.75/1/1.5/2.5mm², 100 pcs each, 500 pcs/pack' },
+        unit: { zh: '包', en: 'pack' },
+        price: 197,
+        image: '/images/store/crimp-terminals.jpg',
+      },
+      {
+        name: { zh: '无铅焊锡丝', en: 'Lead-Free Solder Wire' },
+        spec: { zh: 'Sn99.3Cu0.7；线径0.8mm，净重250g/卷，含助焊剂', en: 'Sn99.3Cu0.7; 0.8mm, net 250g/roll, flux-cored' },
+        unit: { zh: '卷', en: 'roll' },
+        price: 239,
+        image: '/images/store/solder-wire.jpg',
+      },
+      {
+        name: { zh: '杜邦线连接线套装', en: 'Dupont Wire Kit' },
+        spec: { zh: '公对公/公对母/母对母各40根，10/20/30cm 混装，120根/盒', en: 'M/M, M/F, F/F 40 each, 10/20/30cm mixed, 120 pcs/box' },
+        unit: { zh: '盒', en: 'box' },
+        price: 30,
+        image: '/images/store/dupont-wires.jpg',
+      },
+      {
+        name: { zh: '松香助焊剂盒', en: 'Rosin Flux Box' },
+        spec: { zh: '固体松香，20g/盒', en: 'Solid rosin, 20g/box' },
+        unit: { zh: '盒', en: 'box' },
+        price: 20,
+        image: '/images/store/rosin.jpg',
+      },
+      {
+        name: { zh: '吸锡编织带', en: 'Desoldering Braid' },
+        spec: { zh: '宽2.0mm × 长1.5m，含助焊剂', en: '2.0mm wide × 1.5m, flux-coated' },
+        unit: { zh: '卷', en: 'roll' },
+        price: 20,
+        image: '/images/store/desolder-braid.jpg',
+      },
+      {
+        name: { zh: 'XT60 电源插头', en: 'XT60 Power Connectors' },
+        spec: { zh: '公母对插，镀金端子，10对/包', en: 'Male/female pairs, gold-plated contacts, 10 pairs/pack' },
+        unit: { zh: '包', en: 'pack' },
+        price: 44,
+        image: '/images/store/xt60.jpg',
+      },
+    ],
   },
   {
-    name: { zh: '低尘擦拭纸', en: 'Low-Dust Wipes' },
-    spec: { zh: '金佰利34155；110 × 210mm，280张/盒', en: 'Kimberly-Clark 34155; 110 × 210mm, 280 sheets per box' },
-    unit: { zh: '盒', en: 'box' },
-    qty: 8,
-    unitPrice: 34,
-    amount: 272,
+    id: 'thermal',
+    name: { zh: '电池与散热', en: 'Power & Thermal' },
+    desc: { zh: '供电电池与散热管理', en: 'Batteries and thermal management' },
+    items: [
+      {
+        name: { zh: '定位标签电池', en: 'UWB Tag Battery' },
+        spec: { zh: 'Panasonic CR2477；3V 一次性纽扣电池，按设备电池仓确认适配', en: 'Panasonic CR2477; 3V primary coin cell; fit per device compartment' },
+        unit: { zh: '粒', en: 'pc' },
+        price: 48,
+        image: '/images/store/cr2477-battery.jpg',
+      },
+      {
+        name: { zh: '导热硅胶垫片', en: 'Thermal Silicone Pad' },
+        spec: { zh: '200 × 200 × 1mm；标称导热系数5W/(m·K)，按需裁切', en: '200 × 200 × 1mm; 5 W/(m·K), cut to size' },
+        unit: { zh: '片', en: 'sheet' },
+        price: 238,
+        image: '/images/store/thermal-pad.jpg',
+      },
+      {
+        name: { zh: '散热硅脂', en: 'Thermal Grease' },
+        spec: { zh: '4g/针管装，导热系数≥4W/(m·K)', en: '4g syringe, ≥4 W/(m·K)' },
+        unit: { zh: '支', en: 'pc' },
+        price: 50,
+        image: '/images/store/thermal-grease.jpg',
+      },
+    ],
   },
   {
-    name: { zh: '无尘擦拭布', en: 'Cleanroom Wipes' },
-    spec: { zh: '100 × 100mm，聚酯纤维，100片/包；非无菌型', en: '100 × 100mm, polyester, 100 pcs per pack; non-sterile' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 4,
-    unitPrice: 82,
-    amount: 328,
-  },
-  {
-    name: { zh: '海绵头擦拭棒', en: 'Foam-Tipped Swabs' },
-    spec: { zh: 'PP杆，海绵头，总长约70mm，100支/包；非无菌型', en: 'PP stick, foam head, ~70mm overall, 100 pcs per pack; non-sterile' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 2,
-    unitPrice: 149,
-    amount: 298,
-  },
-  {
-    name: { zh: '一次性丁腈手套', en: 'Disposable Nitrile Gloves' },
-    spec: { zh: '无粉、非无菌，100只/盒（50双）；M/L尺码下单确认', en: 'Powder-free, non-sterile, 100 pcs per box (50 pairs); M/L size confirmed at order' },
-    unit: { zh: '盒', en: 'box' },
-    qty: 2,
-    unitPrice: 138,
-    amount: 276,
-  },
-  {
-    name: { zh: '导热硅胶垫片', en: 'Thermal Silicone Pad' },
-    spec: { zh: '200 × 200 × 1mm；标称导热系数5W/(m·K)，按需裁切', en: '200 × 200 × 1mm; rated 5 W/(m·K), cut to size' },
-    unit: { zh: '片', en: 'sheet' },
-    qty: 2,
-    unitPrice: 238,
-    amount: 476,
-  },
-  {
-    name: { zh: '背胶密封泡棉条', en: 'Self-Adhesive Foam Sealing Strip' },
-    spec: { zh: '闭孔EPDM；宽10mm × 厚2mm × 长10m/卷', en: 'Closed-cell EPDM; 10mm wide × 2mm thick × 10m per roll' },
-    unit: { zh: '卷', en: 'roll' },
-    qty: 2,
-    unitPrice: 194,
-    amount: 388,
-  },
-  {
-    name: { zh: '热缩绝缘管材料盒', en: 'Heat-Shrink Tubing Kit' },
-    spec: { zh: '2:1；内径2/3/4/6/8/10mm各50段，100mm/段，共300段', en: '2:1; IDs 2/3/4/6/8/10mm, 50 pcs each, 100mm long, 300 pcs total' },
-    unit: { zh: '盒', en: 'box' },
-    qty: 2,
-    unitPrice: 174,
-    amount: 348,
-  },
-  {
-    name: { zh: '管型预绝缘压接端头', en: 'Pre-Insulated Crimp Ferrules' },
-    spec: { zh: '0.5/0.75/1/1.5/2.5mm²各100只，共500只/包', en: '0.5/0.75/1/1.5/2.5mm², 100 pcs each, 500 pcs per pack' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 2,
-    unitPrice: 197,
-    amount: 394,
-  },
-  {
-    name: { zh: '无铅焊锡丝', en: 'Lead-Free Solder Wire' },
-    spec: { zh: 'Sn99.3Cu0.7；线径0.8mm，净重250g/卷，含助焊剂', en: 'Sn99.3Cu0.7; 0.8mm diameter, net 250g per roll, flux-cored' },
-    unit: { zh: '卷', en: 'roll' },
-    qty: 2,
-    unitPrice: 239,
-    amount: 478,
-  },
-  {
-    name: { zh: '防静电屏蔽包装袋', en: 'Anti-Static Shielding Bags' },
-    spec: { zh: '外尺寸100 × 150mm，平口可热封，100只/包', en: '100 × 150mm outer size, heat-sealable flat, 100 pcs per pack' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 2,
-    unitPrice: 209,
-    amount: 418,
+    id: 'drone',
+    name: { zh: '无人机配件', en: 'Drone Parts' },
+    desc: { zh: '无人机维护与升级配件', en: 'Drone maintenance and upgrade parts' },
+    items: [
+      {
+        name: { zh: '无人机螺旋桨', en: 'Drone Propellers' },
+        spec: { zh: '9450 自锁桨，2对/包，适配主流四旋翼机型', en: '9450 self-locking props, 2 pairs/pack, fits common quadcopters' },
+        unit: { zh: '包', en: 'pack' },
+        price: 60,
+        image: '/images/store/propellers.jpg',
+      },
+      {
+        name: { zh: '云台减震球', en: 'Gimbal Damping Balls' },
+        spec: { zh: '硅胶减震球，8只/包，适配主流云台减震板', en: 'Silicone damping balls, 8 pcs/pack, fits common gimbal plates' },
+        unit: { zh: '包', en: 'pack' },
+        price: 25,
+        image: '/images/store/damping-balls.jpg',
+      },
+      {
+        name: { zh: '5.8GHz 图传天线', en: '5.8GHz FPV Antenna' },
+        spec: { zh: 'RP-SMA 接口蘑菇天线，3dBi，2只/包', en: 'RP-SMA mushroom antenna, 3 dBi, 2 pcs/pack' },
+        unit: { zh: '包', en: 'pack' },
+        price: 80,
+        image: '/images/store/fpv-antenna.jpg',
+      },
+      {
+        name: { zh: '电池魔术贴扎带', en: 'Battery Velcro Straps' },
+        spec: { zh: '宽20mm × 长200mm，5根/包', en: '20mm wide × 200mm long, 5 pcs/pack' },
+        unit: { zh: '包', en: 'pack' },
+        price: 16,
+        image: '/images/store/velcro-straps.jpg',
+      },
+    ],
   },
 ]
 
-const extensionItems: Item[] = [
-  {
-    name: { zh: '杜邦线连接线套装', en: 'Dupont Wire Kit' },
-    spec: { zh: '公对公/公对母/母对母各40根，10/20/30cm 混装，120根/盒', en: 'M/M, M/F, F/F 40 pcs each, 10/20/30cm mixed, 120 pcs per box' },
-    unit: { zh: '盒', en: 'box' },
-    qty: 1,
-    unitPrice: 30,
-    amount: 30,
-  },
-  {
-    name: { zh: '松香助焊剂盒', en: 'Rosin Flux Box' },
-    spec: { zh: '固体松香，20g/盒', en: 'Solid rosin, 20g per box' },
-    unit: { zh: '盒', en: 'box' },
-    qty: 1,
-    unitPrice: 20,
-    amount: 20,
-  },
-  {
-    name: { zh: '吸锡编织带', en: 'Desoldering Braid' },
-    spec: { zh: '宽2.0mm × 长1.5m，含助焊剂', en: '2.0mm wide × 1.5m, flux-coated' },
-    unit: { zh: '卷', en: 'roll' },
-    qty: 1,
-    unitPrice: 20,
-    amount: 20,
-  },
-  {
-    name: { zh: '不锈钢螺丝螺母套装', en: 'Stainless Screw & Nut Kit' },
-    spec: { zh: 'M2/M2.5/M3/M4 常用规格，含平垫弹垫，分格收纳盒', en: 'M2/M2.5/M3/M4 common sizes, with washers, grid storage case' },
-    unit: { zh: '套', en: 'set' },
-    qty: 1,
-    unitPrice: 50,
-    amount: 50,
-  },
-  {
-    name: { zh: '尼龙六角隔离柱套装', en: 'Nylon Hex Standoff Kit' },
-    spec: { zh: 'M3 双通/单通，6/8/10/15/20mm，共100只', en: 'M3 double/single ended, 6/8/10/15/20mm, 100 pcs total' },
-    unit: { zh: '套', en: 'set' },
-    qty: 1,
-    unitPrice: 40,
-    amount: 40,
-  },
-  {
-    name: { zh: '3M VHB 双面胶贴', en: '3M VHB Adhesive Tape' },
-    spec: { zh: '4920 型，宽19mm × 长1m', en: 'Type 4920, 19mm wide × 1m' },
-    unit: { zh: '卷', en: 'roll' },
-    qty: 1,
-    unitPrice: 60,
-    amount: 60,
-  },
-  {
-    name: { zh: 'XT60 电源插头', en: 'XT60 Power Connectors' },
-    spec: { zh: '公母对插，镀金端子，10对/包', en: 'Male/female pairs, gold-plated contacts, 10 pairs per pack' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 1,
-    unitPrice: 44,
-    amount: 44,
-  },
-  {
-    name: { zh: '电子级异丙醇清洁剂', en: 'Electronic-Grade IPA Cleaner' },
-    spec: { zh: '99.9% 异丙醇，500ml/瓶', en: '99.9% isopropyl alcohol, 500ml per bottle' },
-    unit: { zh: '瓶', en: 'bottle' },
-    qty: 1,
-    unitPrice: 50,
-    amount: 50,
-  },
-  {
-    name: { zh: '防静电腕带', en: 'Anti-Static Wrist Strap' },
-    spec: { zh: '双线接地腕带，配接地线与鳄鱼夹', en: 'Dual-conductor grounded strap with cord and alligator clip' },
-    unit: { zh: '条', en: 'pc' },
-    qty: 1,
-    unitPrice: 25,
-    amount: 25,
-  },
-  {
-    name: { zh: '散热硅脂', en: 'Thermal Grease' },
-    spec: { zh: '4g/针管装，导热系数≥4W/(m·K)', en: '4g syringe, thermal conductivity ≥4 W/(m·K)' },
-    unit: { zh: '支', en: 'pc' },
-    qty: 1,
-    unitPrice: 50,
-    amount: 50,
-  },
-  {
-    name: { zh: '无人机螺旋桨', en: 'Drone Propellers' },
-    spec: { zh: '9450 自锁桨，2对/包，适配主流四旋翼机型', en: '9450 self-locking props, 2 pairs per pack, fits common quadcopters' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 1,
-    unitPrice: 60,
-    amount: 60,
-  },
-  {
-    name: { zh: '云台减震球', en: 'Gimbal Damping Balls' },
-    spec: { zh: '硅胶减震球，8只/包，适配主流云台减震板', en: 'Silicone damping balls, 8 pcs per pack, fits common gimbal plates' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 1,
-    unitPrice: 25,
-    amount: 25,
-  },
-  {
-    name: { zh: '5.8GHz 图传天线', en: '5.8GHz FPV Antenna' },
-    spec: { zh: 'RP-SMA 接口蘑菇天线，3dBi，2只/包', en: 'RP-SMA mushroom antenna, 3 dBi, 2 pcs per pack' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 1,
-    unitPrice: 80,
-    amount: 80,
-  },
-  {
-    name: { zh: '电池魔术贴扎带', en: 'Battery Velcro Straps' },
-    spec: { zh: '宽20mm × 长200mm，5根/包', en: '20mm wide × 200mm long, 5 pcs per pack' },
-    unit: { zh: '包', en: 'pack' },
-    qty: 1,
-    unitPrice: 16,
-    amount: 16,
-  },
-]
-
-const extension = {
-  total: extensionItems.reduce((sum, item) => sum + item.amount, 0),
-  totalZh: '伍佰柒拾元整',
-}
+const productCount = categories.reduce((sum, cat) => sum + cat.items.length, 0)
 
 const copy = {
   zh: {
-    kicker: '耗材销售',
-    headline: '机器人研发及维护耗材，整包直购。',
-    lede: 'UWB 定位、视觉传感器、雷达安装与线束电路维护所需的一次性耗材与装配材料，整包交付；机器人与无人机常用扩展耗材可按需加购。',
-    primaryCta: '查看报价明细',
+    kicker: '耗材商店',
+    headline: '机器人与无人机耗材，单品直购。',
+    lede: '面向机器人研发、设备维护与无人机用户的耗材商店：清洁防护、装配紧固、电工焊接、散热与无人机配件，明码标价，扫码即买。',
+    primaryCta: '浏览商品',
     secondaryCta: '扫码购买',
-    badges: [`报价日期 ${quote.date}`, '28 项耗材', '未税建议销售价'],
-    pricing: {
-      kicker: '报价单',
-      title: '14 项耗材，明码标价。',
-      description: '币种为人民币；以下为未税建议销售价，税费及运费另议；包装数量均为实际交付数量。',
-      columns: { no: '序号', name: '耗材名称', spec: '规格及交付包装', unit: '单位', qty: '数量', unitPrice: '单价（元）', amount: '金额（元）' },
-      totalLabel: '未税合计',
-      totalNote: quote.totalZh,
-    },
-    extension: {
-      kicker: '扩展耗材',
-      title: '机器人与无人机常用耗材。',
-      description: '面向机器人调试与无人机维护的常备耗材，可与整包报价单合并下单；以下为未税建议销售价，税费及运费另议。',
-      totalLabel: '未税小计',
-      totalNote: extension.totalZh,
+    badges: [`${productCount} 项现货耗材`, '单品下单 · 明码标价', '扫码支付 · 微信确认'],
+    catalog: {
+      kicker: '商品目录',
+      title: '按分类选购。',
+      description: '以下为未税建议销售价，税费及运费另议；每件商品按展示规格与包装交付。',
+      itemCount: '项',
     },
     payment: {
       kicker: '购买方式',
       title: '三步完成购买。',
       steps: [
-        { title: '确认清单', text: '电池适配、标签打印机规格、手套尺码及导热垫厚度需在下单前确认。' },
-        { title: '扫码付款', text: '使用支付宝扫一扫支付，付款时请备注单位或用途。' },
-        { title: '微信确认', text: `付款后添加微信 ${wechat}，确认收货信息、交期与开票需求。` },
+        { title: '选好商品', text: '从目录中选定商品名称与数量；多件可合并下单。' },
+        { title: '扫码付款', text: '使用支付宝扫一扫支付，付款时请备注商品名称与数量。' },
+        { title: '微信确认', text: `付款后添加微信 ${wechat}，确认收货信息、交期与发票需求。` },
       ],
       qrTitle: '支付宝收款码',
       qrNote: '打开支付宝「扫一扫」扫码支付',
       wechatLabel: '微信',
       wechatNote: '下单确认、交期与发票，请微信联系',
-      extra: '支持对公转账；税费、运费与发票事项在下单前沟通确认。',
+      extra: '支持对公转账；批量采购、税费、运费与发票事项在下单前沟通确认。',
     },
     notes: {
-      kicker: '交付说明',
-      title: '交付范围与约定。',
+      kicker: '购买须知',
+      title: '交付与售后约定。',
       items: [
-        '本单交付为电池、胶材、擦拭材料、一次性防护用品及装配耗用材料，不含开发板、定位模组、工具、标定板、支架或软件服务。',
-        '电池适配、标签打印机规格、手套尺码及导热垫厚度应在下单前确认；未指定品牌的项目按本表规格确认样品，不作额外等级承诺。',
-        '清洁材料仅用于设备厂家允许的表面；胶带和密封条不得遮挡光学或射频窗口。本单不含拆机维修、现场施工或计量校准。',
-        '本表为建议报价；最终品牌、交期、付款方式及验收要求由双方确认。各行商品与包装按实际交付列明，不以更换名称替代实物。',
+        '所列价格为未税建议销售价，税费及运费另议；批量采购或指定品牌可微信沟通议价。',
+        '电池适配、标签打印机规格、手套尺码及导热垫厚度请下单前确认，避免错发。',
+        '清洁材料仅用于设备厂家允许的表面；胶带和密封条不得遮挡光学或射频窗口。',
+        '商品按展示的规格与包装实际交付；如遇缺货可协商等价替代或全额退款。',
       ],
     },
   },
   en: {
     kicker: 'Consumables Store',
-    headline: 'Robotics R&D consumables, one package.',
-    lede: 'One-time consumables and assembly materials for UWB positioning, vision sensors, radar mounting, and wiring maintenance — delivered as a single quote package, with common robot and drone consumables available as add-ons.',
-    primaryCta: 'View Price List',
+    headline: 'Robot & drone consumables, order any item.',
+    lede: 'A consumables store for robotics R&D, device maintenance, and drone users: cleaning, protection, assembly, wiring, thermal, and drone parts — clearly priced, scan to buy.',
+    primaryCta: 'Browse Products',
     secondaryCta: 'Buy Now',
-    badges: [`Quote date ${quote.date}`, '28 items', 'Ex-tax list price'],
-    pricing: {
-      kicker: 'Quote',
-      title: '14 items, clear pricing.',
-      description: 'Prices in CNY, excluding tax; tax and shipping to be discussed. Package counts are actual delivery quantities.',
-      columns: { no: 'No.', name: 'Item', spec: 'Spec & Packaging', unit: 'Unit', qty: 'Qty', unitPrice: 'Unit Price (¥)', amount: 'Amount (¥)' },
-      totalLabel: 'Total (ex-tax)',
-      totalNote: `RMB ${quote.total.toLocaleString('en-US')} only`,
-    },
-    extension: {
-      kicker: 'Extended Consumables',
-      title: 'Common robot & drone consumables.',
-      description: 'Stock items for robot debugging and drone maintenance; combine with the quote package when ordering. Ex-tax list prices; tax and shipping separate.',
-      totalLabel: 'Subtotal (ex-tax)',
-      totalNote: `RMB ${extension.total.toLocaleString('en-US')} only`,
+    badges: [`${productCount} items in stock`, 'Per-item ordering · Clear pricing', 'Scan to pay · WeChat confirm'],
+    catalog: {
+      kicker: 'Catalog',
+      title: 'Shop by category.',
+      description: 'Ex-tax list prices; tax and shipping separate. Every item ships as the listed spec and packaging.',
+      itemCount: 'items',
     },
     payment: {
       kicker: 'How to Buy',
       title: 'Three steps to order.',
       steps: [
-        { title: 'Confirm the list', text: 'Battery fit, label printer spec, glove size, and thermal pad thickness must be confirmed before ordering.' },
-        { title: 'Scan & pay', text: 'Scan the Alipay QR code to pay; note your organization or purpose in the payment remark.' },
+        { title: 'Pick items', text: 'Choose item names and quantities from the catalog; combine multiple items in one order.' },
+        { title: 'Scan & pay', text: 'Scan the Alipay QR code to pay; note the item names and quantities in the remark.' },
         { title: 'Confirm on WeChat', text: `After payment, add WeChat ${wechat} to confirm delivery details, lead time, and invoicing.` },
       ],
       qrTitle: 'Alipay QR Code',
       qrNote: 'Open "Scan" inside Alipay to pay',
       wechatLabel: 'WeChat',
       wechatNote: 'Order confirmation, lead time, and invoicing via WeChat',
-      extra: 'Bank transfer supported; tax, shipping, and invoicing are confirmed before ordering.',
+      extra: 'Bank transfer supported; bulk orders, tax, shipping, and invoicing are confirmed before ordering.',
     },
     notes: {
-      kicker: 'Delivery Notes',
-      title: 'Scope and terms.',
+      kicker: 'Purchase Notes',
+      title: 'Delivery and terms.',
       items: [
-        'This package covers batteries, adhesive materials, wipes, disposable protection, and assembly consumables. It does not include dev boards, positioning modules, tools, calibration boards, brackets, or software services.',
-        'Battery fit, label printer spec, glove size, and thermal pad thickness must be confirmed before ordering. Items without a specified brand follow the listed spec samples, with no extra-grade commitment.',
-        'Cleaning materials apply only to surfaces allowed by device manufacturers; tape and sealing strips must not cover optical or RF windows. No disassembly repair, on-site work, or metrology calibration is included.',
-        'This is a suggested quote; final brand, lead time, payment method, and acceptance are confirmed by both parties. Items and packaging are listed as actually delivered.',
+        'Prices are ex-tax list prices; tax and shipping are separate. Bulk orders or brand preferences can be discussed on WeChat.',
+        'Confirm battery fit, label printer spec, glove size, and thermal pad thickness before ordering to avoid mismatches.',
+        'Cleaning materials apply only to surfaces allowed by device manufacturers; tape and sealing strips must not cover optical or RF windows.',
+        'Items ship as the listed spec and packaging; if an item is out of stock, an equivalent substitute or full refund can be arranged.',
       ],
     },
   },
@@ -362,11 +352,11 @@ function StoreHero() {
   return (
     <section className="hero-plane pt-16">
       <div className="hero-orbit" aria-hidden="true" />
-      <div className="section-container hero-content flex min-h-[70svh] flex-col justify-center py-20 lg:py-28">
+      <div className="section-container hero-content flex min-h-[58svh] flex-col justify-center py-20 lg:py-24">
         <p className="section-kicker !text-[hsl(18_72%_62%)]">{c.kicker}</p>
         <h1 className="hero-headline mt-6 !text-[clamp(1.9rem,4.6vw,3.4rem)]">{c.headline}</h1>
         <p className="hero-lede mt-5">{c.lede}</p>
-        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/50">
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
           {c.badges.map((badge) => (
             <span key={badge} className="inline-flex items-center gap-2">
               <BadgeCheck className="h-3.5 w-3.5 text-[hsl(18_72%_62%)]" />
@@ -376,7 +366,7 @@ function StoreHero() {
         </div>
         <div className="hero-actions mt-10 flex flex-wrap gap-3">
           <a
-            href="#pricing"
+            href="#catalog"
             className="btn-primary !bg-white !text-[hsl(var(--ink))] hover:!bg-[hsl(18_72%_56%)] hover:!text-white"
           >
             {c.primaryCta}
@@ -392,117 +382,62 @@ function StoreHero() {
   )
 }
 
-type QuoteColumns = {
-  no: string
-  name: string
-  spec: string
-  unit: string
-  qty: string
-  unitPrice: string
-  amount: string
+function ProductCard({ product, lang }: { product: Product; lang: 'zh' | 'en' }) {
+  return (
+    <div className="group flex flex-col border border-foreground/10 bg-[hsl(var(--paper))] transition hover:border-[hsl(18_72%_46%)]">
+      <div className="relative aspect-[4/3] overflow-hidden border-b border-foreground/10 bg-white">
+        <Image
+          src={product.image}
+          alt={product.name[lang]}
+          fill
+          sizes="(min-width: 1024px) 280px, (min-width: 768px) 310px, 45vw"
+          className="object-contain p-4 transition duration-300 group-hover:scale-[1.04]"
+        />
+      </div>
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="font-display text-sm font-semibold leading-6 text-foreground">{product.name[lang]}</h3>
+        <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-muted-foreground">{product.spec[lang]}</p>
+        <p className="font-display mt-auto pt-3 text-lg font-bold tabular-nums text-[hsl(var(--copper))]">
+          ¥{product.price}
+          <span className="ml-1 text-xs font-medium normal-case tracking-normal text-muted-foreground">/ {product.unit[lang]}</span>
+        </p>
+      </div>
+    </div>
+  )
 }
 
-function QuoteSection({
-  id,
-  kicker,
-  title,
-  description,
-  columns,
-  items,
-  totalLabel,
-  totalNote,
-  total,
-  paper,
-}: {
-  id: string
-  kicker: string
-  title: string
-  description: string
-  columns: QuoteColumns
-  items: Item[]
-  totalLabel: string
-  totalNote: string
-  total: number
-  paper?: boolean
-}) {
+function CatalogSection() {
   const { language } = useLanguage()
   const lang = language === 'zh' ? 'zh' : 'en'
+  const { catalog } = copy[lang]
 
   return (
-    <section id={id} className={`section-padding scroll-mt-16${paper ? ' border-t border-foreground/5 bg-[hsl(var(--paper))]' : ''}`}>
+    <section id="catalog" className="section-padding scroll-mt-16">
       <div className="section-container">
-        <div className="mb-12 max-w-3xl">
-          <p className="section-kicker">{kicker}</p>
-          <h2 className="section-title">{title}</h2>
-          <p className="section-lede">{description}</p>
+        <div className="mb-14 max-w-3xl">
+          <p className="section-kicker">{catalog.kicker}</p>
+          <h2 className="section-title">{catalog.title}</h2>
+          <p className="section-lede">{catalog.description}</p>
         </div>
 
-        <div className="hidden overflow-hidden border border-foreground/10 bg-[hsl(var(--paper))] md:block">
-          <table className="w-full border-collapse text-left text-sm">
-            <thead>
-              <tr className="border-b border-foreground/10 bg-[hsl(var(--ink))] text-white">
-                <th className="px-4 py-4 text-xs font-semibold uppercase tracking-[0.14em]">{columns.no}</th>
-                <th className="px-4 py-4 text-xs font-semibold uppercase tracking-[0.14em]">{columns.name}</th>
-                <th className="px-4 py-4 text-xs font-semibold uppercase tracking-[0.14em]">{columns.spec}</th>
-                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{columns.unit}</th>
-                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{columns.qty}</th>
-                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{columns.unitPrice}</th>
-                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{columns.amount}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {items.map((item, index) => (
-                <tr key={item.name.en} className="border-b border-foreground/10 transition last:border-b-0 hover:bg-[hsl(18_72%_46%/_0.04)]">
-                  <td className="font-display px-4 py-4 text-sm font-semibold text-[hsl(var(--copper))]">
-                    {String(index + 1).padStart(2, '0')}
-                  </td>
-                  <td className="font-display px-4 py-4 font-semibold text-foreground">{item.name[lang]}</td>
-                  <td className="max-w-md px-4 py-4 leading-6 text-muted-foreground">{item.spec[lang]}</td>
-                  <td className="whitespace-nowrap px-4 py-4 text-right text-muted-foreground">{item.unit[lang]}</td>
-                  <td className="px-4 py-4 text-right tabular-nums text-foreground/80">{item.qty}</td>
-                  <td className="px-4 py-4 text-right tabular-nums text-foreground/80">¥{item.unitPrice}</td>
-                  <td className="px-4 py-4 text-right font-semibold tabular-nums text-foreground">¥{item.amount.toLocaleString('en-US')}</td>
-                </tr>
-              ))}
-            </tbody>
-            <tfoot>
-              <tr className="border-t-2 border-foreground/15 bg-[hsl(var(--paper))]">
-                <td colSpan={6} className="px-4 py-5">
-                  <span className="font-display text-base font-semibold text-foreground">{totalLabel}</span>
-                  <span className="ml-3 text-xs uppercase tracking-[0.14em] text-muted-foreground">{totalNote}</span>
-                </td>
-                <td className="font-display px-4 py-5 text-right text-2xl font-bold tabular-nums text-[hsl(var(--copper))]">
-                  ¥{total.toLocaleString('en-US')}
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
-
-        <div className="grid gap-4 md:hidden">
-          {items.map((item, index) => (
-            <div key={item.name.en} className="border border-foreground/10 bg-[hsl(var(--paper))] p-5">
-              <div className="flex items-baseline justify-between gap-3">
-                <h3 className="font-display font-semibold text-foreground">
-                  <span className="mr-2 text-sm text-[hsl(var(--copper))]">{String(index + 1).padStart(2, '0')}</span>
-                  {item.name[lang]}
-                </h3>
-                <p className="font-display shrink-0 text-lg font-bold tabular-nums text-[hsl(var(--copper))]">¥{item.amount.toLocaleString('en-US')}</p>
+        {categories.map((cat, index) => (
+          <div key={cat.id} className={index > 0 ? 'mt-16 border-t border-foreground/10 pt-12' : ''}>
+            <div className="mb-8 flex flex-wrap items-baseline justify-between gap-3">
+              <div>
+                <h3 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">{cat.name[lang]}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{cat.desc[lang]}</p>
               </div>
-              <p className="mt-3 text-xs leading-6 text-muted-foreground">{item.spec[lang]}</p>
-              <p className="mt-3 text-xs font-medium tabular-nums text-foreground/70">
-                {item.qty} {item.unit[lang]} × ¥{item.unitPrice}
-              </p>
+              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                {cat.items.length} {catalog.itemCount}
+              </span>
             </div>
-          ))}
-          <div className="flex items-baseline justify-between border-y-2 border-foreground/15 bg-[hsl(var(--paper))] px-5 py-5">
-            <div>
-              <p className="font-display text-base font-semibold text-foreground">{totalLabel}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">{totalNote}</p>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-5">
+              {cat.items.map((product) => (
+                <ProductCard key={product.image} product={product} lang={lang} />
+              ))}
             </div>
-            <p className="font-display text-2xl font-bold tabular-nums text-[hsl(var(--copper))]">¥{total.toLocaleString('en-US')}</p>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   )
@@ -588,53 +523,21 @@ function NotesSection() {
             </li>
           ))}
         </ol>
-        <div className="mt-12 flex flex-wrap gap-3">
-          <p className="inline-flex items-center gap-2 border border-foreground/10 px-4 py-3 text-xs font-medium text-muted-foreground">
-            <Package className="h-3.5 w-3.5 text-[hsl(var(--copper))]" />
-            {lang === 'zh' ? '报价单套装 · 14 项 · 未税合计' : 'Quote package · 14 items · Total ex-tax'} ¥{quote.total.toLocaleString('en-US')}
-          </p>
-          <p className="inline-flex items-center gap-2 border border-foreground/10 px-4 py-3 text-xs font-medium text-muted-foreground">
-            <Package className="h-3.5 w-3.5 text-[hsl(var(--copper))]" />
-            {lang === 'zh' ? '扩展耗材 · 14 项 · 未税小计' : 'Extended consumables · 14 items · Subtotal ex-tax'} ¥{extension.total.toLocaleString('en-US')}
-          </p>
-        </div>
+        <p className="mt-12 inline-flex items-center gap-2 border border-foreground/10 px-4 py-3 text-xs font-medium text-muted-foreground">
+          <Package className="h-3.5 w-3.5 text-[hsl(var(--copper))]" />
+          {lang === 'zh' ? '商品目录' : 'Catalog'} · {productCount} {lang === 'zh' ? '项耗材单品在售' : 'items available'}
+        </p>
       </div>
     </section>
   )
 }
 
 function StorePageContent() {
-  const { language } = useLanguage()
-  const lang = language === 'zh' ? 'zh' : 'en'
-  const c = copy[lang]
-
   return (
     <main>
       <Navigation />
       <StoreHero />
-      <QuoteSection
-        id="pricing"
-        kicker={c.pricing.kicker}
-        title={c.pricing.title}
-        description={c.pricing.description}
-        columns={c.pricing.columns}
-        items={items}
-        totalLabel={c.pricing.totalLabel}
-        totalNote={c.pricing.totalNote}
-        total={quote.total}
-      />
-      <QuoteSection
-        id="extension"
-        kicker={c.extension.kicker}
-        title={c.extension.title}
-        description={c.extension.description}
-        columns={c.pricing.columns}
-        items={extensionItems}
-        totalLabel={c.extension.totalLabel}
-        totalNote={c.extension.totalNote}
-        total={extension.total}
-        paper
-      />
+      <CatalogSection />
       <PaymentSection />
       <NotesSection />
       <Footer />
