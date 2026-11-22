@@ -19,7 +19,6 @@ import { useMemo, useState } from 'react'
 const urls = {
   portal: 'https://isacai.cn',
   partner: 'https://isacai.space',
-  githubIsacai: 'https://github.com/chiellini/ISACAI',
   miit: 'https://beian.miit.gov.cn',
 }
 
@@ -61,7 +60,7 @@ const copy = {
       portal: {
         kicker: '入口',
         title: '从这里进入公司、项目与合作。',
-        description: '首页作为导航中枢，串联门户、开源仓库、合作方服务与 VLAClaw 研发项目。',
+        description: '首页作为导航中枢，串联门户、合作方服务与 VLAClaw 研发项目。',
       },
       product: {
         kicker: '本站产品',
@@ -109,7 +108,7 @@ const copy = {
       faq: {
         kicker: 'FAQ',
         title: '常见问题。',
-        description: '把本站与外部合作方的边界说清楚。',
+        description: '关于购买、发票与配送的常见问题。',
       },
     },
     portalCards: [
@@ -118,12 +117,6 @@ const copy = {
         description: '外部合作方独立运营的服务平台。账号、计费、接口和技术支持请以合作方页面为准。',
         href: urls.partner,
         label: 'isacai.space',
-      },
-      {
-        title: 'ISACAI 开源仓库',
-        description: '本站公司资料、技术项目与研发方向的公开代码入口。',
-        href: urls.githubIsacai,
-        label: 'GitHub',
       },
       {
         title: 'ISACAI 公司门户',
@@ -187,16 +180,20 @@ const copy = {
     },
     faq: [
       {
-        q: 'isacai.cn 和 isacai.space 怎么分工？',
-        a: 'isacai.cn 是 ISACAI 的公司门户。isacai.space 是外部合作方网站，与本站没有隶属关系；相关服务请以合作方页面为准。',
+        q: '如何下单购买耗材？',
+        a: '在耗材商店选择所需商品，支付宝扫码付款并备注商品名称与数量，再通过微信 windzero12138 确认收货信息即可。',
       },
       {
-        q: 'VLAClaw 还保留吗？',
-        a: '保留，但不再作为官网唯一主角。它会作为 ISACAI 在机器人方向的研发项目入口出现。',
+        q: '支持发票与对公转账吗？',
+        a: '支持。所列价格为未税建议销售价，税费另议；对公转账与增值税发票请在下单前通过微信或 QQ 联系确认。',
       },
       {
-        q: 'ICP备案信息是否已更新？',
-        a: '备案信息已补充：备案主体和主办单位为“广州多智慧体人工智能科技有限公司”，ICP 备案号为粤ICP备2026050877号。',
+        q: '可以批量采购或指定品牌规格吗？',
+        a: '可以。批量采购、指定品牌或定制规格请通过微信沟通，我们按需求单独报价。',
+      },
+      {
+        q: '发货与售后如何安排？',
+        a: '下单确认后按约定交期发货；如遇缺货可协商等价替代或全额退款，售后问题请微信联系。',
       },
     ],
     footer: {
@@ -235,7 +232,7 @@ const copy = {
       portal: {
         kicker: 'Entrances',
         title: 'Enter the company, projects, and partnerships.',
-        description: 'A navigation hub linking the portal, open-source work, partner services, and VLAClaw research.',
+        description: 'A navigation hub linking the portal, partner services, and the VLAClaw research project.',
       },
       product: {
         kicker: 'Our Product',
@@ -283,7 +280,7 @@ const copy = {
       faq: {
         kicker: 'FAQ',
         title: 'Common questions.',
-        description: 'Clear boundaries between this portal and partner services.',
+        description: 'Common questions about ordering, invoicing, and delivery.',
       },
     },
     portalCards: [
@@ -292,12 +289,6 @@ const copy = {
         description: 'An externally operated partner service. Accounts, billing, and support are handled by the partner.',
         href: urls.partner,
         label: 'isacai.space',
-      },
-      {
-        title: 'ISACAI Repository',
-        description: 'Public code and project materials for this portal and ISACAI technology work.',
-        href: urls.githubIsacai,
-        label: 'GitHub',
       },
       {
         title: 'ISACAI Company Portal',
@@ -361,16 +352,20 @@ const copy = {
     },
     faq: [
       {
-        q: 'How do isacai.cn and isacai.space differ?',
-        a: 'isacai.cn is the ISACAI company portal. isacai.space is an independent partner website with no affiliation to this portal.',
+        q: 'How do I order consumables?',
+        a: 'Pick the items you need in the consumables store, pay via the Alipay QR code with the item names and quantities noted, then confirm delivery details on WeChat (windzero12138).',
       },
       {
-        q: 'Is VLAClaw still part of the site?',
-        a: 'Yes. It remains a robotics R&D project, but is no longer the only homepage focus.',
+        q: 'Are invoices and bank transfer supported?',
+        a: 'Yes. Listed prices are ex-tax and tax is quoted separately; bank transfer and VAT invoices can be confirmed via WeChat or QQ before ordering.',
       },
       {
-        q: 'Has filing information been updated?',
-        a: 'Yes. The filing subject and hosting unit are 广州多智慧体人工智能科技有限公司 (Guangzhou Multi-Agent Artificial Intelligence Technology Co., Ltd.), ICP 粤ICP备2026050877号.',
+        q: 'Can I order in bulk or specify brands?',
+        a: 'Yes. For bulk orders, specific brands, or custom specs, contact us on WeChat for a separate quote.',
+      },
+      {
+        q: 'How are shipping and after-sales handled?',
+        a: 'Orders ship per the agreed lead time; out-of-stock items can be substituted or fully refunded. Contact us on WeChat for after-sales.',
       },
     ],
     footer: {
@@ -868,7 +863,7 @@ export function Footer() {
                 {[
                   { label: 'isacai.cn', href: urls.portal },
                   { label: 'Partner', href: urls.partner },
-                  { label: 'GitHub', href: urls.githubIsacai },
+                  { label: '耗材商店', href: '/store' },
                 ].map((item) => (
                   <a key={item.href} href={item.href} target="_blank" rel="noreferrer" className="font-medium text-foreground/70 underline-offset-4 transition hover:text-[hsl(var(--copper))] hover:underline">
                     {item.label}
