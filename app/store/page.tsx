@@ -289,6 +289,8 @@ const copy = {
       ],
       qrTitle: '支付宝收款码',
       qrNote: '打开支付宝「扫一扫」扫码支付',
+      wechatQrTitle: '微信二维码',
+      wechatQrNote: '微信「扫一扫」加好友，下单确认',
       wechatLabel: '微信',
       wechatNote: '下单确认、交期与发票，请微信联系',
       extra: '支持对公转账；批量采购、税费、运费与发票事项在下单前沟通确认。',
@@ -327,6 +329,8 @@ const copy = {
       ],
       qrTitle: 'Alipay QR Code',
       qrNote: 'Open "Scan" inside Alipay to pay',
+      wechatQrTitle: 'WeChat QR Code',
+      wechatQrNote: 'Scan with WeChat to add contact and confirm orders',
       wechatLabel: 'WeChat',
       wechatNote: 'Order confirmation, lead time, and invoicing via WeChat',
       extra: 'Bank transfer supported; bulk orders, tax, shipping, and invoicing are confirmed before ordering.',
@@ -473,19 +477,34 @@ function PaymentSection() {
             </li>
           </ol>
 
-          <div className="order-1 flex flex-col items-start gap-8 sm:flex-row sm:items-start lg:order-2 lg:flex-col">
-            <div className="w-64 max-w-full bg-white p-4 shadow-2xl">
-              <Image
-                src="/images/alipay-qr.jpg"
-                alt={payment.qrTitle}
-                width={640}
-                height={960}
-                sizes="(min-width: 1024px) 256px, 60vw"
-                className="h-auto w-full"
-                priority
-              />
-              <p className="font-display mt-3 text-center text-sm font-semibold text-[hsl(205_28%_34%)]">{payment.qrTitle}</p>
-              <p className="mt-1 text-center text-xs text-slate-500">{payment.qrNote}</p>
+          <div className="order-1 flex flex-col items-start gap-8 lg:order-2">
+            <div className="grid w-full grid-cols-2 gap-4 lg:max-w-sm">
+              <div className="bg-white p-3 shadow-xl">
+                <Image
+                  src="/images/alipay-qr.jpg"
+                  alt={payment.qrTitle}
+                  width={512}
+                  height={768}
+                  sizes="(min-width: 1024px) 208px, 45vw"
+                  className="h-auto w-full"
+                  priority
+                />
+                <p className="font-display mt-2 text-center text-xs font-semibold text-[hsl(205_28%_34%)]">{payment.qrTitle}</p>
+                <p className="mt-1 text-center text-[11px] leading-4 text-slate-500">{payment.qrNote}</p>
+              </div>
+              <div className="bg-white p-3 shadow-xl">
+                <Image
+                  src="/images/wechat-qr.jpg"
+                  alt={payment.wechatQrTitle}
+                  width={512}
+                  height={652}
+                  sizes="(min-width: 1024px) 208px, 45vw"
+                  className="h-auto w-full"
+                  priority
+                />
+                <p className="font-display mt-2 text-center text-xs font-semibold text-[hsl(150_45%_32%)]">{payment.wechatQrTitle}</p>
+                <p className="mt-1 text-center text-[11px] leading-4 text-slate-500">{payment.wechatQrNote}</p>
+              </div>
             </div>
 
             <div className="border-t-2 border-[hsl(18_72%_56%)] pt-4">
