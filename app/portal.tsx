@@ -186,7 +186,7 @@ const copy = {
       },
       {
         q: '支持发票与对公转账吗？',
-        a: '支持。所列价格为未税建议销售价，税费另议；对公转账与增值税发票请在下单前通过微信或 QQ 联系确认。',
+        a: '支持。所列价格均为含税价格，运费另议；对公转账与发票请在下单前通过微信或 QQ 联系确认。',
       },
       {
         q: '可以批量采购或指定品牌规格吗？',
@@ -359,7 +359,7 @@ const copy = {
       },
       {
         q: 'Are invoices and bank transfer supported?',
-        a: 'Yes. Listed prices are ex-tax and tax is quoted separately; bank transfer and VAT invoices can be confirmed via WeChat or QQ before ordering.',
+        a: 'Yes. Listed prices are tax-inclusive and shipping is quoted separately; bank transfer and invoices can be confirmed via WeChat or QQ before ordering.',
       },
       {
         q: 'Can I order in bulk or specify brands?',

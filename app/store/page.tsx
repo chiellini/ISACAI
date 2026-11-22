@@ -276,7 +276,7 @@ const copy = {
     catalog: {
       kicker: '商品目录',
       title: '按分类选购。',
-      description: '以下为未税建议销售价，税费及运费另议；每件商品按展示规格与包装交付。',
+      description: '所列价格均为含税价格，运费另议；每件商品按展示规格与包装交付。',
       itemCount: '项',
     },
     payment: {
@@ -293,13 +293,13 @@ const copy = {
       wechatQrNote: '微信「扫一扫」加好友，下单确认',
       wechatLabel: '微信',
       wechatNote: '下单确认、交期与发票，请微信联系',
-      extra: '支持对公转账；批量采购、税费、运费与发票事项在下单前沟通确认。',
+      extra: '支持对公转账；批量采购、运费与发票事项在下单前沟通确认。',
     },
     notes: {
       kicker: '购买须知',
       title: '交付与售后约定。',
       items: [
-        '所列价格为未税建议销售价，税费及运费另议；批量采购或指定品牌可微信沟通议价。',
+        '所列价格均为含税价格，运费另议；批量采购或指定品牌可微信沟通议价。',
         '电池适配、标签打印机规格、手套尺码及导热垫厚度请下单前确认，避免错发。',
         '清洁材料仅用于设备厂家允许的表面；胶带和密封条不得遮挡光学或射频窗口。',
         '商品按展示的规格与包装实际交付；如遇缺货可协商等价替代或全额退款。',
@@ -316,7 +316,7 @@ const copy = {
     catalog: {
       kicker: 'Catalog',
       title: 'Shop by category.',
-      description: 'Ex-tax list prices; tax and shipping separate. Every item ships as the listed spec and packaging.',
+      description: 'All prices are tax-inclusive; shipping is quoted separately. Every item ships as the listed spec and packaging.',
       itemCount: 'items',
     },
     payment: {
@@ -339,7 +339,7 @@ const copy = {
       kicker: 'Purchase Notes',
       title: 'Delivery and terms.',
       items: [
-        'Prices are ex-tax list prices; tax and shipping are separate. Bulk orders or brand preferences can be discussed on WeChat.',
+        'All prices are tax-inclusive; shipping is quoted separately. Bulk orders or brand preferences can be discussed on WeChat.',
         'Confirm battery fit, label printer spec, glove size, and thermal pad thickness before ordering to avoid mismatches.',
         'Cleaning materials apply only to surfaces allowed by device manufacturers; tape and sealing strips must not cover optical or RF windows.',
         'Items ship as the listed spec and packaging; if an item is out of stock, an equivalent substitute or full refund can be arranged.',
