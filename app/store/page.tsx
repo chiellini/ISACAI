@@ -137,14 +137,134 @@ const items: Item[] = [
   },
 ]
 
+const extensionItems: Item[] = [
+  {
+    name: { zh: '杜邦线连接线套装', en: 'Dupont Wire Kit' },
+    spec: { zh: '公对公/公对母/母对母各40根，10/20/30cm 混装，120根/盒', en: 'M/M, M/F, F/F 40 pcs each, 10/20/30cm mixed, 120 pcs per box' },
+    unit: { zh: '盒', en: 'box' },
+    qty: 1,
+    unitPrice: 30,
+    amount: 30,
+  },
+  {
+    name: { zh: '松香助焊剂盒', en: 'Rosin Flux Box' },
+    spec: { zh: '固体松香，20g/盒', en: 'Solid rosin, 20g per box' },
+    unit: { zh: '盒', en: 'box' },
+    qty: 1,
+    unitPrice: 20,
+    amount: 20,
+  },
+  {
+    name: { zh: '吸锡编织带', en: 'Desoldering Braid' },
+    spec: { zh: '宽2.0mm × 长1.5m，含助焊剂', en: '2.0mm wide × 1.5m, flux-coated' },
+    unit: { zh: '卷', en: 'roll' },
+    qty: 1,
+    unitPrice: 20,
+    amount: 20,
+  },
+  {
+    name: { zh: '不锈钢螺丝螺母套装', en: 'Stainless Screw & Nut Kit' },
+    spec: { zh: 'M2/M2.5/M3/M4 常用规格，含平垫弹垫，分格收纳盒', en: 'M2/M2.5/M3/M4 common sizes, with washers, grid storage case' },
+    unit: { zh: '套', en: 'set' },
+    qty: 1,
+    unitPrice: 50,
+    amount: 50,
+  },
+  {
+    name: { zh: '尼龙六角隔离柱套装', en: 'Nylon Hex Standoff Kit' },
+    spec: { zh: 'M3 双通/单通，6/8/10/15/20mm，共100只', en: 'M3 double/single ended, 6/8/10/15/20mm, 100 pcs total' },
+    unit: { zh: '套', en: 'set' },
+    qty: 1,
+    unitPrice: 40,
+    amount: 40,
+  },
+  {
+    name: { zh: '3M VHB 双面胶贴', en: '3M VHB Adhesive Tape' },
+    spec: { zh: '4920 型，宽19mm × 长1m', en: 'Type 4920, 19mm wide × 1m' },
+    unit: { zh: '卷', en: 'roll' },
+    qty: 1,
+    unitPrice: 60,
+    amount: 60,
+  },
+  {
+    name: { zh: 'XT60 电源插头', en: 'XT60 Power Connectors' },
+    spec: { zh: '公母对插，镀金端子，10对/包', en: 'Male/female pairs, gold-plated contacts, 10 pairs per pack' },
+    unit: { zh: '包', en: 'pack' },
+    qty: 1,
+    unitPrice: 44,
+    amount: 44,
+  },
+  {
+    name: { zh: '电子级异丙醇清洁剂', en: 'Electronic-Grade IPA Cleaner' },
+    spec: { zh: '99.9% 异丙醇，500ml/瓶', en: '99.9% isopropyl alcohol, 500ml per bottle' },
+    unit: { zh: '瓶', en: 'bottle' },
+    qty: 1,
+    unitPrice: 50,
+    amount: 50,
+  },
+  {
+    name: { zh: '防静电腕带', en: 'Anti-Static Wrist Strap' },
+    spec: { zh: '双线接地腕带，配接地线与鳄鱼夹', en: 'Dual-conductor grounded strap with cord and alligator clip' },
+    unit: { zh: '条', en: 'pc' },
+    qty: 1,
+    unitPrice: 25,
+    amount: 25,
+  },
+  {
+    name: { zh: '散热硅脂', en: 'Thermal Grease' },
+    spec: { zh: '4g/针管装，导热系数≥4W/(m·K)', en: '4g syringe, thermal conductivity ≥4 W/(m·K)' },
+    unit: { zh: '支', en: 'pc' },
+    qty: 1,
+    unitPrice: 50,
+    amount: 50,
+  },
+  {
+    name: { zh: '无人机螺旋桨', en: 'Drone Propellers' },
+    spec: { zh: '9450 自锁桨，2对/包，适配主流四旋翼机型', en: '9450 self-locking props, 2 pairs per pack, fits common quadcopters' },
+    unit: { zh: '包', en: 'pack' },
+    qty: 1,
+    unitPrice: 60,
+    amount: 60,
+  },
+  {
+    name: { zh: '云台减震球', en: 'Gimbal Damping Balls' },
+    spec: { zh: '硅胶减震球，8只/包，适配主流云台减震板', en: 'Silicone damping balls, 8 pcs per pack, fits common gimbal plates' },
+    unit: { zh: '包', en: 'pack' },
+    qty: 1,
+    unitPrice: 25,
+    amount: 25,
+  },
+  {
+    name: { zh: '5.8GHz 图传天线', en: '5.8GHz FPV Antenna' },
+    spec: { zh: 'RP-SMA 接口蘑菇天线，3dBi，2只/包', en: 'RP-SMA mushroom antenna, 3 dBi, 2 pcs per pack' },
+    unit: { zh: '包', en: 'pack' },
+    qty: 1,
+    unitPrice: 80,
+    amount: 80,
+  },
+  {
+    name: { zh: '电池魔术贴扎带', en: 'Battery Velcro Straps' },
+    spec: { zh: '宽20mm × 长200mm，5根/包', en: '20mm wide × 200mm long, 5 pcs per pack' },
+    unit: { zh: '包', en: 'pack' },
+    qty: 1,
+    unitPrice: 16,
+    amount: 16,
+  },
+]
+
+const extension = {
+  total: extensionItems.reduce((sum, item) => sum + item.amount, 0),
+  totalZh: '伍佰柒拾元整',
+}
+
 const copy = {
   zh: {
     kicker: '耗材销售',
     headline: '机器人研发及维护耗材，整包直购。',
-    lede: 'UWB 定位、视觉传感器、雷达安装与线束电路维护所需的一次性耗材与装配材料，按报价单整包交付。',
+    lede: 'UWB 定位、视觉传感器、雷达安装与线束电路维护所需的一次性耗材与装配材料，整包交付；机器人与无人机常用扩展耗材可按需加购。',
     primaryCta: '查看报价明细',
     secondaryCta: '扫码购买',
-    badges: [`报价日期 ${quote.date}`, '14 项耗材', '未税建议销售价'],
+    badges: [`报价日期 ${quote.date}`, '28 项耗材', '未税建议销售价'],
     pricing: {
       kicker: '报价单',
       title: '14 项耗材，明码标价。',
@@ -152,6 +272,13 @@ const copy = {
       columns: { no: '序号', name: '耗材名称', spec: '规格及交付包装', unit: '单位', qty: '数量', unitPrice: '单价（元）', amount: '金额（元）' },
       totalLabel: '未税合计',
       totalNote: quote.totalZh,
+    },
+    extension: {
+      kicker: '扩展耗材',
+      title: '机器人与无人机常用耗材。',
+      description: '面向机器人调试与无人机维护的常备耗材，可与整包报价单合并下单；以下为未税建议销售价，税费及运费另议。',
+      totalLabel: '未税小计',
+      totalNote: extension.totalZh,
     },
     payment: {
       kicker: '购买方式',
@@ -181,10 +308,10 @@ const copy = {
   en: {
     kicker: 'Consumables Store',
     headline: 'Robotics R&D consumables, one package.',
-    lede: 'One-time consumables and assembly materials for UWB positioning, vision sensors, radar mounting, and wiring maintenance — delivered as a single quote package.',
+    lede: 'One-time consumables and assembly materials for UWB positioning, vision sensors, radar mounting, and wiring maintenance — delivered as a single quote package, with common robot and drone consumables available as add-ons.',
     primaryCta: 'View Price List',
     secondaryCta: 'Buy Now',
-    badges: [`Quote date ${quote.date}`, '14 items', 'Ex-tax list price'],
+    badges: [`Quote date ${quote.date}`, '28 items', 'Ex-tax list price'],
     pricing: {
       kicker: 'Quote',
       title: '14 items, clear pricing.',
@@ -192,6 +319,13 @@ const copy = {
       columns: { no: 'No.', name: 'Item', spec: 'Spec & Packaging', unit: 'Unit', qty: 'Qty', unitPrice: 'Unit Price (¥)', amount: 'Amount (¥)' },
       totalLabel: 'Total (ex-tax)',
       totalNote: `RMB ${quote.total.toLocaleString('en-US')} only`,
+    },
+    extension: {
+      kicker: 'Extended Consumables',
+      title: 'Common robot & drone consumables.',
+      description: 'Stock items for robot debugging and drone maintenance; combine with the quote package when ordering. Ex-tax list prices; tax and shipping separate.',
+      totalLabel: 'Subtotal (ex-tax)',
+      totalNote: `RMB ${extension.total.toLocaleString('en-US')} only`,
     },
     payment: {
       kicker: 'How to Buy',
@@ -258,36 +392,67 @@ function StoreHero() {
   )
 }
 
-function PricingSection() {
+type QuoteColumns = {
+  no: string
+  name: string
+  spec: string
+  unit: string
+  qty: string
+  unitPrice: string
+  amount: string
+}
+
+function QuoteSection({
+  id,
+  kicker,
+  title,
+  description,
+  columns,
+  items,
+  totalLabel,
+  totalNote,
+  total,
+  paper,
+}: {
+  id: string
+  kicker: string
+  title: string
+  description: string
+  columns: QuoteColumns
+  items: Item[]
+  totalLabel: string
+  totalNote: string
+  total: number
+  paper?: boolean
+}) {
   const { language } = useLanguage()
   const lang = language === 'zh' ? 'zh' : 'en'
-  const { pricing } = copy[lang]
 
   return (
-    <section id="pricing" className="section-padding scroll-mt-16">
+    <section id={id} className={`section-padding scroll-mt-16${paper ? ' border-t border-foreground/5 bg-[hsl(var(--paper))]' : ''}`}>
       <div className="section-container">
         <div className="mb-12 max-w-3xl">
-          <p className="section-kicker">{pricing.kicker}</p>
-          <h2 className="section-title">{pricing.title}</h2>
-          <p className="section-lede">{pricing.description}</p>
+          <p className="section-kicker">{kicker}</p>
+          <h2 className="section-title">{title}</h2>
+          <p className="section-lede">{description}</p>
         </div>
 
         <div className="hidden overflow-hidden border border-foreground/10 bg-[hsl(var(--paper))] md:block">
           <table className="w-full border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-foreground/10 bg-[hsl(var(--ink))] text-white">
-                <th className="px-4 py-4 text-xs font-semibold uppercase tracking-[0.14em]">{pricing.columns.no}</th>
-                <th className="px-4 py-4 text-xs font-semibold uppercase tracking-[0.14em]">{pricing.columns.name}</th>
-                <th className="px-4 py-4 text-xs font-semibold uppercase tracking-[0.14em]">{pricing.columns.spec}</th>
-                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{pricing.columns.unit}</th>
-                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{pricing.columns.qty}</th>
-                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{pricing.columns.unitPrice}</th>
-                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{pricing.columns.amount}</th>
+                <th className="px-4 py-4 text-xs font-semibold uppercase tracking-[0.14em]">{columns.no}</th>
+                <th className="px-4 py-4 text-xs font-semibold uppercase tracking-[0.14em]">{columns.name}</th>
+                <th className="px-4 py-4 text-xs font-semibold uppercase tracking-[0.14em]">{columns.spec}</th>
+                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{columns.unit}</th>
+                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{columns.qty}</th>
+                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{columns.unitPrice}</th>
+                <th className="px-4 py-4 text-right text-xs font-semibold uppercase tracking-[0.14em]">{columns.amount}</th>
               </tr>
             </thead>
             <tbody>
               {items.map((item, index) => (
-                <tr key={item.name.en} className="border-b border-foreground/10 transition last:border-b-0 hover:bg-[hsl(18_72%_46%_/_0.04)]">
+                <tr key={item.name.en} className="border-b border-foreground/10 transition last:border-b-0 hover:bg-[hsl(18_72%_46%/_0.04)]">
                   <td className="font-display px-4 py-4 text-sm font-semibold text-[hsl(var(--copper))]">
                     {String(index + 1).padStart(2, '0')}
                   </td>
@@ -303,11 +468,11 @@ function PricingSection() {
             <tfoot>
               <tr className="border-t-2 border-foreground/15 bg-[hsl(var(--paper))]">
                 <td colSpan={6} className="px-4 py-5">
-                  <span className="font-display text-base font-semibold text-foreground">{pricing.totalLabel}</span>
-                  <span className="ml-3 text-xs uppercase tracking-[0.14em] text-muted-foreground">{pricing.totalNote}</span>
+                  <span className="font-display text-base font-semibold text-foreground">{totalLabel}</span>
+                  <span className="ml-3 text-xs uppercase tracking-[0.14em] text-muted-foreground">{totalNote}</span>
                 </td>
                 <td className="font-display px-4 py-5 text-right text-2xl font-bold tabular-nums text-[hsl(var(--copper))]">
-                  ¥{quote.total.toLocaleString('en-US')}
+                  ¥{total.toLocaleString('en-US')}
                 </td>
               </tr>
             </tfoot>
@@ -332,10 +497,10 @@ function PricingSection() {
           ))}
           <div className="flex items-baseline justify-between border-y-2 border-foreground/15 bg-[hsl(var(--paper))] px-5 py-5">
             <div>
-              <p className="font-display text-base font-semibold text-foreground">{pricing.totalLabel}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">{pricing.totalNote}</p>
+              <p className="font-display text-base font-semibold text-foreground">{totalLabel}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.14em] text-muted-foreground">{totalNote}</p>
             </div>
-            <p className="font-display text-2xl font-bold tabular-nums text-[hsl(var(--copper))]">¥{quote.total.toLocaleString('en-US')}</p>
+            <p className="font-display text-2xl font-bold tabular-nums text-[hsl(var(--copper))]">¥{total.toLocaleString('en-US')}</p>
           </div>
         </div>
       </div>
@@ -423,21 +588,53 @@ function NotesSection() {
             </li>
           ))}
         </ol>
-        <p className="mt-12 inline-flex items-center gap-2 border border-foreground/10 px-4 py-3 text-xs font-medium text-muted-foreground">
-          <Package className="h-3.5 w-3.5 text-[hsl(var(--copper))]" />
-          {lang === 'zh' ? '整套 14 项耗材 · 未税合计' : 'Full 14-item package · Total ex-tax'} ¥{quote.total.toLocaleString('en-US')}
-        </p>
+        <div className="mt-12 flex flex-wrap gap-3">
+          <p className="inline-flex items-center gap-2 border border-foreground/10 px-4 py-3 text-xs font-medium text-muted-foreground">
+            <Package className="h-3.5 w-3.5 text-[hsl(var(--copper))]" />
+            {lang === 'zh' ? '报价单套装 · 14 项 · 未税合计' : 'Quote package · 14 items · Total ex-tax'} ¥{quote.total.toLocaleString('en-US')}
+          </p>
+          <p className="inline-flex items-center gap-2 border border-foreground/10 px-4 py-3 text-xs font-medium text-muted-foreground">
+            <Package className="h-3.5 w-3.5 text-[hsl(var(--copper))]" />
+            {lang === 'zh' ? '扩展耗材 · 14 项 · 未税小计' : 'Extended consumables · 14 items · Subtotal ex-tax'} ¥{extension.total.toLocaleString('en-US')}
+          </p>
+        </div>
       </div>
     </section>
   )
 }
 
 function StorePageContent() {
+  const { language } = useLanguage()
+  const lang = language === 'zh' ? 'zh' : 'en'
+  const c = copy[lang]
+
   return (
     <main>
       <Navigation />
       <StoreHero />
-      <PricingSection />
+      <QuoteSection
+        id="pricing"
+        kicker={c.pricing.kicker}
+        title={c.pricing.title}
+        description={c.pricing.description}
+        columns={c.pricing.columns}
+        items={items}
+        totalLabel={c.pricing.totalLabel}
+        totalNote={c.pricing.totalNote}
+        total={quote.total}
+      />
+      <QuoteSection
+        id="extension"
+        kicker={c.extension.kicker}
+        title={c.extension.title}
+        description={c.extension.description}
+        columns={c.pricing.columns}
+        items={extensionItems}
+        totalLabel={c.extension.totalLabel}
+        totalNote={c.extension.totalNote}
+        total={extension.total}
+        paper
+      />
       <PaymentSection />
       <NotesSection />
       <Footer />
