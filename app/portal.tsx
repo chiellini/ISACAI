@@ -41,6 +41,7 @@ const copy = {
     langLabel: 'EN',
     nav: [
       { label: '门户', href: '/' },
+      { label: '耗材商店', href: '/store' },
       { label: '合作方入口', href: urls.partner },
       { label: '开发者', href: '/developers' },
       { label: '公司', href: '/company' },
@@ -213,6 +214,7 @@ const copy = {
     langLabel: '中文',
     nav: [
       { label: 'Portal', href: '/' },
+      { label: 'Store', href: '/store' },
       { label: 'Partner', href: urls.partner },
       { label: 'Developers', href: '/developers' },
       { label: 'Company', href: '/company' },
