@@ -403,8 +403,8 @@ const copy = {
       title: '三步完成购买。',
       steps: [
         { title: '选好商品', text: '从目录中选定商品名称与数量；多件可合并下单。' },
-        { title: '扫码付款', text: '使用支付宝扫一扫支付，付款时请备注商品名称与数量。' },
-        { title: '微信确认', text: `付款后添加微信 ${wechat}，确认收货信息、交期与发票需求。` },
+        { title: '微信确认', text: `添加微信 ${wechat}，确认商品、收货信息、交期与发票需求。` },
+        { title: '扫码付款', text: '使用支付宝扫一扫支付。' },
       ],
       qrTitle: '支付宝收款码',
       qrNote: '打开支付宝「扫一扫」扫码支付',
@@ -443,8 +443,8 @@ const copy = {
       title: 'Three steps to order.',
       steps: [
         { title: 'Pick items', text: 'Choose item names and quantities from the catalog; combine multiple items in one order.' },
-        { title: 'Scan & pay', text: 'Scan the Alipay QR code to pay; note the item names and quantities in the remark.' },
-        { title: 'Confirm on WeChat', text: `After payment, add WeChat ${wechat} to confirm delivery details, lead time, and invoicing.` },
+        { title: 'Confirm on WeChat', text: `Add WeChat ${wechat} to confirm items, delivery details, lead time, and invoicing.` },
+        { title: 'Scan & pay', text: 'Scan with Alipay to pay.' },
       ],
       qrTitle: 'Alipay QR Code',
       qrNote: 'Open "Scan" inside Alipay to pay',
