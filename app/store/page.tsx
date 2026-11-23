@@ -261,6 +261,125 @@ const categories: Category[] = [
       },
     ],
   },
+  {
+    id: 'uwb',
+    name: { zh: 'UWB 定位配件', en: 'UWB Positioning Parts' },
+    desc: { zh: 'UWB 标签模组与固定配件', en: 'UWB tag modules and mounting parts' },
+    items: [
+      {
+        name: { zh: 'UWB 备用射频模组', en: 'UWB Radio Module' },
+        spec: { zh: 'BU03 / DW3000，板载天线；裸模组，不含外壳及电池', en: 'BU03 / DW3000, onboard antenna; bare module, no case or battery' },
+        unit: { zh: '个', en: 'pc' },
+        price: 127,
+        image: '/images/store/uwb-module.jpg',
+      },
+      {
+        name: { zh: '标签外壳及佩戴挂绳', en: 'Tag Case & Lanyard' },
+        spec: { zh: '现成适配外壳＋挂绳；不含定制开模', en: 'Off-the-shelf case + lanyard; no custom tooling' },
+        unit: { zh: '套', en: 'set' },
+        price: 19,
+        image: '/images/store/tag-lanyard.jpg',
+      },
+      {
+        name: { zh: '定位设备固定材料包', en: 'Mounting Materials Pack' },
+        spec: { zh: '每包工业双面胶片10片、尼龙扎带50根', en: '10 adhesive pads + 50 nylon cable ties per pack' },
+        unit: { zh: '包', en: 'pack' },
+        price: 29,
+        image: '/images/store/mount-pack.jpg',
+      },
+    ],
+  },
+  {
+    id: 'vision',
+    name: { zh: '摄像头与视觉', en: 'Camera & Vision' },
+    desc: { zh: '工业相机线缆、标定与清洁', en: 'Camera cabling, calibration, and cleaning' },
+    items: [
+      {
+        name: { zh: 'USB 3.0 工业相机连接线', en: 'USB 3.0 Camera Cable' },
+        spec: { zh: '2m，USB-A转USB-B；下单前确认相机接口', en: '2m, USB-A to USB-B; confirm camera port before ordering' },
+        unit: { zh: '条', en: 'pc' },
+        price: 267,
+        image: '/images/store/usb3-cable.jpg',
+      },
+      {
+        name: { zh: 'GigE 工业相机屏蔽网线', en: 'GigE Shielded Cable' },
+        spec: { zh: '3m，RJ45转RJ45，屏蔽抗干扰', en: '3m, RJ45 to RJ45, shielded' },
+        unit: { zh: '条', en: 'pc' },
+        price: 217,
+        image: '/images/store/gige-cable.jpg',
+      },
+      {
+        name: { zh: '玻璃相机标定板', en: 'Glass Calibration Board' },
+        spec: { zh: '100×100mm 棋盘格；格距按需求确认，不含校准证书', en: '100×100mm chessboard; grid size on request, no calibration certificate' },
+        unit: { zh: '块', en: 'pc' },
+        price: 348,
+        image: '/images/store/calib-board.jpg',
+      },
+      {
+        name: { zh: '镜头外置保护镜', en: 'Lens Protector' },
+        spec: { zh: '默认30.5mm螺纹口径，按镜头规格匹配', en: '30.5mm thread by default, matched to lens spec' },
+        unit: { zh: '片', en: 'pc' },
+        price: 47,
+        image: '/images/store/lens-filter.jpg',
+      },
+      {
+        name: { zh: '相机清洁维护套装', en: 'Camera Cleaning Kit' },
+        spec: { zh: '每套含 Kimtech 34155 擦拭纸4盒、气吹1个；不含清洁液', en: '4 boxes Kimtech 34155 wipes + 1 blower per kit; no cleaning fluid' },
+        unit: { zh: '套', en: 'set' },
+        price: 68,
+        image: '/images/store/cleaning-kit.jpg',
+      },
+    ],
+  },
+  {
+    id: 'radar',
+    name: { zh: '雷达配件', en: 'Radar Parts' },
+    desc: { zh: '雷达线束、测试件与安装支架', en: 'Radar harnesses, test targets, and mounts' },
+    items: [
+      {
+        name: { zh: '雷达电源及数据线束', en: 'Radar Power & Data Harness' },
+        spec: { zh: '1m 常规无源线束；接头及针序下单前确认', en: '1m passive harness; connector and pinout confirmed at order' },
+        unit: { zh: '套', en: 'set' },
+        price: 97,
+        image: '/images/store/radar-harness.jpg',
+      },
+      {
+        name: { zh: '小型三面角反射器', en: 'Corner Reflector' },
+        spec: { zh: '约50mm 实验测试件；尺寸可确认，不含计量校准证书', en: '~50mm lab test target; size on request, no metrology certificate' },
+        unit: { zh: '个', en: 'pc' },
+        price: 328,
+        image: '/images/store/corner-reflector.jpg',
+      },
+      {
+        name: { zh: '雷达安装支架及紧固件', en: 'Radar Mount & Fasteners' },
+        spec: { zh: '现成铝合金支架＋配套螺丝；不含非标机械加工', en: 'Off-the-shelf aluminum bracket + screws; no custom machining' },
+        unit: { zh: '套', en: 'set' },
+        price: 67,
+        image: '/images/store/radar-bracket.jpg',
+      },
+    ],
+  },
+  {
+    id: 'boards',
+    name: { zh: '开发板与调试', en: 'Boards & Debug' },
+    desc: { zh: '预烧录控制板与调试线束', en: 'Pre-flashed boards and debug harnesses' },
+    items: [
+      {
+        name: { zh: '预烧录 STM32 控制板', en: 'Pre-flashed STM32 Board' },
+        spec: { zh: 'STM32F103C8T6；含固件烧录、基础测试、版本标签及防静电包装', en: 'STM32F103C8T6; flashed firmware, basic test, version label, ESD packaging' },
+        unit: { zh: '块', en: 'pc' },
+        price: 119,
+        image: '/images/store/stm32-board.jpg',
+      },
+      {
+        name: { zh: 'SWD 备用线束包', en: 'SWD Cable Pack' },
+        spec: { zh: '2.54mm 四线 20cm；每包5条，不含下载器', en: '2.54mm pitch, 4-wire, 20cm; 5 cables per pack, debugger not included' },
+        unit: { zh: '包', en: 'pack' },
+        price: 23,
+        image: '/images/store/swd-cables.jpg',
+      },
+    ],
+  },
 ]
 
 const productCount = categories.reduce((sum, cat) => sum + cat.items.length, 0)
@@ -269,7 +388,7 @@ const copy = {
   zh: {
     kicker: '耗材商店',
     headline: '机器人与无人机耗材，单品直购。',
-    lede: '面向机器人研发、设备维护与无人机用户的耗材商店：清洁防护、装配紧固、电工焊接、散热与无人机配件，明码标价，扫码即买。',
+    lede: '面向机器人研发、设备维护与无人机用户的配件商店：从清洁耗材、电工焊接到 UWB 定位、视觉标定与雷达配件，明码标价，扫码即买。',
     primaryCta: '浏览商品',
     secondaryCta: '扫码购买',
     badges: [`${productCount} 项现货耗材`, '单品下单 · 明码标价', '扫码支付 · 微信确认'],
@@ -309,7 +428,7 @@ const copy = {
   en: {
     kicker: 'Consumables Store',
     headline: 'Robot & drone consumables, order any item.',
-    lede: 'A consumables store for robotics R&D, device maintenance, and drone users: cleaning, protection, assembly, wiring, thermal, and drone parts — clearly priced, scan to buy.',
+    lede: 'A parts store for robotics R&D, device maintenance, and drone users: from cleaning consumables and soldering to UWB positioning, vision calibration, and radar parts — clearly priced, scan to buy.',
     primaryCta: 'Browse Products',
     secondaryCta: 'Buy Now',
     badges: [`${productCount} items in stock`, 'Per-item ordering · Clear pricing', 'Scan to pay · WeChat confirm'],
